@@ -1,0 +1,69 @@
+# OLF DSL Knowledge Base
+
+> A knowledge base for generating myViewBoard `.olf` files. **Default path: build
+> the file yourself, right now, in your own code-execution sandbox** — write
+> Python using the standard library (`json`, `zipfile`, `uuid`) to construct
+> `content.json` and zip it into a `.olf`, following the element semantics in
+> `spec/`+`elements/` and the mechanical rules in `constraints/`. Most readers of
+> this repo are plain Claude/ChatGPT/Gemini chat users with no external tool
+> access, so that's the assumed default, not a fallback. An MCP tool wrapping the
+> real engine, if one happens to be available, is preferred when reachable — see
+> `CORE.md` for the full priority order.
+
+Read in this order: `CORE.md` first (reading order + generation-path rules), then
+`spec/dsl-spec.md`, then only the `elements/*.md` files relevant to the current
+request, then any matching `constraints/*.md` files, then a worked `examples/*.yaml`
+for few-shot grounding.
+
+## Core
+
+- [CORE.md](CORE.md) — start here always. Reading order, what this DSL can and
+  cannot do yet, and the generation-path rule (produce a spec, not a zip).
+- [spec/dsl-spec.md](spec/dsl-spec.md) — the DSL grammar: document structure,
+  templates, positioning, layers, the engine contract, CLI/MCP interface.
+
+## Elements (Layer 2 — what a spec's `elements:` list can contain)
+
+- [elements/text.md](elements/text.md) — `text:`, role presets, RTF/alignment rules
+- [elements/bullets.md](elements/bullets.md) — `bullets:`, the compound list element
+- [elements/shape.md](elements/shape.md) — `shape:`, the full shape-kind catalog
+- [elements/line-and-curve.md](elements/line-and-curve.md) — `line:` and `curve:`
+- [elements/image.md](elements/image.md) — `image:`
+- [elements/table.md](elements/table.md) — `table:`, merges, the three index spaces
+- [elements/animate-and-link.md](elements/animate-and-link.md) — `animate:` and
+  `link:` attributes (attach to any element above except `bullets`)
+- [elements/raw-passthrough.md](elements/raw-passthrough.md) — `raw:`, the Layer-3
+  escape hatch, and its mechanical safety checks
+
+## Constraints (ground-truth facts that override intuition or the official spec)
+
+- [constraints/font-size-and-pixels.md](constraints/font-size-and-pixels.md)
+- [constraints/width-factor-and-line-pitch.md](constraints/width-factor-and-line-pitch.md)
+- [constraints/max-font-size-cap.md](constraints/max-font-size-cap.md)
+- [constraints/text-color-two-fields.md](constraints/text-color-two-fields.md)
+- [constraints/table-index-spaces.md](constraints/table-index-spaces.md)
+- [constraints/raw-element-mechanical-checks.md](constraints/raw-element-mechanical-checks.md)
+- [constraints/android-vs-windows-divergence.md](constraints/android-vs-windows-divergence.md)
+- [constraints/ai-pen-color-format.md](constraints/ai-pen-color-format.md)
+- [constraints/font-portability.md](constraints/font-portability.md)
+- [constraints/deferred-features-not-in-dsl.md](constraints/deferred-features-not-in-dsl.md) —
+  read this before promising flashcard, poll, or AI-pen-icon support
+
+## Patterns
+
+- [patterns/common-patterns.md](patterns/common-patterns.md) — worked page patterns
+  (title+bullets+caption, mixed layers, coordinate-free lesson pages)
+
+## Examples (worked DSL specs — use these for few-shot, not just the schema)
+
+- [examples/minimal.yaml](examples/minimal.yaml) — smallest valid file
+- [examples/water_cycle.yaml](examples/water_cycle.yaml) — typical lesson page
+- [examples/frog_life_cycle.yaml](examples/frog_life_cycle.yaml) — multi-page,
+  shapes + images
+- [examples/tables_animation_links.yaml](examples/tables_animation_links.yaml) —
+  merged table + animation + page links together
+
+## Meta
+
+- [_meta/status.md](_meta/status.md) — when this mirror was last synced against the
+  live `olf-dsl` engine, and what's documented-but-not-yet-buildable

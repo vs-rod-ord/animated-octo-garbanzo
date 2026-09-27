@@ -1,0 +1,37 @@
+dsl: 1
+meta: {title: Frog Life Cycle}
+pages:
+  - template: title_slide
+    params: {title: The Frog Life Cycle, subtitle: From egg to adult — Grade 3 Science, theme: dark}
+  - template: bullet_list
+    params:
+      title: The Five Stages
+      bullet: number
+      items:
+        - "Eggs — laid in water as a jelly-like cluster called frogspawn"
+        - "Tadpole — hatches with a tail and gills, lives fully in water"
+        - "Tadpole with legs — back legs sprout first, then front legs"
+        - "Froglet — tail shrinks, lungs develop, starts breathing air"
+        - "Adult frog — lives on land and water, returns to lay eggs"
+  - elements:
+      - text: {content: "The Cycle Repeats", role: heading, align: center}
+      - shape: {kind: circle, at: [810, 220], width: 300, height: 300,
+                fill: "#BFDBFE", stroke: "#1D4ED8", stroke_width: 5,
+                label: Eggs, label_size: 36, label_bold: true}
+      - shape: {kind: circle, at: [1310, 480], width: 300, height: 300,
+                fill: "#A7F3D0", stroke: "#047857", stroke_width: 5,
+                label: Tadpole, label_size: 36, label_bold: true}
+      - shape: {kind: circle, at: [810, 740], width: 300, height: 300,
+                fill: "#FDE68A", stroke: "#B45309", stroke_width: 5,
+                label: Froglet, label_size: 36, label_bold: true}
+      - shape: {kind: circle, at: [310, 480], width: 300, height: 300,
+                fill: "#FECACA", stroke: "#B91C1C", stroke_width: 5,
+                label: Adult, label_size: 36, label_bold: true}
+      - curve: {from: [1130, 340], via: [1400, 380], to: [1450, 470],
+                arrow: end, color: "#334155", width: 6}
+      - curve: {from: [1450, 800], via: [1400, 900], to: [1130, 920],
+                arrow: end, color: "#334155", width: 6}
+      - curve: {from: [790, 920], via: [520, 900], to: [470, 800],
+                arrow: end, color: "#334155", width: 6}
+      - curve: {from: [470, 470], via: [520, 380], to: [790, 340],
+                arrow: end, color: "#334155", width: 6}

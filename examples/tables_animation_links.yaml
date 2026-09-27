@@ -1,0 +1,78 @@
+dsl: 1
+meta: {title: 'Tables, animation and links'}
+pages:
+  # ---- page 1: a menu, exercising link: to_page -----------------------------
+  - elements:
+      - text:
+          content: 'PAGE 1 - MENU. One link per shape, never on the label too.'
+          role: heading
+          at: [80, 60]
+          width: 1760
+          align: center
+      - shape:
+          kind: rect
+          at: [180, 380]
+          width: 480
+          height: 300
+          fill: "#4F46E5"
+          label: 'Go to the table'
+          label_size: 40
+          label_color: "#FFFFFF"
+          link: {to_page: 2}
+      - shape:
+          kind: rect
+          at: [720, 380]
+          width: 480
+          height: 300
+          fill: "#059669"
+          label: 'Go to the animation'
+          label_size: 40
+          label_color: "#FFFFFF"
+          link: {to_page: 3}
+      - shape:
+          kind: rect
+          at: [1260, 380]
+          width: 480
+          height: 300
+          fill: "#CA8A04"
+          label: 'Show a text popup'
+          label_size: 40
+          label_color: "#FFFFFF"
+          link: {text: 'A text link shows its message inline.'}
+
+  # ---- page 2: the merged table --------------------------------------------
+  # Reproduces Merge_Probe.olf page 1, which was built by hand in myViewBoard:
+  # a 3x3 with A1+B1 merged vertically and B2+B3 merged horizontally.
+  - elements:
+      - text:
+          content: 'PAGE 2 - 3x3 table. A1+B1 merged down, B2+B3 merged across.'
+          role: heading
+          at: [80, 60]
+          width: 1760
+      - table:
+          at: [585, 469]
+          size: 53
+          columns: 160
+          rows: [95, 100, 95]
+          cells:
+            - ['A1', 'A2', 'A3']
+            - ['',   'B2', '']
+            - ['C1', 'C2', 'C3']
+          merges:
+            - [0, 0, 2, 1]
+            - [1, 1, 1, 2]
+      - text: {content: 'BACK TO MENU', size: 44, at: [80, 940], width: 500, link: {to_page: 1}}
+
+  # ---- page 3: animation ---------------------------------------------------
+  - elements:
+      - text:
+          content: 'PAGE 3 - the top row toggles on tap, the bottom row fades out.'
+          role: heading
+          at: [80, 60]
+          width: 1760
+      - shape: {kind: rect, at: [180, 260], width: 300, height: 200, fill: "#EF4444", animate: {toggle: true}}
+      - shape: {kind: rect, at: [540, 260], width: 300, height: 200, fill: "#F59E0B", animate: [fade-in, fade-out]}
+      - shape: {kind: rect, at: [900, 260], width: 300, height: 200, fill: "#10B981", animate: {toggle: true, duration: "2"}}
+      - shape: {kind: rect, at: [180, 560], width: 300, height: 200, fill: "#3B82F6", animate: fade-out}
+      - shape: {kind: rect, at: [540, 560], width: 300, height: 200, fill: "#A855F7", animate: {type: fade-in, duration: "3"}}
+      - text: {content: 'BACK TO MENU', size: 44, at: [80, 940], width: 500, link: {to_page: 1}}

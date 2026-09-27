@@ -1,0 +1,120 @@
+---
+name: core
+description: Always read first. Reading order, scope, and the generation-path rule for the OLF DSL knowledge base.
+metadata:
+  type: core
+  status: proven
+---
+
+# Start here
+
+This repository teaches an AI how to turn a request ("make a lesson page about
+the water cycle") into a real, working `.olf` file — **by default, generated
+directly in your own code-execution sandbox**, not by calling an external tool.
+Most people using this corpus are talking to plain Claude, ChatGPT, or Gemini
+chat, with no MCP server or other tool access — so the default path has to work
+there. See "The generation-path rule" below before writing anything.
+
+## Reading order
+
+1. This file.
+2. [`spec/dsl-spec.md`](spec/dsl-spec.md) — the DSL's document structure, layers,
+   and how positioning/defaults work. Read this fully; it's short.
+3. Only the specific files under [`elements/`](elements/) that the current request
+   needs. Don't read all of them — each is self-contained.
+4. Any [`constraints/`](constraints/) file whose topic touches an element you're
+   using (e.g. writing a `table:`? read `constraints/table-index-spaces.md`).
+5. One matching file under [`examples/`](examples/) for few-shot grounding before
+   writing the final spec.
+
+## What this DSL can build today (v1 scope)
+
+Supported Layer-2 elements: `text`, `bullets`, `shape` (rect/triangle/oval/
+polygon-N/star/quadrant/3D-solids/rounded-rect), `line`, `curve`, `image`, `table`
+(with cell merges), plus `animate:` and `link:` attributes on most of the above.
+Layer 1 templates: `title_slide`, `bullet_list`, `two_column`, `section_marker`,
+`blank`. Layer 3 `raw:` is a literal `content.json` element passthrough, usable
+for anything not in Layer 2.
+
+**Not yet supported by the DSL** — `flashcard`, `poll`, AI-pen/SVG icon import,
+`group`, per-element rotation, and `page.tools` (Calculator etc.) are deferred to
+a future version. See
+[`constraints/deferred-features-not-in-dsl.md`](constraints/deferred-features-not-in-dsl.md)
+before claiming the DSL can generate one of these — it currently cannot, though
+`raw:` can sometimes stand in for a hand-built version of one.
+
+## The generation-path rule
+
+An OLF file is a **zip** containing `content.json`. Ordinary text generation
+cannot produce zip bytes — only code execution can. Priority order:
+
+**1. Default: write and run Python in your own sandbox, right now, in this
+conversation.** ChatGPT's Advanced Data Analysis, Gemini's code execution tool,
+and Claude's analysis/code-execution tool all give you a Python environment with
+the standard library — `json`, `zipfile`, `uuid`, `datetime` are all you need to
+build a valid `content.json` and zip it into a downloadable `.olf` file. Use the
+DSL semantics in `spec/` and `elements/` to decide *what* to build, and every
+file in `constraints/` as the literal rules for *how* to encode it correctly —
+those constraint files exist specifically because getting the mechanics wrong
+produces a file that opens looking fine and fails later, often only on Android,
+with no error at build time. Treat this as the expected, normal path — not a
+fallback.
+
+**Do not assume you can reach an external engine.** Standard code-execution
+sandboxes on all three major chat platforms have no general internet access as
+of this writing — you cannot `pip install` an unlisted package, `git clone` this
+project's real Python engine, or fetch anything by URL as a reliable default (a
+narrow, tool-gated exception exists on some ChatGPT surfaces, but don't depend
+on it being present). Build `content.json` yourself from what's documented in
+this repository, using only the standard library.
+
+**2. If an MCP tool wrapping the real engine happens to be available** (rare for
+a plain chat user, more likely for a developer with a configured client), prefer
+it — it reuses a tested, deterministic implementation instead of your own
+freshly-written code, which is strictly more reliable. But do not assume this is
+available; it is the exception, not the default.
+
+**3. If you have no code execution at all** (a bare chat surface with no
+sandbox), produce the `content.json` as text and say so explicitly — do not
+claim to have generated a working `.olf` file. Tell the person exactly what to
+do with it (save it as `content.json`, zip it at the root of the archive, rename
+the `.zip` to `.olf`).
+
+**Before delivering a file built via path 1, self-check it against every
+relevant file in `constraints/`** — there is no external validator catching
+mistakes for you now, so this review step is the only thing standing in for the
+validation pass the real engine normally does. At minimum, re-check: font sizes
+converted to pixels (not left as points), the `『『『` triple separator on every
+measurement string, 6-digit shape colors vs. 8-digit text colors, table merge
+index spaces if a table is present, and that text color was set via RTF
+`\colortbl`, not just the JSON `fill` field.
+
+## Worked JSON coverage in this corpus
+
+Every `elements/*.md` file now includes a "Worked `content.json`" section with
+a literal, engine-sourced example — `text`, `bullets`, every `shape` kind
+(`polygon`/`ellipse`/`quadrant`/`pseudo3Dshape`/`rounded-rect`), `line`,
+`curve`, `image`, `table` (including merges), and `animate:`/`link:`. Prefer
+copying the field structure from these examples over reconstructing it from
+the DSL's semantic description alone — they're taken directly from the
+reference engine's own construction code, not reverse-engineered from
+behavior.
+
+**Still gap-level, lower confidence:** `flashcard` and `poll` have literal JSON
+too (see
+[`constraints/deferred-features-not-in-dsl.md`](constraints/deferred-features-not-in-dsl.md)),
+but AI-pen/SVG icon import (beyond the `rounded-rect` case in
+`elements/shape.md`), `group`, per-element rotation, and `page.tools` have no
+worked example anywhere in this repo. For those, say so explicitly rather than
+inventing a plausible-looking JSON shape from general knowledge — several real
+bugs in this project's history came from exactly that kind of guess.
+
+## When something isn't covered
+
+Several real bugs in this project's history came from the *official* myViewBoard
+spec being wrong, or from a plausible-sounding guess being wrong in a way that
+only failed at runtime (often Android-only, often silent). If a required field or
+element behavior isn't covered in what you've read here, **ask rather than
+guess** — do not fill the gap from general knowledge about JSON, SVG, or zip
+formats. General knowledge about those formats does not reliably predict what
+myViewBoard's specific, quirky parser accepts.

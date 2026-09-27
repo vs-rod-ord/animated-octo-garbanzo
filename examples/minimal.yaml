@@ -1,0 +1,4 @@
+dsl: 1
+pages:
+  - template: title_slide
+    params: {title: Hello myViewBoard}

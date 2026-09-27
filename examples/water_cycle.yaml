@@ -1,0 +1,16 @@
+dsl: 1
+meta: {title: Water Cycle}
+pages:
+  - template: title_slide
+    params: {title: The Water Cycle, subtitle: Grade 5 Science, theme: dark}
+  - elements:
+      - text: {content: The Water Cycle, role: title, align: center}
+      - bullets:
+          items: [Evaporation, Condensation, Precipitation, Collection]
+          bullet: number
+      - text: {content: "Source: NOAA", role: caption, at: bottom-right}
+  - template: two_column
+    params:
+      title: Warm vs Cold
+      left: [Evaporation speeds up, More vapor in air]
+      right: [Condensation dominates, Rain and snow fall]
