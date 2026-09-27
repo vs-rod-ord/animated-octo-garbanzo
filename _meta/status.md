@@ -21,6 +21,29 @@ taken deliberately, not the live state of the local project.
 | `/lite/` tier | Not built — deliberately skipped. The intended audience (flagship ChatGPT/Gemini-class models) was assessed as a token-budget-constrained audience, not a model-capability-constrained one; Section 8/9 of the design brainstorm (`OKF_Knowledge_Hierarchy_Brainstorm.md`) covers the reasoning. Revisit if a genuinely small/weak-model audience becomes a real target. |
 | MCP generation tool | Not yet built. This corpus assumes an MCP tool wrapping the `olf-dsl` engine will eventually be the primary generation path (see `CORE.md`'s generation-path rule) — until then, treat any platform without code execution as text-spec-only, per that same rule. |
 
+## Live test findings
+
+**2026-09-28, ChatGPT, first real test (prompt: title + 3-item bulleted list):**
+The generated `.olf` correctly applied every *element-level* constraint
+(font-size pixel conversion, RTF/JSON text-color sync, 6-digit shape colors,
+the `『『『` triple separator, correct `additional` entry shapes for the bullet
+ellipses) — but the file did not open, because the **root envelope was wrong**:
+no top-level `"olf"` key (bare `{"meta":..., "pageset":...}` instead), pages
+not wrapped in `{"page": {...}}`, `background` written as a bare color string
+instead of a `backgrounds` array, `additional` nested per-page instead of once
+at the root, page missing `matrix`/`is-hidden`, and `meta` missing 8 of its 9
+required fields. Root cause: no file in this corpus ever showed the full
+envelope — every `elements/*.md` worked example showed only the element
+object, silently assuming the reader already knew how it gets wrapped.
+
+**Fix applied same day:** added
+[`spec/content-json-envelope.md`](../spec/content-json-envelope.md) with the
+full root structure and a complete minimal worked file, and made it a
+mandatory (not optional) step 3 in `CORE.md`'s reading order, ahead of any
+`elements/*.md` file. Not yet re-tested against a live platform — next test
+should re-run the same ChatGPT prompt and confirm the envelope comes out
+correct this time.
+
 ## Known gaps (documented-only, not DSL-buildable)
 
 See [`constraints/deferred-features-not-in-dsl.md`](../constraints/deferred-features-not-in-dsl.md)
