@@ -21,6 +21,11 @@ for few-shot grounding.
   cannot do yet, and the generation-path rule (produce a spec, not a zip).
 - [spec/dsl-spec.md](spec/dsl-spec.md) — the DSL grammar: document structure,
   templates, positioning, layers, the engine contract, CLI/MCP interface.
+- [spec/content-json-envelope.md](spec/content-json-envelope.md) — **read this
+  in full before writing any JSON, every time, no exceptions.** The root
+  `olf`/`pageset`/`page` structure every element sits inside. A file can have
+  every element correct and still fail to open if this is wrong — confirmed by
+  a real test.
 
 ## Elements (Layer 2 — what a spec's `elements:` list can contain)
 

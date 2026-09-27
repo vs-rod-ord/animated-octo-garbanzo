@@ -20,11 +20,21 @@ there. See "The generation-path rule" below before writing anything.
 1. This file.
 2. [`spec/dsl-spec.md`](spec/dsl-spec.md) — the DSL's document structure, layers,
    and how positioning/defaults work. Read this fully; it's short.
-3. Only the specific files under [`elements/`](elements/) that the current request
+3. **[`spec/content-json-envelope.md`](spec/content-json-envelope.md) — read this
+   in full, every time, before writing any JSON.** It is not optional and not
+   skippable even for a one-element file. This is the root `olf` → `pageset` →
+   `page` structure every element sits inside. Confirmed by a real test: a
+   generated file got every element-level constraint correct (font sizes,
+   color sync, separators) and still failed to open, purely from getting this
+   envelope wrong (no root `olf` key, pages not wrapped in `{"page": ...}`,
+   wrong viewbox format, background as a bare string instead of an array).
+   Getting the envelope right is more important than getting any individual
+   element exactly right.
+4. Only the specific files under [`elements/`](elements/) that the current request
    needs. Don't read all of them — each is self-contained.
-4. Any [`constraints/`](constraints/) file whose topic touches an element you're
+5. Any [`constraints/`](constraints/) file whose topic touches an element you're
    using (e.g. writing a `table:`? read `constraints/table-index-spaces.md`).
-5. One matching file under [`examples/`](examples/) for few-shot grounding before
+6. One matching file under [`examples/`](examples/) for few-shot grounding before
    writing the final spec.
 
 ## What this DSL can build today (v1 scope)
@@ -83,11 +93,25 @@ the `.zip` to `.olf`).
 **Before delivering a file built via path 1, self-check it against every
 relevant file in `constraints/`** — there is no external validator catching
 mistakes for you now, so this review step is the only thing standing in for the
-validation pass the real engine normally does. At minimum, re-check: font sizes
-converted to pixels (not left as points), the `『『『` triple separator on every
-measurement string, 6-digit shape colors vs. 8-digit text colors, table merge
-index spaces if a table is present, and that text color was set via RTF
-`\colortbl`, not just the JSON `fill` field.
+validation pass the real engine normally does. At minimum, re-check:
+
+- **Envelope first** (see
+  [`spec/content-json-envelope.md`](spec/content-json-envelope.md)): root object
+  has exactly one key, `"olf"`; each page is wrapped in `{"page": {...}}`;
+  `olf.viewbox` is space-separated, `page.viewbox` is comma-separated; `page`
+  has both `matrix` and `is-hidden`; background is a `backgrounds` array, not a
+  bare string; `additional` is one array on the root `olf` object, not
+  per-page; `meta` has all nine required fields.
+- Font sizes converted to pixels (not left as points).
+- The `『『『` triple separator on every measurement string.
+- 6-digit shape colors vs. 8-digit text colors.
+- Table merge index spaces if a table is present.
+- Text color set via RTF `\colortbl`, not just the JSON `fill` field.
+
+A file can pass every item below the envelope check and still fail to open —
+confirmed by a real test where all five lower checks were correct and the file
+still didn't work, purely from envelope mistakes. Check the envelope first,
+every time.
 
 ## Worked JSON coverage in this corpus
 
