@@ -63,12 +63,23 @@ array entry as `polygon` (see [`elements/shape.md`](shape.md)).
     "end-point": "600,300",
     "stroke": "#FF0000",
     "stroke-width": 2.0,
+    "stroke-opacity": 1.0,
     "stroke-linecap-start": "none",
     "stroke-linecap-end": "arrow",
     "matrix": "1,0,0,0,1,0,0,0,1"
   }
 }
 ```
+
+**`stroke-opacity: 1.0` is required — confirmed 2026-10-01.** A real generated
+file omitted it (an earlier version of this doc also omitted it, which is
+exactly where the omission came from) and every curve on the page rendered
+with a fully transparent stroke — invisible, even though the element was
+otherwise 100% correctly formed, correctly positioned, and correctly
+referenced in `additional`. Unlike some fields that default sensibly when
+omitted, `stroke-opacity` on `curve` appears to default to fully transparent,
+not opaque — always set it explicitly to `1.0` (or whatever opacity is
+actually intended).
 
 Control points use `start-point`/`second-point`/`end-point` — **not** a
 `points` field like `polyline`. Arrowheads: `stroke-linecap-start`/`-end` are
