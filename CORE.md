@@ -107,6 +107,17 @@ validation pass the real engine normally does. At minimum, re-check:
 - 6-digit shape colors vs. 8-digit text colors.
 - Table merge index spaces if a table is present.
 - Text color set via RTF `\colortbl`, not just the JSON `fill` field.
+- **Every `curve` element has `stroke-opacity` set explicitly** (`1.0` for a
+  fully visible stroke) — see
+  [`constraints/curve-stroke-opacity.md`](constraints/curve-stroke-opacity.md).
+  Confirmed failure: a `curve` with no `stroke-opacity` renders fully
+  transparent, not opaque, even though every other field is correct.
+- **Every textarea's real (wrapped) height was estimated and accounted for in
+  the next element's position** — see
+  [`constraints/text-wrapping-and-overlap.md`](constraints/text-wrapping-and-overlap.md).
+  Confirmed failure: assuming every textarea is one line tall causes visible
+  overlap the moment any text wraps to a second line. Check this for every
+  textarea, not just ones that look long.
 
 A file can pass every item below the envelope check and still fail to open —
 confirmed by a real test where all five lower checks were correct and the file

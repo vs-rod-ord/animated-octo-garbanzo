@@ -44,9 +44,14 @@ for few-shot grounding.
 
 - [constraints/font-size-and-pixels.md](constraints/font-size-and-pixels.md)
 - [constraints/width-factor-and-line-pitch.md](constraints/width-factor-and-line-pitch.md)
+- [constraints/text-wrapping-and-overlap.md](constraints/text-wrapping-and-overlap.md) —
+  **read before placing any textarea** — how to estimate wrapped line count and
+  height without real font metrics, to avoid overlapping the next element
 - [constraints/max-font-size-cap.md](constraints/max-font-size-cap.md)
 - [constraints/text-color-two-fields.md](constraints/text-color-two-fields.md)
 - [constraints/table-index-spaces.md](constraints/table-index-spaces.md)
+- [constraints/curve-stroke-opacity.md](constraints/curve-stroke-opacity.md) —
+  a `curve` with no explicit `stroke-opacity` renders invisible
 - [constraints/raw-element-mechanical-checks.md](constraints/raw-element-mechanical-checks.md)
 - [constraints/android-vs-windows-divergence.md](constraints/android-vs-windows-divergence.md)
 - [constraints/ai-pen-color-format.md](constraints/ai-pen-color-format.md)
