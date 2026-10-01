@@ -40,9 +40,54 @@ object, silently assuming the reader already knew how it gets wrapped.
 [`spec/content-json-envelope.md`](../spec/content-json-envelope.md) with the
 full root structure and a complete minimal worked file, and made it a
 mandatory (not optional) step 3 in `CORE.md`'s reading order, ahead of any
-`elements/*.md` file. Not yet re-tested against a live platform — next test
-should re-run the same ChatGPT prompt and confirm the envelope comes out
-correct this time.
+`elements/*.md` file.
+
+**2026-09-28/29, ChatGPT, re-test in the same conversation thread:** envelope
+bug still present, byte-for-byte identical, despite the fix being live and
+confirmed correct on GitHub at the time of the test. Everything *else* in the
+file changed (new UUIDs, adjusted bullet spacing, a dropped `\b0` in RTF),
+strongly suggesting ChatGPT patched its own earlier output rather than
+re-fetching the corpus for that follow-up turn. Not conclusively diagnosed —
+depends on whether the user's follow-up was in the same thread without an
+explicit re-fetch instruction. Flagged as a possible platform-specific
+caveat (same-thread follow-ups may not re-read updated source material) rather
+than a corpus defect, pending a cleaner re-test.
+
+**2026-10-01, Google AI Studio, fresh test ("The Water Cycle," 4 pages —
+title, numbered list, cycle diagram with arrows, summary table):** envelope
+fix confirmed working, file opened correctly, and the whole structure was
+validated field-by-field (meta, additional/links arrays, table cell counts,
+link payload) with no errors. Two new issues found, both confirmed and fixed
+same day:
+
+1. **Text overlap, same root cause as the first finding above, but a deeper
+   instance of it.** Textarea elements whose content wrapped to 2 lines
+   overlapped the element below. Root cause: no file in the corpus showed how
+   to estimate wrapped line count without real font metrics. Fixed by adding
+   [`constraints/text-wrapping-and-overlap.md`](../constraints/text-wrapping-and-overlap.md).
+2. **Re-tested, still broken the same way** — a follow-up generation after
+   fix #1 was live still overlapped, now diagnosed precisely: the generator
+   computed the correct single-line pitch value (`32.25pt × 1.8 = 58.05`) and
+   used it *directly* as the textarea height, never actually calling the
+   line-count estimation step. The formula itself was correct (verified by
+   hand: it predicts 2 lines and `height=116.1` for the exact failing text);
+   the generator just skipped half of it. Fixed by adding an explicit
+   worked-through "wrong vs. right" numeric example using this exact failure
+   case directly in `constraints/text-wrapping-and-overlap.md`, naming the
+   specific mistake pattern (`height = pitch_formula` with no `lines *`
+   factor) so it's recognizable even without re-deriving the math.
+3. **Curve elements (arrows) rendered fully invisible — confirmed by the user
+   directly in myViewBoard, not just inferred from the JSON.** Root cause: the
+   `curve` worked example in `elements/line-and-curve.md` never included
+   `stroke-opacity`, unlike `polygon`/`ellipse`/`polyline`, which all had it
+   from the start. That omission traced back to the original source reference
+   this corpus was built from, which also omitted it — i.e., a "confirmed"
+   example that had actually never been visually verified. Fixed by adding
+   `stroke-opacity: 1.0` to the `curve` example and a new dedicated file,
+   [`constraints/curve-stroke-opacity.md`](../constraints/curve-stroke-opacity.md).
+
+Not yet re-tested. Next test should regenerate the same water-cycle request
+and confirm both the text spacing and the arrow visibility.
 
 ## Known gaps (documented-only, not DSL-buildable)
 
