@@ -19,6 +19,7 @@ standard library, so they run in any chat sandbox with no network.
 |---|---|---|
 | [`starter/olf_starter.py`](../starter/olf_starter.py) | **Always, first** | `Doc`, `Page`, text/shape/curve builders, wrapped-height flow, `doc.save()` |
 | [`starter/olf_starter_extras.py`](../starter/olf_starter_extras.py) | Only if the request needs a table, image, animation or page/web link. Paste **after** the core file. | `add_table`, `add_image`, `animate`, `link_page`, `link_web` |
+| [`starter/olf_starter_svg.py`](../starter/olf_starter_svg.py) | Only if the request needs SVG: vector icons/shapes (`AI-pen`) or an SVG image. Paste after the core file (independent of extras). | `ai_pen_icon`, `ai_pen_rounded_rect`, `svg_to_paths`, `add_svg_image`, `svg_lint`, `parse_path` |
 | [`starter/olf_validate.py`](../starter/olf_validate.py) | **Always, before delivering** | `validate_olf(path)` + `print_report(...)` |
 
 ## The workflow
@@ -60,8 +61,16 @@ link_page(doc, element_id, 3)                 # 1-based page ordinal
 link_web(doc, element_id, "https://example.com")
 add_image(p, doc, "images/pic.png", png_bytes, "image/png", x, y, w, h)
 
+# SVG (paste olf_starter_svg.py after the core file) -- see elements/ai-pen.md
+p.add(ai_pen_icon(["<path d>", ("<path d>", "#F59E0B")], x, y, size=200, vb=24, fill="#1565C0"))
+p.add(ai_pen_rounded_rect(x, y, w, h, r, "#E0F2FE"))        # add before text = behind it
+paths, (vw, vh), warns = svg_to_paths(svg_text)             # path/circle/rect/polygon -> d
+add_svg_image(p, doc, "name", svg_text, x, y, w, h)         # image/svg+xml, auto 8x oversize
+
 doc.save("out.olf")
 ```
+
+Worked SVG script: [`starter/example_svg_build.py`](../starter/example_svg_build.py).
 
 Sizes (`size=`) are in **points**; the builders convert to JSON pixels and RTF
 half-points for you. Coordinates are canvas units on a 1920×1080 canvas.
@@ -84,7 +93,10 @@ Envelope shape and the nine `meta` fields; unique ids; every shape has exactly o
 separator; `stroke-opacity` present on curves/lines/shapes; matrix has nine
 numbers; RTF font-size and colour agree with the JSON; 130pt cap; animation
 duration is a string `"0"`–`"3"`; link `page-id` is an in-range ordinal string;
-table container counts and even/dense index spaces; **textarea height ≥ the
+table container counts and even/dense index spaces; **AI-pen** (real matrix, populated
+background container, plain-hex colours, absolute path commands, non-negative
+coordinates, no `flip`); **image** sources exist in the ZIP and SVG sources are
+linted (`<text>`, `<pattern>`, `<use>`, animation, too-small intrinsic size); **textarea height ≥ the
 wrapped-height estimate**; **true 2-D overlap** between text boxes (x *and* y, so
 side-by-side text is not flagged); content beyond the canvas (warning).
 
