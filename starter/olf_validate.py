@@ -222,6 +222,12 @@ def validate_olf(src):
                 (b.get("x", 0) < -1 or b.get("y", 0) < -1 or
                  b.get("x", 0) + b.get("width", 0) > 1921 or b.get("y", 0) + b.get("height", 0) > 1081):
             Wn("page %d %s extends beyond the 1920x1080 canvas" % (pn, kind))
+    # bottom safe area: the app's toolbars hide the lowest part of the canvas
+    for rid, (kind, b, pn) in elems.items():
+        if kind in ("textarea", "image", "table") and 0 <= b.get("y", 0) < 1080 and \
+                b.get("y", 0) + b.get("height", 0) > 880 + 1:
+            Wn("page %d %s ends at y=%.0f, below the safe area (880): the myViewBoard toolbar "
+               "will cover it -- move it up" % (pn, kind, b.get("y", 0) + b.get("height", 0)))
 
     # ---- layout collisions between text and shapes / arrows ---------------
     per_page = {}
