@@ -13,7 +13,6 @@ then build with Doc/Page (see spec/starter-helpers.md) and finish with
 # ==========================================================================
 # ---- olf_starter.py
 # ==========================================================================
-
 """olf_starter.py -- CORE helpers for building a myViewBoard .olf in a plain sandbox.
 
 Standard library only. Paste this whole file into your code sandbox unchanged
@@ -45,6 +44,9 @@ from datetime import datetime
 W, H = 1920, 1080
 MATRIX = "1,0,0,0,1,0,0,0,1"
 MARGIN, GUTTER = 80, 40
+# myViewBoard's bottom toolbars cover roughly the lowest ~190 canvas units of a normal
+# window. Keep anything the user must READ or TAP above this line (decor may go below).
+SAFE_BOTTOM = 880
 _MSEP = "\u300e\u300e\u300e"          # THREE U+300E chars. Never change.
 
 
@@ -336,7 +338,6 @@ class Doc:
 # ==========================================================================
 # ---- olf_starter_extras.py
 # ==========================================================================
-
 """olf_starter_extras.py -- tables, images, animation, links.
 
 Paste AFTER olf_starter.py (it uses uid, MATRIX, _add, textarea, estimate_height,
@@ -479,7 +480,6 @@ def link_web(doc, ref_id, url):
 # ==========================================================================
 # ---- olf_starter_svg.py
 # ==========================================================================
-
 """olf_starter_svg.py -- SVG support: AI-pen vector icons/shapes and SVG image elements.
 
 Paste AFTER olf_starter.py (uses uid, MATRIX, Page, Doc). Standard library only.
@@ -944,7 +944,6 @@ def add_svg_image(page, doc, name, svg_text, x, y, w, h, oversample=8):
 # ==========================================================================
 # ---- olf_validate.py
 # ==========================================================================
-
 """olf_validate.py -- run this on your .olf BEFORE delivering it. Standard library only.
 
     report = validate_olf("out.olf")        # path to .olf, or a content dict
@@ -1169,6 +1168,12 @@ def validate_olf(src):
                 (b.get("x", 0) < -1 or b.get("y", 0) < -1 or
                  b.get("x", 0) + b.get("width", 0) > 1921 or b.get("y", 0) + b.get("height", 0) > 1081):
             Wn("page %d %s extends beyond the 1920x1080 canvas" % (pn, kind))
+    # bottom safe area: the app's toolbars hide the lowest part of the canvas
+    for rid, (kind, b, pn) in elems.items():
+        if kind in ("textarea", "image", "table") and 0 <= b.get("y", 0) < 1080 and \
+                b.get("y", 0) + b.get("height", 0) > 880 + 1:
+            Wn("page %d %s ends at y=%.0f, below the safe area (880): the myViewBoard toolbar "
+               "will cover it -- move it up" % (pn, kind, b.get("y", 0) + b.get("height", 0)))
 
     # ---- layout collisions between text and shapes / arrows ---------------
     per_page = {}
@@ -1449,3 +1454,4 @@ if __name__ == "__main__":
     # Only acts when run as a CLI with a path; harmless when pasted into a sandbox.
     if len(sys.argv) > 1 and sys.argv[1].lower().endswith(".olf"):
         sys.exit(0 if print_report(validate_olf(sys.argv[1])) else 1)
+
