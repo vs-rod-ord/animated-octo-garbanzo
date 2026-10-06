@@ -59,6 +59,11 @@ so a UUID could not survive even if it briefly resolved.
   the "put it on the shape" concern only applies when two linked elements
   overlap each other.
 
+**Verification status:** only `page` links are confirmed working from generated
+files (see [`patterns/page-link-menu.md`](../patterns/page-link-menu.md) for the
+recipe and the link-pruning rule). `web`, `text`, `tool`, `file` and `audio` are
+written in the correct shape but unverified.
+
 ## Worked `content.json` — where each attribute actually lives
 
 Neither `animate:` nor `link:` is a field *inside* the element itself — both
