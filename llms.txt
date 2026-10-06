@@ -27,6 +27,16 @@ for few-shot grounding.
   every element correct and still fail to open if this is wrong — confirmed by
   a real test.
 
+- [spec/starter-helpers.md](spec/starter-helpers.md) — **default build method.**
+  Paste-ready stdlib-only Python helpers + a validator you run before delivering:
+  [starter/olf_starter.py](starter/olf_starter.py) (always),
+  [starter/olf_starter_extras.py](starter/olf_starter_extras.py) (tables, images,
+  animation, links), [starter/olf_validate.py](starter/olf_validate.py) (always,
+  fix until PASS). Fetch them as raw text and paste verbatim into your sandbox.
+- [examples/water-cycle-full.md](examples/water-cycle-full.md) — complete 3-page
+  worked example: [starter/example_build.py](starter/example_build.py) →
+  [examples/water_cycle_full.content.json](examples/water_cycle_full.content.json).
+
 ## Elements (Layer 2 — what a spec's `elements:` list can contain)
 
 - [elements/text.md](elements/text.md) — `text:`, role presets, RTF/alignment rules

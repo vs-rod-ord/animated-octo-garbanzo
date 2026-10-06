@@ -34,8 +34,11 @@ there. See "The generation-path rule" below before writing anything.
    needs. Don't read all of them — each is self-contained.
 5. Any [`constraints/`](constraints/) file whose topic touches an element you're
    using (e.g. writing a `table:`? read `constraints/table-index-spaces.md`).
-6. One matching file under [`examples/`](examples/) for few-shot grounding before
-   writing the final spec.
+6. [`spec/starter-helpers.md`](spec/starter-helpers.md) — **the default build
+   method**: paste the helper `.py` files into your sandbox, build with them, and
+   run the validator before delivering.
+7. [`examples/water-cycle-full.md`](examples/water-cycle-full.md) — a complete
+   multi-page worked example (script + resulting `content.json`) for few-shot grounding.
 
 ## What this DSL can build today (v1 scope)
 
@@ -90,10 +93,20 @@ claim to have generated a working `.olf` file. Tell the person exactly what to
 do with it (save it as `content.json`, zip it at the root of the archive, rename
 the `.zip` to `.olf`).
 
-**Before delivering a file built via path 1, self-check it against every
-relevant file in `constraints/`** — there is no external validator catching
-mistakes for you now, so this review step is the only thing standing in for the
-validation pass the real engine normally does. At minimum, re-check:
+**Use the starter helpers and the validator — don't hand-write everything.**
+[`spec/starter-helpers.md`](spec/starter-helpers.md) points to three raw Python
+files (`starter/olf_starter.py`, `starter/olf_starter_extras.py`,
+`starter/olf_validate.py`). Fetch them, paste them into your sandbox verbatim,
+build with the helpers, save, then run `print_report(validate_olf("file.olf"))`
+and **fix every ERROR until it prints PASS** before delivering. A complete worked
+3-page example is in [`examples/water-cycle-full.md`](examples/water-cycle-full.md).
+The helpers already enforce the mechanical rules below; the validator catches the
+rest.
+
+**If you could not fetch/run the validator** (or hand-built the JSON), then
+self-check manually against every relevant file in `constraints/` — in that case
+this review step is the only thing standing in for the validation pass. At
+minimum, re-check:
 
 - **Envelope first** (see
   [`spec/content-json-envelope.md`](spec/content-json-envelope.md)): root object
