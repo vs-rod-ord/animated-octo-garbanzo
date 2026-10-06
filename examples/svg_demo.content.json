@@ -4,11 +4,11 @@
   "height": 1080.0,
   "viewbox": "0 0 1920 1080",
   "meta": {
-   "id": "42aca8da-eb11-46cc-85f7-cac90abe6d22",
+   "id": "2087afff-74c4-4017-9bd4-f6045ef9416c",
    "create-platform": "myViewBoard for Windows",
    "create-by-library": "Viewsonic Open Learning Format library",
-   "create-time": "10/6/2026 04:40:12 PM",
-   "modify-time": "10/6/2026 04:40:12 PM",
+   "create-time": "10/6/2026 05:07:42 PM",
+   "modify-time": "10/6/2026 05:07:42 PM",
    "create-library-version": "0.0.1.50",
    "create-version": "3.4.9.603 [64 bits]",
    "modify-version": "3.4.9.603 [64 bits]",
@@ -18,14 +18,14 @@
   "pageset": [
    {
     "page": {
-     "id": "a3831506-2636-4adb-bab5-cfbd6ab24745",
+     "id": "4b05eec7-f202-4e51-b546-68d41b548c52",
      "matrix": "1,0,0,0,1,0,0,0,1",
      "viewbox": "0,0,1920,1080",
      "is-hidden": false,
      "elements": [
       {
        "textarea": {
-        "id": "6afe79dc-f757-4c5f-8a58-97aff202e305",
+        "id": "21e73f5b-7d54-45d4-ab0d-b7ff8c30cc0a",
         "x": 80.0,
         "y": 80.0,
         "width": 1760.0,
@@ -36,13 +36,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "1be7b540-8e5d-4b15-b19d-befa35dc3ac4",
+           "id": "430638e2-dc72-48db-87b6-3ba9a65b2ccd",
            "font-size": 59.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "827a09bb-61ac-4eb8-9947-c64a1f0552e6",
+              "id": "9a64ad8e-f864-4ace-bd31-0c39be3a3d06",
               "text": "Vector icons (AI-pen)",
               "font-family": "Segoe UI",
               "font-size": 59.0,
@@ -63,12 +63,12 @@
       },
       {
        "AI-pen": {
-        "id": "abe2ecd7-14ab-4abe-b7ef-d3059fdb7ce7",
+        "id": "aca2ab73-032c-48ff-9a80-96ea83c6b67f",
         "matrix": "1,0,80,0,1,220,0,0,1",
         "foreground-objects-container": [
          {
           "path": {
-           "id": "0a70aecf-b7b6-440e-a5e4-9dfbe831bce4",
+           "id": "264efe25-6724-412c-8308-60644e932047",
            "x": 0.0,
            "y": 0.0,
            "width": 1760.0,
@@ -90,7 +90,7 @@
         "background-objects-container": [
          {
           "path": {
-           "id": "86dbb3c4-1372-4d7d-b894-2ede7470e505",
+           "id": "12b55b61-98dc-470d-b7a2-2c5f5b0ccda2",
            "x": 0.0,
            "y": 0.0,
            "width": 1760.0,
@@ -113,12 +113,12 @@
       },
       {
        "AI-pen": {
-        "id": "03252f17-3f28-4c7f-a3d9-4f0ac704f295",
+        "id": "4246eaf7-6070-4bac-aba8-16a7dafba124",
         "matrix": "8.3333,0,260,0,8.3333,260,0,0,1",
         "foreground-objects-container": [
          {
           "path": {
-           "id": "473bc95a-3768-44fe-aa84-1b1875bc0e1c",
+           "id": "8ebc1bd1-4696-455b-bfc5-23e58eb91134",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -140,7 +140,7 @@
         "background-objects-container": [
          {
           "path": {
-           "id": "2c19c2fa-4a91-4f25-89c7-e1b21c8b50bc",
+           "id": "c05c6ebe-0161-4bbf-92f7-3e4f8cd11ac9",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -163,7 +163,7 @@
       },
       {
        "textarea": {
-        "id": "2421035f-856f-47e4-b245-7b78a23dfe5e",
+        "id": "ed79c215-045a-4259-97f4-06ab8e6cc299",
         "x": 210.0,
         "y": 475.0,
         "width": 300.0,
@@ -174,13 +174,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "d7457e7d-7ef2-412f-93b4-60ea8a83a3d2",
+           "id": "bbbb9d70-3a2e-4228-aa03-d0ea827189b5",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "b14bf4ba-7ba0-4f4d-a09f-719f91ffa663",
+              "id": "26d1774a-8d0b-4fcb-8a18-32be36331e10",
               "text": "Home",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -201,12 +201,12 @@
       },
       {
        "AI-pen": {
-        "id": "2791b599-4177-4246-a2d7-93c7ad6ef771",
+        "id": "28bd46a0-1ad7-4973-bbe8-ece36bf112bd",
         "matrix": "8.3333,0,860,0,8.3333,260,0,0,1",
         "foreground-objects-container": [
          {
           "path": {
-           "id": "fb23f2f4-33dc-44c5-80bb-1117e8e1214b",
+           "id": "54a0a768-e397-4d2c-833d-f781934eab36",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -228,7 +228,7 @@
         "background-objects-container": [
          {
           "path": {
-           "id": "029f2314-dcf7-4ee8-a684-17f141837940",
+           "id": "72e56796-67a1-4ae2-bff1-96883c29637c",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -251,7 +251,7 @@
       },
       {
        "textarea": {
-        "id": "2acdf1ff-a5de-4fa7-927a-8e5e4452b428",
+        "id": "7baa8273-54ff-451d-adda-e6007cee3fea",
         "x": 810.0,
         "y": 475.0,
         "width": 300.0,
@@ -262,13 +262,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "da811398-e657-42b6-89d2-f62b104a0c42",
+           "id": "dc6ad7a4-c92a-4e40-99dd-717815185002",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "4f1a66c7-7c73-4854-96f8-1b12c2df1ad6",
+              "id": "7d30b037-8826-475b-b1fa-23858f08b459",
               "text": "Star",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -289,12 +289,12 @@
       },
       {
        "AI-pen": {
-        "id": "8658d5b1-1b48-4950-bf39-09a969a2eeb6",
+        "id": "5d561176-c95e-4d17-bcbb-aa11d810c364",
         "matrix": "8.3333,0,1460,0,8.3333,260,0,0,1",
         "foreground-objects-container": [
          {
           "path": {
-           "id": "213a852e-5c78-4301-807f-d1703a77480c",
+           "id": "e5c4745e-4ef1-4b2f-89b8-06c79a89297f",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -316,7 +316,7 @@
         "background-objects-container": [
          {
           "path": {
-           "id": "127e58fe-6a92-4bc0-95ac-a9f22ff0a01f",
+           "id": "1456cf13-a852-45ca-aaf4-731e6837c13a",
            "x": 0.0,
            "y": 0.0,
            "width": 24.0,
@@ -339,7 +339,7 @@
       },
       {
        "textarea": {
-        "id": "40ec9460-e29e-4844-a5bd-342e2211493e",
+        "id": "f9b2b73f-99cc-46f1-9ae6-bb1a93d19300",
         "x": 1410.0,
         "y": 475.0,
         "width": 300.0,
@@ -350,13 +350,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "0299d9a0-342f-4b14-b9a8-3bbe3186da19",
+           "id": "80974af9-b359-476f-973f-f338e1361819",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "44a6431b-2092-4228-9bab-22fabfdeeb8d",
+              "id": "7362a58a-f86a-450d-963a-3d331e003486",
               "text": "Arrow",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -377,7 +377,7 @@
       },
       {
        "textarea": {
-        "id": "28099f85-ed77-46b6-9238-3c45c166f212",
+        "id": "543280fe-ff13-4f8e-9ef8-660fcce0da9b",
         "x": 80.0,
         "y": 640.0,
         "width": 1760.0,
@@ -388,13 +388,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "4e9ea5bc-1c32-46b0-80a2-4c3cc3db6062",
+           "id": "ba44dcf5-7779-4eec-945d-3960b55e91a8",
            "font-size": 37.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "0aed54c4-17ed-4939-8b5e-f99eb4e3aa3e",
+              "id": "131f3f7d-cbd6-4ba1-8160-86d335ca0446",
               "text": "Icons are real vector paths: drag a corner in myViewBoard and they stay sharp.",
               "font-family": "Segoe UI",
               "font-size": 37.0,
@@ -417,7 +417,7 @@
      "backgrounds": [
       {
        "background": {
-        "id": "81a49f52-727d-43a2-9504-ee18f8863e8e",
+        "id": "8e741b90-2e3a-4f93-89bd-82bac4a8f6d7",
         "type": "color",
         "fill": "#FFFFFF",
         "opacity": 1.0
@@ -428,14 +428,14 @@
    },
    {
     "page": {
-     "id": "e7c7b14c-255f-4883-a8fb-e0565f70224b",
+     "id": "bb585036-19fd-4ba5-8cf6-86732b24fe9d",
      "matrix": "1,0,0,0,1,0,0,0,1",
      "viewbox": "0,0,1920,1080",
      "is-hidden": false,
      "elements": [
       {
        "textarea": {
-        "id": "7aea939d-3661-4593-b4c1-a3299899425c",
+        "id": "905c5488-a108-4da1-9242-4cf20fc97b36",
         "x": 80.0,
         "y": 80.0,
         "width": 1760.0,
@@ -446,13 +446,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "ed7aa1b8-f3f0-43df-a837-352aee7d2a24",
+           "id": "7d7ad3e5-5423-4e89-89bb-0ea800660e44",
            "font-size": 59.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "2750533c-4964-4024-a0ca-e62d82533c9e",
+              "id": "d0e777ac-0ef8-4ea1-9788-ca7f7feb94c6",
               "text": "SVG image element",
               "font-family": "Segoe UI",
               "font-size": 59.0,
@@ -473,7 +473,7 @@
       },
       {
        "image": {
-        "id": "860f1fb1-dc71-4b85-882c-9f68f26c98e5",
+        "id": "95d3250f-c460-44f1-a24e-ea80f93ccf0e",
         "x": 560.0,
         "y": 260.0,
         "width": 800.0,
@@ -487,7 +487,7 @@
      "backgrounds": [
       {
        "background": {
-        "id": "cbe202fe-cf2c-4a4c-a171-1f54a2e374d3",
+        "id": "ce514bdf-b0e6-4ccf-bca7-0c92cb017bfc",
         "type": "color",
         "fill": "#FFFFFF",
         "opacity": 1.0
@@ -500,8 +500,8 @@
   "additional": [
    {
     "element": {
-     "id": "5aee8cb9-bf60-4645-81e0-7f210e084105",
-     "ref": "abe2ecd7-14ab-4abe-b7ef-d3059fdb7ce7",
+     "id": "84d93465-4fd4-4b28-b3c4-d852c3ef6816",
+     "ref": "aca2ab73-032c-48ff-9a80-96ea83c6b67f",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false
@@ -509,8 +509,8 @@
    },
    {
     "element": {
-     "id": "5320fd50-a2ba-4d30-b6a8-3194facdde39",
-     "ref": "03252f17-3f28-4c7f-a3d9-4f0ac704f295",
+     "id": "1e50d787-29b3-4c1f-b350-857b00afc61b",
+     "ref": "4246eaf7-6070-4bac-aba8-16a7dafba124",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false
@@ -518,8 +518,8 @@
    },
    {
     "element": {
-     "id": "b72b462f-f041-4671-aad8-9c066af6cd92",
-     "ref": "2791b599-4177-4246-a2d7-93c7ad6ef771",
+     "id": "a5f7ae76-d9b9-488c-abdc-747a9b417fbe",
+     "ref": "28bd46a0-1ad7-4973-bbe8-ece36bf112bd",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false
@@ -527,8 +527,8 @@
    },
    {
     "element": {
-     "id": "ce58871b-9852-4eec-919f-fc252de6e397",
-     "ref": "8658d5b1-1b48-4950-bf39-09a969a2eeb6",
+     "id": "797566e8-5a5d-4cb7-abf0-36bef4e44645",
+     "ref": "5d561176-c95e-4d17-bcbb-aa11d810c364",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false
