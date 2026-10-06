@@ -31,7 +31,7 @@ for i, (label, dates, colour) in enumerate(sections):
     pg = doc.page(bg="#FFFFFF")
     pg.title(label, size=54)
     pg.text(dates, size=32, color="#475569")
-    back = pg.text("BACK TO MENU", size=28, bold=True, color="#1D4ED8", y=950)   # bare textarea link
+    back = pg.text("BACK TO MENU", size=28, bold=True, color="#1D4ED8", y=800)   # bare textarea link
     link_page(doc, back, 1)                      # page 1 = the menu
     link_page(doc, button_ids[i], i + 2)         # menu button i -> page i+2 (1-based ordinal)
 
