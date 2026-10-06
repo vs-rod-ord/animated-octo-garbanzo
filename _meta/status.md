@@ -125,6 +125,45 @@ and confirm both the text spacing and the arrow visibility.
   documented as a requirement list only.
 - Not yet viewed in myViewBoard: `svg_example.olf` (icons + card + SVG image).
 
+**2026-10-06 (third batch) — RTF, pitch, patterns, housekeeping:**
+
+- New: `constraints/rtf-text-structure.md` (template, `\fs` half-points, colour/alignment
+  that actually render, escaping incl. non-ASCII `\uN?`, the Arial→Calibri rewrite and
+  its word-joiner fix, features that render / not clickable / not saved);
+  `patterns/multiple-choice.md` + `starter/example_multiple_choice.py`;
+  `patterns/page-link-menu.md` + `starter/example_toc.py` (link-type verification table).
+- **Correction to the earlier bold note:** bold does NOT have a different line pitch
+  (that was an artefact of a wrong regular value). Pitch is per-font (Segoe 1.77,
+  Calibri 1.61, Georgia 1.52, Open Sans 1.82, Times 1.48 — pitch ÷ pt, starter uses them
+  rounded up); bold only widens glyphs, so the estimator uses 0.60 vs 0.55 avg char width.
+- Starter changes: per-font `pitch_ratio`, `estimate_height(..., bold, font)`,
+  `badge_y` (calibrated label centring), RTF escaping of non-ASCII and "Arial". The
+  validator's height floor became `(lines−1)×pitch + 1.25×pt` (the real block height),
+  fixing a false alarm on hand-sized single-line titles; it also warns on a literal
+  "Arial".
+- `android-vs-windows-divergence.md` expanded (differences table + rules for a file
+  that opens on both). `llms.txt`, `README.md`, `spec/dsl-spec.md`, `patterns/common-patterns.md`,
+  `CORE.md` reworded so the helpers are the default and the YAML engine is reference only.
+- Everything re-validated (water cycle, SVG, multiple choice, menu: all PASS, 0 warnings;
+  all 24 mutation tests still caught).
+
+**2026-10-06, ChatGPT, water cycle (5 pages), first run with the starter-helper corpus:**
+
+- The model read the repo with its browsing tool but **its sandbox could not download the
+  helper `.py` files** (no GitHub access), so it hand-checked against the rules instead
+  and honestly reported "validator-rule checked, not PASS". Fix: new single-file
+  `starter/olf_kit.py` (concatenation of the four helpers) plus a documented "ask the
+  user to attach it" step in `spec/starter-helpers.md`, `CORE.md`, `llms.txt`, `README.md`.
+  Regenerate the kit after editing any helper:
+  `cat olf_starter.py olf_starter_extras.py olf_starter_svg.py olf_validate.py` with the
+  header (see the file) — keep it in sync.
+- Running OUR validator on the resulting (user-resaved) file found real defects visible in
+  its thumbnails: text drawn behind a later shape, a text/text overlap on the busiest page,
+  arrows running through text boxes, a text box extending past the bottom edge, and
+  too-small heights. The dense 32-element diagram page is where it broke down.
+  New validator checks added for text hidden behind later shapes, arrows crossing text, and
+  a two-tier height check (error only when short even on an optimistic line count).
+
 ## Known gaps (documented-only, not DSL-buildable)
 
 See [`constraints/deferred-features-not-in-dsl.md`](../constraints/deferred-features-not-in-dsl.md)
