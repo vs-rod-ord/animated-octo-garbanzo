@@ -5,7 +5,7 @@ metadata:
   type: element
   status: proven
   dsl_support: full
-  related: [spec/dsl-spec, constraints/font-size-and-pixels, constraints/width-factor-and-line-pitch]
+  related: [spec/dsl-spec, constraints/font-size-and-pixels, constraints/width-factor-and-line-pitch, constraints/text-wrapping-and-overlap]
 ---
 
 # `text`
@@ -37,7 +37,12 @@ metadata:
 
 - **Never set `height`.** It is always computed from the wrapped line count and
   font metrics. Specifying it yourself is not supported and will be ignored or
-  rejected.
+  rejected. When you're generating `content.json` directly (the default path —
+  see `CORE.md`), you have to compute this yourself since there's no real
+  engine doing it for you — see
+  [`constraints/text-wrapping-and-overlap.md`](../constraints/text-wrapping-and-overlap.md)
+  for a concrete, confirmed-necessary method. Skipping this causes visible
+  overlap the moment any text wraps to more than one line.
 - **Alignment is driven by RTF, not the JSON `text-align` field.** The engine
   generates `\qc`/`\qr`/`\qj` RTF codes for center/right/justify. If you ever
   emit a `text` element via `raw:` instead of the DSL, setting `text-align` in
