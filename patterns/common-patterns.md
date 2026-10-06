@@ -13,6 +13,16 @@ metadata:
 These are worked shapes for frequent requests, meant to be adapted rather than
 copied verbatim. For complete, runnable files, see [`examples/`](../examples/).
 
+> **Reading the YAML below in a chat sandbox.** The snippets are written in the
+> reference engine's YAML so they stay short. You will not run that engine; read them
+> as *layout intent* (what goes on the page, in what order, with what emphasis) and
+> build it with the helpers in [`spec/starter-helpers.md`](../spec/starter-helpers.md):
+> `p.title(...)`, `p.text(...)`, `p.bullets([...])`, shapes and tables. The
+> "coordinate-free" idea maps directly to the flowing `p.text()` cursor, which
+> advances by the estimated wrapped height. Complete JSON-building scripts:
+> [`water-cycle-full`](../examples/water-cycle-full.md),
+> [`multiple-choice`](multiple-choice.md), [`page-link-menu`](page-link-menu.md).
+
 ## Coordinate-free lesson page
 
 The default pattern for "make a page about X" — no `at:` anywhere, so the
