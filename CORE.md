@@ -150,6 +150,11 @@ minimum, re-check:
   Confirmed failure: assuming every textarea is one line tall causes visible
   overlap the moment any text wraps to a second line. Check this for every
   textarea, not just ones that look long.
+- **Keep each page to about 15 elements or fewer.** A ~32-element diagram page
+  (many shapes, arrows and labels) broke down in a live test: overlaps, hidden
+  text, labels off their shapes. Split dense diagrams across pages, drop
+  decorative shapes, and let one label serve one shape. The validator's overlap
+  and hidden-text checks matter most on busy pages.
 
 A file can pass every item below the envelope check and still fail to open —
 confirmed by a real test where all five lower checks were correct and the file
