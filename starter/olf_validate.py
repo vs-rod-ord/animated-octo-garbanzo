@@ -22,9 +22,14 @@ HEX6, HEX8 = re.compile(r"^#[0-9A-Fa-f]{6}$"), re.compile(r"^#[0-9A-Fa-f]{8}$")
 MATRIX9 = re.compile(r"^(-?[\d.eE+-]+,){8}-?[\d.eE+-]+$")
 
 
-def _est_lines(text, pt, width):
+_PITCH = {"Segoe UI": 1.80, "Calibri": 1.65, "Georgia": 1.55, "Open Sans": 1.85,
+          "Times New Roman": 1.55}      # measured pitch/pt rounded up; bold is NOT different
+
+
+def _est_lines(text, pt, width, bold=False, avg=None):
     px = round(pt * 4 / 3)
-    per = max(1, int(width / (px * 0.55)))
+    avg = avg or (0.60 if bold else 0.55)          # fraction of the pixel font size per character
+    per = max(1, int(width / (px * avg)))
     return sum(max(1, len(textwrap.wrap(p, per, break_long_words=True)))
                for p in str(text).split("\n"))
 
@@ -173,10 +178,21 @@ def validate_olf(src):
             continue
         txt, pt = _text_of(b)
         if pt:
-            need = sum(_est_lines(p.get("text", ""), pt, b["width"]) for p in [{"text": txt}]) * pt * 1.8
-            if b["height"] < need * 0.95:
+            fam, bold = _font_of(b)
+            # minimum honest height: (n-1) wrapped-line pitches + one line box (~1.25 x pt).
+            # The starter reserves more (n x pitch); this is the floor, to avoid false alarms
+            # on single-line boxes sized by hand.
+            pitch = _PITCH.get(fam, 1.85)
+            n_hi = _est_lines(txt, pt, b["width"], bold)                 # generous count
+            n_lo = _est_lines(txt, pt, b["width"], bold, 0.48 if not bold else 0.52)  # tight count
+            need_hi = ((n_hi - 1) * pitch + 1.25) * pt
+            need_lo = ((n_lo - 1) * pitch + 1.25) * pt
+            if b["height"] < need_lo * 0.95:           # too short even on the optimistic count
                 E("page %d textarea %r: height %.1f < estimated wrapped height %.1f "
-                  "(lines*pitch). Do NOT use pitch alone as height." % (pn, txt[:40], b["height"], need))
+                  "(lines*pitch). Do NOT use pitch alone as height." % (pn, txt[:40], b["height"], need_lo))
+            elif b["height"] < need_hi * 0.95:         # only the generous count disagrees
+                Wn("page %d textarea %r: height %.1f may be too short if the text wraps to %d lines "
+                   "(needs ~%.0f)" % (pn, txt[:40], b["height"], n_hi, need_hi))
             _check_rtf(b, txt, pt, pn, E, Wn)
         if rid not in cell_text:
             boxes.append((pn, rid, b["x"], b["y"], b["x"] + b["width"], b["y"] + b["height"], txt))
@@ -207,9 +223,112 @@ def validate_olf(src):
                  b.get("x", 0) + b.get("width", 0) > 1921 or b.get("y", 0) + b.get("height", 0) > 1081):
             Wn("page %d %s extends beyond the 1920x1080 canvas" % (pn, kind))
 
+    # ---- layout collisions between text and shapes / arrows ---------------
+    per_page = {}
+    for rid, (kind, b, pn) in elems.items():              # insertion order = draw order
+        per_page.setdefault(pn, []).append((kind, b, rid))
+    for pn, items in per_page.items():
+        for i, (kind, b, rid) in enumerate(items):
+            if kind != "textarea" or rid in cell_text:
+                continue
+            tb = (b["x"], b["y"], b["x"] + b["width"], b["y"] + b["height"])
+            area = max(1.0, (tb[2] - tb[0]) * (tb[3] - tb[1]))
+            txt = _text_of(b)[0]
+            for kind2, b2, rid2 in items[i + 1:]:          # shapes drawn AFTER the text cover it
+                if kind2 not in ("polygon", "ellipse", "AI-pen", "quadrant"):
+                    continue
+                sb = _bbox(kind2, b2)
+                if not sb or not _opaque(kind2, b2):
+                    continue
+                ox = min(tb[2], sb[2]) - max(tb[0], sb[0])
+                oy = min(tb[3], sb[3]) - max(tb[1], sb[1])
+                if ox <= 2 or oy <= 2:
+                    continue
+                if ox * oy >= 0.9 * area:
+                    E("page %d text %r is hidden BEHIND a %s drawn after it -- add the shape first, "
+                      "the text after (draw order = list order)" % (pn, txt[:30], kind2))
+                elif ox * oy >= 0.3 * area:
+                    Wn("page %d text %r is partly covered by a %s drawn after it (%.0f%% of the box)"
+                       % (pn, txt[:30], kind2, 100.0 * ox * oy / area))
+        for kind, b, rid in items:
+            if kind not in ("curve", "polyline"):
+                continue
+            pts = _line_points(kind, b)
+            for kind2, b2, rid2 in items:
+                if kind2 != "textarea" or rid2 in cell_text:
+                    continue
+                x0, y0, x1, y1 = b2["x"] + 4, b2["y"] + 4, b2["x"] + b2["width"] - 4, b2["y"] + b2["height"] - 4
+                inside = sum(1 for (px, py) in pts if x0 < px < x1 and y0 < py < y1)
+                if inside >= 3:
+                    Wn("page %d a %s passes through the text %r -- move the arrow or the text"
+                       % (pn, kind, _text_of(b2)[0][:30]))
+
     stats = {"pages": n_pages, "elements": len(elems), "additional": len(olf.get("additional", [])),
              "links": len(olf.get("links", []))}
     return {"errors": errs, "warnings": warns, "stats": stats}
+
+
+def _mat(b):
+    try:
+        m = [float(v) for v in str(b.get("matrix", "")).split(",")]
+        return m[0], m[2], m[4], m[5]          # sx, tx, sy, ty
+    except Exception:
+        return 1.0, 0.0, 1.0, 0.0
+
+
+def _bbox(kind, b):
+    """Canvas-space bounding box (x0, y0, x1, y1) of a filled shape, or None."""
+    try:
+        if kind == "polygon":
+            pts = [tuple(float(v) for v in p.split(",")) for p in b["points"].split()]
+            return (min(p[0] for p in pts), min(p[1] for p in pts),
+                    max(p[0] for p in pts), max(p[1] for p in pts))
+        sx, tx, sy, ty = _mat(b)
+        if kind == "ellipse":
+            return (tx, ty, tx + b["rx"] * 2, ty + b["ry"] * 2)
+        if kind == "AI-pen":
+            p = b["foreground-objects-container"][0]["path"]
+            return (tx, ty, tx + sx * p["width"], ty + sy * p["height"])
+    except Exception:
+        return None
+    return None
+
+
+def _opaque(kind, b):
+    try:
+        if kind == "AI-pen":
+            return b["foreground-objects-container"][0]["path"].get("fill-opacity", 1.0) >= 0.5
+        return float(b.get("fill-opacity", 1.0)) >= 0.5
+    except Exception:
+        return False
+
+
+def _line_points(kind, b):
+    """~12 canvas-space sample points along a curve (quadratic) or polyline."""
+    try:
+        if kind == "polyline":
+            pts = [tuple(float(v) for v in p.split(",")) for p in b["points"].split()]
+            out = []
+            for (ax, ay), (cx, cy) in zip(pts, pts[1:]):
+                out += [(ax + (cx - ax) * t / 8.0, ay + (cy - ay) * t / 8.0) for t in range(9)]
+            return out
+        s, v, e = [tuple(float(q) for q in b[k].split(",")) for k in ("start-point", "second-point", "end-point")]
+        out = []
+        for t in [i / 12.0 for i in range(13)]:
+            u = 1 - t
+            out.append((b["x"] + u * u * s[0] + 2 * u * t * v[0] + t * t * e[0],
+                        b["y"] + u * u * s[1] + 2 * u * t * v[1] + t * t * e[1]))
+        return out
+    except Exception:
+        return []
+
+
+def _font_of(b):
+    for p in b.get("text-blocks-container", []):
+        for t in p.get("paragraph", {}).get("text-list-container", []):
+            r = t.get("text", {})
+            return r.get("font-family", "Segoe UI"), r.get("font-weight") == "bold"
+    return "Segoe UI", False
 
 
 def _text_of(b):
@@ -232,6 +351,9 @@ def _check_rtf(b, txt, pt, pn, E, Wn):
     if m and abs(int(m.group(1)) - pt * 2) > 2:
         E("page %d textarea %r: RTF \\fs%s disagrees with JSON font-size (%.0f px => \\fs%.0f). "
           "JSON is px = pt*4/3; RTF is pt*2." % (pn, txt[:30], m.group(1), pt * 4 / 3, pt * 2))
+    if "Arial" in rtf:
+        Wn("page %d textarea %r: the literal word 'Arial' is rewritten to 'Calibri' by "
+           "myViewBoard (escape it as Ari\\u8288?al; never use Arial as a font)" % (pn, txt[:30]))
     cm = re.search(r"\\red(\d+)\\green(\d+)\\blue(\d+)", rtf)
     for p in b.get("text-blocks-container", []):
         for t in p.get("paragraph", {}).get("text-list-container", []):
