@@ -150,6 +150,13 @@ minimum, re-check:
   Confirmed failure: assuming every textarea is one line tall causes visible
   overlap the moment any text wraps to a second line. Check this for every
   textarea, not just ones that look long.
+- **Keep readable/tappable content above y=880 (bottom safe area).** In a normal
+  myViewBoard window the bottom toolbars cover the lowest ~190 canvas units, so a
+  "BACK TO MENU" link at y=950 or a table's last row at y=1000 is hidden under them
+  (confirmed in a real screenshot). Lay out text, buttons, tables and diagram nodes
+  within y ≤ 880; only background/decor may extend below. The helpers expose
+  `SAFE_BOTTOM = 880` and the validator warns when a text box, table or image ends
+  below it.
 - **Keep each page to about 15 elements or fewer.** A ~32-element diagram page
   (many shapes, arrows and labels) broke down in a live test: overlaps, hidden
   text, labels off their shapes. Split dense diagrams across pages, drop
