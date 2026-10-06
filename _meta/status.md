@@ -164,6 +164,23 @@ and confirm both the text spacing and the arrow visibility.
   New validator checks added for text hidden behind later shapes, arrows crossing text, and
   a two-tier height check (error only when short even on an optimistic line count).
 
+**2026-10-06, Windows myViewBoard (3.4.17.1075), the four built examples (water cycle, SVG,
+multiple choice, page-link menu):**
+
+- All four **opened and saved with nothing visibly wrong** (animation, page links, AI-pen
+  icons, SVG image, table all fine). Diffing each saved file against the generated one:
+  same element counts, positions, sizes, fonts, colours, ids, links, animation and image
+  data. Only differences: save metadata (version, user "Guest", file id, modify time,
+  description), float noise (46.800000000000004 -> 46.8), an empty `merge-cell-container`
+  dropped, link array order, and added page thumbnails. Multiple choice was byte-identical.
+  Note: pages the user did not edit were copied through verbatim, so the earlier
+  "ids regenerate / heights +4px on save" findings apply only to pages actually edited.
+- Real defect found from a screenshot: content below about y=880 is covered by the
+  bottom toolbars (a "BACK TO MENU" link at y=950 was hidden). Added `SAFE_BOTTOM = 880`
+  to the helpers, a validator warning for text boxes/tables/images ending below it, a
+  CORE.md rule, and moved the examples' low content up. Also added a CORE.md rule capping
+  pages at about 15 elements. Android check of the examples still pending.
+
 ## Known gaps (documented-only, not DSL-buildable)
 
 See [`constraints/deferred-features-not-in-dsl.md`](../constraints/deferred-features-not-in-dsl.md)
