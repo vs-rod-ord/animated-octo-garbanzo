@@ -1,97 +1,100 @@
-# OLF DSL Knowledge Base
+# OLF Knowledge Base (myViewBoard .olf generation)
 
 > A knowledge base for generating myViewBoard `.olf` files. **Default path: build
-> the file yourself, right now, in your own code-execution sandbox** — write
-> Python using the standard library (`json`, `zipfile`, `uuid`) to construct
-> `content.json` and zip it into a `.olf`, following the element semantics in
-> `spec/`+`elements/` and the mechanical rules in `constraints/`. Most readers of
-> this repo are plain Claude/ChatGPT/Gemini chat users with no external tool
-> access, so that's the assumed default, not a fallback. An MCP tool wrapping the
-> real engine, if one happens to be available, is preferred when reachable — see
-> `CORE.md` for the full priority order.
+> the file yourself, right now, in your own code-execution sandbox.** An `.olf` is a
+> ZIP containing `content.json`. Fetch the paste-in Python helpers in `starter/`
+> (standard library only), build with them, save, then run the validator and fix
+> every error before delivering. Most readers of this repo are plain
+> Claude/ChatGPT/Gemini chat users with no external tools, so this is the assumed
+> default, not a fallback. If an MCP tool wrapping the real engine happens to be
+> available, prefer it — see `CORE.md` for the full priority order.
 
-Read in this order: `CORE.md` first (reading order + generation-path rules), then
-`spec/dsl-spec.md`, then only the `elements/*.md` files relevant to the current
-request, then any matching `constraints/*.md` files, then a worked `examples/*.yaml`
-for few-shot grounding.
+Read in this order: `CORE.md` (reading order + generation-path rules), then
+`spec/content-json-envelope.md` (mandatory), then `spec/starter-helpers.md`, then only
+the `elements/*.md`, `constraints/*.md` and `patterns/*.md` files relevant to the
+request, then a worked example.
 
 ## Core
 
-- [CORE.md](CORE.md) — start here always. Reading order, what this DSL can and
-  cannot do yet, and the generation-path rule (produce a spec, not a zip).
-- [spec/dsl-spec.md](spec/dsl-spec.md) — the DSL grammar: document structure,
-  templates, positioning, layers, the engine contract, CLI/MCP interface.
-- [spec/content-json-envelope.md](spec/content-json-envelope.md) — **read this
-  in full before writing any JSON, every time, no exceptions.** The root
-  `olf`/`pageset`/`page` structure every element sits inside. A file can have
-  every element correct and still fail to open if this is wrong — confirmed by
-  a real test.
-
+- [CORE.md](CORE.md) — start here always. Reading order, scope, the generation-path
+  rule, and the pre-delivery checklist.
+- [spec/content-json-envelope.md](spec/content-json-envelope.md) — **read in full
+  before writing any JSON, every time.** The root `olf`/`pageset`/`page` structure
+  every element sits inside. A file can have every element correct and still fail to
+  open if this is wrong — confirmed by a real test.
 - [spec/starter-helpers.md](spec/starter-helpers.md) — **default build method.**
-  Paste-ready stdlib-only Python helpers + a validator you run before delivering:
-  [starter/olf_starter.py](starter/olf_starter.py) (always),
-  [starter/olf_starter_extras.py](starter/olf_starter_extras.py) (tables, images,
-  animation, links), [starter/olf_starter_svg.py](starter/olf_starter_svg.py)
-  (only for SVG icons/shapes/images), [starter/olf_validate.py](starter/olf_validate.py) (always,
-  fix until PASS). Fetch them as raw text and paste verbatim into your sandbox.
-- [examples/water-cycle-full.md](examples/water-cycle-full.md) — complete 3-page
-  worked example: [starter/example_build.py](starter/example_build.py) →
-  [examples/water_cycle_full.content.json](examples/water_cycle_full.content.json).
+  Paste-ready, stdlib-only helpers plus a validator you run before delivering:
+  - [starter/olf_starter.py](starter/olf_starter.py) — always (text, shapes, curves, pages, save)
+  - [starter/olf_starter_extras.py](starter/olf_starter_extras.py) — tables, images, animation, links
+  - [starter/olf_starter_svg.py](starter/olf_starter_svg.py) — only for SVG icons/shapes/images
+  - [starter/olf_validate.py](starter/olf_validate.py) — always; fix until PASS
+  - [starter/olf_kit.py](starter/olf_kit.py) — **all four in one file** (easiest to attach)
+  Your sandbox probably can't download these: if so, **ask the user to attach
+  `olf_kit.py`** (or the repo ZIP) — see the "Getting the helpers INTO your sandbox"
+  section of spec/starter-helpers.md. Never claim the validator passed unless you ran it.
+- [spec/dsl-spec.md](spec/dsl-spec.md) — vocabulary/semantics of the reference YAML
+  engine (what a `bullets` list, template or role preset means). Reference only; you
+  build with the helpers above.
 
-## Elements (Layer 2 — what a spec's `elements:` list can contain)
+## Elements (what you can put on a page)
 
-- [elements/text.md](elements/text.md) — `text:`, role presets, RTF/alignment rules
-- [elements/bullets.md](elements/bullets.md) — `bullets:`, the compound list element
-- [elements/shape.md](elements/shape.md) — `shape:`, the full shape-kind catalog
-- [elements/line-and-curve.md](elements/line-and-curve.md) — `line:` and `curve:`
-- [elements/image.md](elements/image.md) — `image:`
-- [elements/table.md](elements/table.md) — `table:`, merges, the three index spaces
-- [elements/animate-and-link.md](elements/animate-and-link.md) — `animate:` and
-  `link:` attributes (attach to any element above except `bullets`)
-- [elements/ai-pen.md](elements/ai-pen.md) — `AI-pen`: true-vector SVG icons,
-  custom shapes, rounded-rect cards (starter helper: `starter/olf_starter_svg.py`)
-- [elements/svg-image.md](elements/svg-image.md) — SVG as an `image` element:
-  what renders, what fails (`<text>`, `<pattern>`, `<use>`, animation), the 8x rule
-- [elements/raw-passthrough.md](elements/raw-passthrough.md) — `raw:`, the Layer-3
-  escape hatch, and its mechanical safety checks
+- [elements/text.md](elements/text.md) — text boxes, role presets, alignment
+- [elements/bullets.md](elements/bullets.md) — the compound bullet list
+- [elements/shape.md](elements/shape.md) — polygon/ellipse/quadrant/3D shapes, rounded rect
+- [elements/line-and-curve.md](elements/line-and-curve.md) — lines, arrows, curves
+- [elements/image.md](elements/image.md) — raster images
+- [elements/table.md](elements/table.md) — tables, merges, the three index spaces
+- [elements/animate-and-link.md](elements/animate-and-link.md) — tap-to-reveal and page/web/tool links
+- [elements/ai-pen.md](elements/ai-pen.md) — true-vector SVG icons, custom shapes, rounded cards
+- [elements/svg-image.md](elements/svg-image.md) — SVG as an image: what renders, what fails, the 8x rule
+- [elements/raw-passthrough.md](elements/raw-passthrough.md) — literal JSON escape hatch and its safety checks
 
 ## Constraints (ground-truth facts that override intuition or the official spec)
 
 - [constraints/font-size-and-pixels.md](constraints/font-size-and-pixels.md)
-- [constraints/width-factor-and-line-pitch.md](constraints/width-factor-and-line-pitch.md)
+- [constraints/rtf-text-structure.md](constraints/rtf-text-structure.md) — how the RTF
+  string works: size, colour, alignment, escaping, the "Arial" rewrite, what renders
+- [constraints/width-factor-and-line-pitch.md](constraints/width-factor-and-line-pitch.md) —
+  per-font line pitch; bold is not special
 - [constraints/text-wrapping-and-overlap.md](constraints/text-wrapping-and-overlap.md) —
-  **read before placing any textarea** — how to estimate wrapped line count and
-  height without real font metrics, to avoid overlapping the next element
+  **read before placing any text** — estimating wrapped height so elements don't overlap
 - [constraints/max-font-size-cap.md](constraints/max-font-size-cap.md)
 - [constraints/text-color-two-fields.md](constraints/text-color-two-fields.md)
 - [constraints/table-index-spaces.md](constraints/table-index-spaces.md)
 - [constraints/curve-stroke-opacity.md](constraints/curve-stroke-opacity.md) —
   a `curve` with no explicit `stroke-opacity` renders invisible
-- [constraints/raw-element-mechanical-checks.md](constraints/raw-element-mechanical-checks.md)
-- [constraints/android-vs-windows-divergence.md](constraints/android-vs-windows-divergence.md)
-- [constraints/ai-pen-path-rules.md](constraints/ai-pen-path-rules.md) —
-  **read before using any SVG path in AI-pen**: allowed commands, non-negative
-  coords, the donut-hole trap, how to vet a stock icon
+- [constraints/ai-pen-path-rules.md](constraints/ai-pen-path-rules.md) — **read before
+  using any SVG path**: allowed commands, non-negative coords, the donut-hole trap
 - [constraints/ai-pen-color-format.md](constraints/ai-pen-color-format.md)
+- [constraints/raw-element-mechanical-checks.md](constraints/raw-element-mechanical-checks.md)
+- [constraints/android-vs-windows-divergence.md](constraints/android-vs-windows-divergence.md) —
+  what differs, and the rules for a file that must open on both
 - [constraints/font-portability.md](constraints/font-portability.md)
 - [constraints/deferred-features-not-in-dsl.md](constraints/deferred-features-not-in-dsl.md) —
-  read this before promising flashcard, poll, or AI-pen-icon support
+  read before promising flashcard, poll, groups, rotation or tool elements
 
-## Patterns
+## Patterns (whole-page recipes)
 
-- [patterns/common-patterns.md](patterns/common-patterns.md) — worked page patterns
-  (title+bullets+caption, mixed layers, coordinate-free lesson pages)
+- [patterns/multiple-choice.md](patterns/multiple-choice.md) — question pages with lettered options
+- [patterns/page-link-menu.md](patterns/page-link-menu.md) — clickable menu / contents pages
+- [patterns/common-patterns.md](patterns/common-patterns.md) — title+bullets+caption and other composites
 
-## Examples (worked DSL specs — use these for few-shot, not just the schema)
+## Worked examples (build scripts + the JSON they produce)
 
-- [examples/minimal.yaml](examples/minimal.yaml) — smallest valid file
-- [examples/water_cycle.yaml](examples/water_cycle.yaml) — typical lesson page
-- [examples/frog_life_cycle.yaml](examples/frog_life_cycle.yaml) — multi-page,
-  shapes + images
-- [examples/tables_animation_links.yaml](examples/tables_animation_links.yaml) —
-  merged table + animation + page links together
+- [examples/water-cycle-full.md](examples/water-cycle-full.md) — 3 pages: wrapped list, cycle diagram, table
+  ([starter/example_build.py](starter/example_build.py) →
+  [examples/water_cycle_full.content.json](examples/water_cycle_full.content.json))
+- SVG: [starter/example_svg_build.py](starter/example_svg_build.py) →
+  [examples/svg_demo.content.json](examples/svg_demo.content.json)
+- Multiple choice: [starter/example_multiple_choice.py](starter/example_multiple_choice.py)
+- Menu with page links: [starter/example_toc.py](starter/example_toc.py)
+- YAML specs for the reference engine (semantic hints only):
+  [examples/minimal.yaml](examples/minimal.yaml),
+  [examples/water_cycle.yaml](examples/water_cycle.yaml),
+  [examples/frog_life_cycle.yaml](examples/frog_life_cycle.yaml),
+  [examples/tables_animation_links.yaml](examples/tables_animation_links.yaml)
 
 ## Meta
 
-- [_meta/status.md](_meta/status.md) — when this mirror was last synced against the
-  live `olf-dsl` engine, and what's documented-but-not-yet-buildable
+- [_meta/status.md](_meta/status.md) — what has been verified, live test findings,
+  and what is documented but not yet buildable
