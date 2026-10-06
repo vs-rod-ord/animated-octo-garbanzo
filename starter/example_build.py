@@ -32,9 +32,9 @@ nodes = [("Evaporation", 400, 700, "#FDE68A"), ("Condensation", 960, 380, "#E2E8
          ("Precipitation", 1520, 700, "#BAE6FD"), ("Collection", 960, 900, "#BBF7D0")]
 for label, cx, cy, fill in nodes:
     p2.ellipse(cx, cy, RX, RY, fill=fill, stroke="#334155", stroke_width=3.0)
-    lh = estimate_height(label, 26, 2 * RX - 40)
-    p2.add(textarea(cx - RX + 20, cy - lh / 2, 2 * RX - 40, lh, label, 26, bold=True,
-                    color="#0F172A", align="center"))
+    lh = estimate_height(label, 26, 2 * RX - 40, bold=True)
+    p2.add(textarea(cx - RX + 20, badge_y(cy - RY, 2 * RY, 26), 2 * RX - 40, lh, label, 26,
+                    bold=True, color="#0F172A", align="center"))
 arrows = [((300, 625), (520, 480), (800, 400)),      # Evaporation -> Condensation
           ((1120, 400), (1400, 480), (1560, 620)),   # Condensation -> Precipitation
           ((1440, 770), (1300, 880), (1150, 900)),   # Precipitation -> Collection
