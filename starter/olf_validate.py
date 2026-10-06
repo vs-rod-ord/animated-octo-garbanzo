@@ -34,16 +34,21 @@ def validate_olf(src):
     E, Wn = errs.append, warns.append
 
     # ---- load -------------------------------------------------------------
+    zipnames, svgs = None, {}
     if isinstance(src, dict):
         data = src
     else:
         try:
             with zipfile.ZipFile(src) as zf:
                 names = zf.namelist()
+                zipnames = set(names)
                 if "content.json" not in names:
                     E("ZIP has no content.json at the archive ROOT (found: %s)" % names[:5])
                     return {"errors": errs, "warnings": warns, "stats": {}}
                 data = json.loads(zf.read("content.json").decode("utf-8"))
+                for nm in names:
+                    if nm.lower().endswith(".svg"):
+                        svgs[nm] = zf.read(nm).decode("utf-8", "replace")
         except zipfile.BadZipFile:
             E("not a valid ZIP file")
             return {"errors": errs, "warnings": warns, "stats": {}}
@@ -185,6 +190,16 @@ def validate_olf(src):
             if ox > 1 and oy > 1:           # true 2-D overlap (x AND y)
                 E("page %d text overlap: %r and %r overlap by %.0fx%.0f"
                   % (a[0], a[6][:30], c[6][:30], ox, oy))
+    # images: source must exist in the zip; SVG sources get linted
+    for rid, (kind, b, pn) in elems.items():
+        if kind == "image" and zipnames is not None:
+            s = b.get("source")
+            if s not in zipnames:
+                E("page %d image source %r is not in the ZIP (images must be stored at that path)" % (pn, s))
+            elif s in svgs:
+                _lint_svg(s, svgs[s], b.get("width"), pn, Wn)
+            if b.get("mime-type") == "image/svg+xml" and s and not str(s).lower().endswith(".svg"):
+                Wn("page %d image mime is svg+xml but source %r does not end in .svg" % (pn, s))
     # off-canvas
     for rid, (kind, b, pn) in elems.items():
         if kind in ("textarea", "image", "table") and \
@@ -265,6 +280,65 @@ def _check_element(kind, b, where, E, Wn, reg):
                     Wn("%s font-size %s is not a whole pixel number" % (where, fs))
     if kind == "image" and not b.get("source"):
         E("%s image missing 'source'" % where)
+    if kind == "AI-pen":
+        _check_ai_pen(b, where, E, Wn, reg)
+
+
+_IDENT = "1,0,0,0,1,0,0,0,1"
+_BAD_SVG = [("<pattern", "<pattern> fills render SOLID BLACK"), ("<mask", "<mask> is ignored"),
+            ("<text", "<text> renders NOTHING (convert to paths)"),
+            ("<use", "<use> does not resolve (inline it)"), ("<symbol", "<symbol> does not resolve"),
+            ("<foreignObject", "<foreignObject> content is dropped"),
+            ("<animate", "SMIL animation never plays"), ("<set ", "SMIL animation never plays"),
+            ("@keyframes", "CSS animation never plays")]
+
+
+def _lint_svg(name, text, display_w, pn, Wn):
+    for tok, msg in _BAD_SVG:
+        if tok in text:
+            Wn("page %d SVG %s: %s" % (pn, name, msg))
+    m = re.search(r"<svg\b[^>]*>", text)
+    if m and display_w:
+        wm = re.search(r'\bwidth="([\d.]+)', m.group(0))
+        if not wm:
+            Wn("page %d SVG %s has no width attribute -- intrinsic size unknown; author ~8x display" % (pn, name))
+        elif float(wm.group(1)) < display_w * 4:
+            Wn("page %d SVG %s intrinsic width %s < 4x display %.0f -- will look blurry" % (pn, name, wm.group(1), display_w))
+
+
+def _check_ai_pen(b, where, E, Wn, reg):
+    fgs = b.get("foreground-objects-container", [])
+    bgs = b.get("background-objects-container", [])
+    if not fgs:
+        E("%s has no foreground-objects-container paths" % where)
+    if not bgs:
+        E("%s background-objects-container is EMPTY -- must mirror the foreground at fill-opacity 0.3 "
+          "or the shape can render invisible" % where)
+    elif len(bgs) != len(fgs):
+        Wn("%s background has %d paths, foreground %d (should mirror)" % (where, len(bgs), len(fgs)))
+    if b.get("matrix") == _IDENT:
+        E("%s uses the IDENTITY matrix -- AI-pen needs a real scale/translate matrix or it can render invisible" % where)
+    for grp, lst in (("foreground", fgs), ("background", bgs)):
+        for item in lst:
+            pth = item.get("path", {})
+            reg(pth.get("id"), where + " " + grp + " path")
+            for key in ("fill", "stroke"):
+                if not HEX6.match(str(pth.get(key, ""))):
+                    E("%s %s path %s %r must be plain #RRGGBB (non-hex CRASHES Android)"
+                      % (where, grp, key, pth.get(key)))
+            d = str(pth.get("data", ""))
+            if not d:
+                E("%s %s path has no 'data'" % (where, grp))
+                continue
+            if grp == "foreground":
+                if re.search(r"[HhVvQqTtSsmlcaz]", d):
+                    Wn("%s path data uses relative/shorthand commands (H V Q S T or lowercase) -- "
+                       "prefer absolute M L C A Z only" % where)
+                if re.search(r"(?<![0-9.eE])-\d", d):
+                    Wn("%s path data has NEGATIVE coordinates -- keep local coords >= 0 and fold the "
+                       "offset into the matrix" % where)
+            if "url(" in d or "currentColor" in d:
+                E("%s path data contains a paint reference" % where)
 
 
 def _check_table(b, pn, elems, cell_text, E, Wn):
