@@ -17,10 +17,35 @@ standard library, so they run in any chat sandbox with no network.
 
 | File | Paste when | What it gives you |
 |---|---|---|
+| [`starter/olf_kit.py`](../starter/olf_kit.py) | **Easiest: ONE file with everything below** (generated concatenation of the four files). Attach or fetch just this. | all of the rows below |
 | [`starter/olf_starter.py`](../starter/olf_starter.py) | **Always, first** | `Doc`, `Page`, text/shape/curve builders, wrapped-height flow, `doc.save()` |
 | [`starter/olf_starter_extras.py`](../starter/olf_starter_extras.py) | Only if the request needs a table, image, animation or page/web link. Paste **after** the core file. | `add_table`, `add_image`, `animate`, `link_page`, `link_web` |
 | [`starter/olf_starter_svg.py`](../starter/olf_starter_svg.py) | Only if the request needs SVG: vector icons/shapes (`AI-pen`) or an SVG image. Paste after the core file (independent of extras). | `ai_pen_icon`, `ai_pen_rounded_rect`, `svg_to_paths`, `add_svg_image`, `svg_lint`, `parse_path` |
 | [`starter/olf_validate.py`](../starter/olf_validate.py) | **Always, before delivering** | `validate_olf(path)` + `print_report(...)` |
+
+## Getting the helpers INTO your sandbox (this is the step that fails)
+
+Your code sandbox almost certainly **cannot reach GitHub** (confirmed on ChatGPT: it
+could read the pages with its browsing tool but could not download the `.py` files
+inside the sandbox). Reading a file and having it in your sandbox are different
+things. Try these, in order, and be honest about which you used:
+
+1. **Direct fetch inside the sandbox** (`urllib`/`requests` to the raw URL) — try
+   once; on any network error, stop trying.
+2. **Ask the user to attach the file.** Say exactly: *"My sandbox can't download from
+   GitHub. Please attach `starter/olf_kit.py` (one file with everything) to this chat —
+   or download the repo as a ZIP (Code → Download ZIP) and attach that."* Then load it
+   from the uploads folder (e.g. `/mnt/data/olf_kit.py`; for a ZIP, `zipfile` extract
+   first) with `exec(open(path).read())`. **This is the reliable route.**
+3. **Re-emit the file yourself:** if you have read the file with a browsing tool but the
+   user cannot attach it, write its contents into a single code cell **verbatim** (the
+   core file `olf_starter.py` plus `olf_validate.py` are enough for most pages). Do not
+   "improve" or shorten it.
+
+**Never claim the validator returned PASS unless you actually executed
+`validate_olf` on the saved file.** If you could only check rules by hand, say so
+plainly ("hand-checked against the rules; validator not run"). `starter/olf_kit.py`
+is all four helper files concatenated into one, so a single attachment is enough.
 
 ## The workflow
 
@@ -49,8 +74,9 @@ p.curve(start, via, end, arrow_end=True)      # stroke-opacity 1.0 is built in
 tid = p.text(...)                             # every p.* returns the element id
 
 # centred label inside a shape: create the textarea yourself
-h = estimate_height(label, 26, width)
-p.add(textarea(cx - width/2, cy - h/2, width, h, label, 26, align="center"))
+h = estimate_height(label, 26, width, bold=True)              # bold=/font= change the estimate
+p.add(textarea(cx - width/2, badge_y(cy - ry, 2*ry, 26), width, h, label, 26,
+               bold=True, align="center"))                   # badge_y = calibrated centring
 
 # extras (paste olf_starter_extras.py after the core file)
 t = add_table(p, x=80, y=p.y, col_lengths=[420,1300], row_lengths=[80,110,110],
@@ -93,7 +119,10 @@ Envelope shape and the nine `meta` fields; unique ids; every shape has exactly o
 separator; `stroke-opacity` present on curves/lines/shapes; matrix has nine
 numbers; RTF font-size and colour agree with the JSON; 130pt cap; animation
 duration is a string `"0"`–`"3"`; link `page-id` is an in-range ordinal string;
-table container counts and even/dense index spaces; **AI-pen** (real matrix, populated
+table container counts and even/dense index spaces; **layout collisions** (text drawn
+*behind* a later shape = error; text partly covered, or an arrow/curve passing through
+a text box = warning); **height too small** (error only when short even on an
+optimistic line count, warning when only the generous count disagrees); **AI-pen** (real matrix, populated
 background container, plain-hex colours, absolute path commands, non-negative
 coordinates, no `flip`); **image** sources exist in the ZIP and SVG sources are
 linted (`<text>`, `<pattern>`, `<use>`, animation, too-small intrinsic size); **textarea height ≥ the
