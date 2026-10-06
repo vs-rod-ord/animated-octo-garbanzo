@@ -4,11 +4,11 @@
   "height": 1080.0,
   "viewbox": "0 0 1920 1080",
   "meta": {
-   "id": "c716cbf6-8f99-47b7-8201-b492d64a31fc",
+   "id": "9f8ca9ee-40e4-491e-8bac-a1db37cd6eb2",
    "create-platform": "myViewBoard for Windows",
    "create-by-library": "Viewsonic Open Learning Format library",
-   "create-time": "10/6/2026 04:24:11 PM",
-   "modify-time": "10/6/2026 04:24:11 PM",
+   "create-time": "10/6/2026 05:07:42 PM",
+   "modify-time": "10/6/2026 05:07:42 PM",
    "create-library-version": "0.0.1.50",
    "create-version": "3.4.9.603 [64 bits]",
    "modify-version": "3.4.9.603 [64 bits]",
@@ -18,14 +18,14 @@
   "pageset": [
    {
     "page": {
-     "id": "a4ba09ad-1b30-4731-b6e1-df5681138c79",
+     "id": "166d4c1f-5864-412b-82cb-cb5867812136",
      "matrix": "1,0,0,0,1,0,0,0,1",
      "viewbox": "0,0,1920,1080",
      "is-hidden": false,
      "elements": [
       {
        "textarea": {
-        "id": "7edb02d4-5789-494a-8651-a82d4f0ded8c",
+        "id": "6d5d3528-0db5-47e2-80dc-da8e129df94f",
         "x": 80.0,
         "y": 80.0,
         "width": 1760.0,
@@ -36,13 +36,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "716e067a-7e06-44ae-86fa-7a575f377a9f",
+           "id": "85174644-4f3f-4446-8fbb-a361e0c0b022",
            "font-size": 72.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "59771145-ee55-4402-8899-3153c557fb43",
+              "id": "8e853ad8-b955-44a3-ad7e-cb093a3c6907",
               "text": "The Water Cycle",
               "font-family": "Segoe UI",
               "font-size": 72.0,
@@ -63,7 +63,7 @@
       },
       {
        "textarea": {
-        "id": "19911211-0831-441f-9cd7-4775611d12d1",
+        "id": "0866b9ba-b0d1-4b8c-aace-ed66b77de9b7",
         "x": 80.0,
         "y": 217.2,
         "width": 1760.0,
@@ -74,13 +74,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "43da7130-b0ac-4db7-aab6-d05989bd5db0",
+           "id": "93c8ca5c-33fc-49cd-acba-e70b1fdedf3a",
            "font-size": 40.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "a876c85a-eef9-48f0-8763-21c084237f56",
+              "id": "70c21224-d899-4051-aa65-fd784ab4d10c",
               "text": "Water moves continuously between the oceans, the air and the land.",
               "font-family": "Segoe UI",
               "font-size": 40.0,
@@ -101,7 +101,7 @@
       },
       {
        "textarea": {
-        "id": "da8fd9df-ce45-4d79-9920-3d6df9a4f0eb",
+        "id": "aa4e2bce-f1b6-4848-a02f-84149db2380b",
         "x": 80.0,
         "y": 311.2,
         "width": 1760.0,
@@ -112,13 +112,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "c5c46b96-4048-40fb-b447-94f5f744caf0",
+           "id": "32877cc3-daf9-4371-bb75-c473d7abefeb",
            "font-size": 37.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "1a25fa61-b8b7-41fa-826e-f58d9cd47ab4",
+              "id": "0db9d366-05cc-40e8-a7ce-26b7f197259b",
               "text": "1.  Evaporation: heat from the sun warms oceans, lakes, and rivers, turning liquid water into invisible water vapor that rises into the air.",
               "font-family": "Segoe UI",
               "font-size": 37.0,
@@ -139,7 +139,7 @@
       },
       {
        "textarea": {
-        "id": "7240f0e5-5a2c-4c2e-b77d-8d68634b7688",
+        "id": "2ef01ed7-ff70-4e16-8904-c5bbb89c0a22",
         "x": 80.0,
         "y": 436.0,
         "width": 1760.0,
@@ -150,13 +150,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "b6c1b434-e6b5-42f4-9acf-cd3b97b4a556",
+           "id": "637eb08c-3e53-473d-a514-5c047026a2a4",
            "font-size": 37.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "841be19f-2852-4b3a-933d-b5c47a5578b7",
+              "id": "07a6f66d-5a13-43c8-b92a-d109ec4b1b71",
               "text": "2.  Condensation: as vapor rises it cools and condenses into tiny droplets that gather to form clouds.",
               "font-family": "Segoe UI",
               "font-size": 37.0,
@@ -177,7 +177,7 @@
       },
       {
        "textarea": {
-        "id": "4ad58f21-5314-4754-934f-dc9491d33a8c",
+        "id": "721112a4-c8ef-4c2b-82a3-401ec7e0d9e1",
         "x": 80.0,
         "y": 560.8,
         "width": 1760.0,
@@ -188,13 +188,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "00aca1bd-e552-4d45-a152-0f478f9ae823",
+           "id": "86e1b304-05ea-41b6-9263-03f485bdd423",
            "font-size": 37.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "997d57a1-6b92-4b40-bca8-396887609015",
+              "id": "761cc7e8-6181-4b79-bfb9-dcd84587d080",
               "text": "3.  Precipitation: when droplets grow heavy they fall as rain, snow, sleet or hail.",
               "font-family": "Segoe UI",
               "font-size": 37.0,
@@ -215,7 +215,7 @@
       },
       {
        "textarea": {
-        "id": "50f44888-7e91-4cb6-95d5-0868e9ed9407",
+        "id": "2eee2f5a-151f-4bae-bb4c-0e669e874360",
         "x": 80.0,
         "y": 635.1999999999999,
         "width": 1760.0,
@@ -226,13 +226,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "bc30fdff-03c3-4f8e-a919-f2f7b2db6d92",
+           "id": "ec6e6732-62f4-4961-ae38-c4afcabf9363",
            "font-size": 37.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "5adbf18e-1365-44da-903e-d164cac0d4aa",
+              "id": "53209fb0-4b2a-4b19-ad97-608a09c7ba85",
               "text": "4.  Collection: water runs off or soaks into the ground and collects in oceans, lakes and rivers.",
               "font-family": "Segoe UI",
               "font-size": 37.0,
@@ -255,7 +255,7 @@
      "backgrounds": [
       {
        "background": {
-        "id": "e6725755-e02a-43b7-8c4c-aebc502a6d6f",
+        "id": "8002f7af-c788-4b1a-b86f-99d48152a9fa",
         "type": "color",
         "fill": "#FFFFFF",
         "opacity": 1.0
@@ -266,14 +266,14 @@
    },
    {
     "page": {
-     "id": "e8b5e127-9252-4ee9-bd7d-e7b1d85b3cb7",
+     "id": "4e7a93ed-baaf-4979-9c32-130e1c913a1d",
      "matrix": "1,0,0,0,1,0,0,0,1",
      "viewbox": "0,0,1920,1080",
      "is-hidden": false,
      "elements": [
       {
        "textarea": {
-        "id": "746cc83c-59c3-43ec-96a4-5e5cd36399da",
+        "id": "a38b2360-69d4-4491-af7a-e15e15c3f182",
         "x": 80.0,
         "y": 80.0,
         "width": 1760.0,
@@ -284,13 +284,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "c87054a8-f110-4a77-97bd-ee0bc29ecc8c",
+           "id": "a837c3bd-84cd-456c-b9af-fcd5b9e29d43",
            "font-size": 59.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "b7493c82-cac7-4ad1-a173-45a0614e0466",
+              "id": "6890b570-8720-4eaa-8a94-71c4c056ad85",
               "text": "How the cycle flows",
               "font-family": "Segoe UI",
               "font-size": 59.0,
@@ -311,7 +311,7 @@
       },
       {
        "ellipse": {
-        "id": "37fbe5f1-5de3-413f-a640-e85d658077ab",
+        "id": "09c08e54-6086-499c-93ea-29bff834d10c",
         "is-pie": false,
         "x": 0.0,
         "y": 0.0,
@@ -336,9 +336,9 @@
       },
       {
        "textarea": {
-        "id": "70e29e7b-ea42-4d82-9511-51f412c73a10",
+        "id": "01146e22-ba51-42ec-8bf7-235ab9732f97",
         "x": 230.0,
-        "y": 676.6,
+        "y": 689.0,
         "width": 340.0,
         "height": 46.800000000000004,
         "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Evaporation\\par\r\n}\r\n",
@@ -347,13 +347,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "1c8ce660-c695-46ae-8140-bd8165371c7b",
+           "id": "32c84e6e-5efc-4995-9464-76a07680d8ec",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "f1fe3507-07f0-4fd3-89a8-4cd77ff2ac64",
+              "id": "48ab8c52-4c73-4aab-8d7d-c666481335cf",
               "text": "Evaporation",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -374,7 +374,7 @@
       },
       {
        "ellipse": {
-        "id": "3c955791-05a8-435f-be5a-9307dd2fb9ae",
+        "id": "cad41e03-0151-49d6-ae14-a8eb782b0b1b",
         "is-pie": false,
         "x": 0.0,
         "y": 0.0,
@@ -399,9 +399,9 @@
       },
       {
        "textarea": {
-        "id": "83f4f5e3-b59a-4f73-9a18-77483d7734fb",
+        "id": "b3541300-ba3c-4124-84f6-464bb6a2e647",
         "x": 790.0,
-        "y": 356.6,
+        "y": 369.0,
         "width": 340.0,
         "height": 46.800000000000004,
         "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Condensation\\par\r\n}\r\n",
@@ -410,13 +410,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "32ca9cde-8637-473b-b86c-98ae4d2cd4bd",
+           "id": "91567f23-ccac-41aa-84fb-0030d6b343c2",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "4fe96df1-df8d-4884-bc0f-969ea1905e18",
+              "id": "53a3ee74-dbe7-4b40-8aad-8d786233e3bf",
               "text": "Condensation",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -437,7 +437,7 @@
       },
       {
        "ellipse": {
-        "id": "1d8ae365-7103-430a-aa6b-c0d954d0a71b",
+        "id": "f703ada2-eb9c-4332-87f0-de481de2b739",
         "is-pie": false,
         "x": 0.0,
         "y": 0.0,
@@ -462,9 +462,9 @@
       },
       {
        "textarea": {
-        "id": "7030368e-3822-4af1-bf4a-ee611d671214",
+        "id": "26e6cd20-3d33-4431-95aa-8344f726b8aa",
         "x": 1350.0,
-        "y": 676.6,
+        "y": 689.0,
         "width": 340.0,
         "height": 46.800000000000004,
         "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Precipitation\\par\r\n}\r\n",
@@ -473,13 +473,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "d80f4db2-a92c-49ab-a45f-0f2b3f2b85e2",
+           "id": "69859aac-ba27-4a57-b199-1fcf7115353a",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "ec87ee4c-3fca-4d1a-a9e3-c2405c406fdb",
+              "id": "9ece9b9b-7116-4d90-a13a-009b6a316c57",
               "text": "Precipitation",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -500,7 +500,7 @@
       },
       {
        "ellipse": {
-        "id": "63882037-208c-4e7b-98ae-1c1424990f74",
+        "id": "ed0d5400-52e0-4bfe-988b-134b3381fc7a",
         "is-pie": false,
         "x": 0.0,
         "y": 0.0,
@@ -525,9 +525,9 @@
       },
       {
        "textarea": {
-        "id": "4c7738bc-0c0e-4f14-9b40-74ba10eed952",
+        "id": "cf623074-f337-4650-8a17-4139fbf56848",
         "x": 790.0,
-        "y": 876.6,
+        "y": 889.0,
         "width": 340.0,
         "height": 46.800000000000004,
         "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Collection\\par\r\n}\r\n",
@@ -536,13 +536,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "ae8a349b-f925-4ea2-b807-77538cd980ec",
+           "id": "3affe09a-2244-454a-ba3e-71e854fa04a9",
            "font-size": 35.0,
            "text-align": "center",
            "text-list-container": [
             {
              "text": {
-              "id": "d2b03a8d-e64b-472e-be49-53e2ecf937cb",
+              "id": "b5dba76c-fa93-4900-b5ce-26c03129cac1",
               "text": "Collection",
               "font-family": "Segoe UI",
               "font-size": 35.0,
@@ -563,7 +563,7 @@
       },
       {
        "curve": {
-        "id": "d3af94ad-1d56-4f6b-b46a-dc960dccfc37",
+        "id": "76b732c8-f9a9-440e-84ee-e33d1d7dc3dc",
         "x": 297.0,
         "y": 397.0,
         "width": 506.0,
@@ -581,7 +581,7 @@
       },
       {
        "curve": {
-        "id": "19a925c9-581e-4755-bfcb-6913d4781ce9",
+        "id": "69cbe3d0-3e0b-4ecc-a327-74e887a4deae",
         "x": 1117.0,
         "y": 397.0,
         "width": 446.0,
@@ -599,7 +599,7 @@
       },
       {
        "curve": {
-        "id": "98c03bba-cc22-40e8-94eb-206ef145f4c6",
+        "id": "0ecfc3e2-9daf-447e-92da-bbfa9c5993ac",
         "x": 1147.0,
         "y": 767.0,
         "width": 296.0,
@@ -617,7 +617,7 @@
       },
       {
        "curve": {
-        "id": "fe4094be-a17b-4a2b-bb54-c4be14ed757c",
+        "id": "322e4bc8-df5d-4d6d-a104-18ef2b70f913",
         "x": 377.0,
         "y": 782.0,
         "width": 396.0,
@@ -637,7 +637,7 @@
      "backgrounds": [
       {
        "background": {
-        "id": "7d97fd94-09fb-4748-a27d-68b3cbd6427b",
+        "id": "f562c212-d8e8-4118-9dd6-2eb7583598a1",
         "type": "color",
         "fill": "#F0F9FF",
         "opacity": 1.0
@@ -648,14 +648,14 @@
    },
    {
     "page": {
-     "id": "f63c7328-6cd6-4253-a21c-c456bb06b0a3",
+     "id": "f409bd9a-094a-4480-b124-c6de4ec57cfc",
      "matrix": "1,0,0,0,1,0,0,0,1",
      "viewbox": "0,0,1920,1080",
      "is-hidden": false,
      "elements": [
       {
        "textarea": {
-        "id": "7e07be21-0724-4000-adcc-3f85d27113b9",
+        "id": "e1b617eb-e37f-4e63-aa76-ec7d5a6841f8",
         "x": 80.0,
         "y": 80.0,
         "width": 1760.0,
@@ -666,13 +666,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "1798fe37-ef24-4a13-8050-67c2fa57d4c0",
+           "id": "8888bd6c-e925-44ca-b025-6681fd7ff829",
            "font-size": 59.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "2d8abdb4-f9f6-421f-9f57-b68319ad3e98",
+              "id": "7fc8c4cf-57b2-4234-860a-f3ad9f216b68",
               "text": "Summary",
               "font-family": "Segoe UI",
               "font-size": 59.0,
@@ -693,7 +693,7 @@
       },
       {
        "table": {
-        "id": "5912e9fe-7cbb-4627-b26a-774c3f7b8474",
+        "id": "592316df-ec8f-4100-aee3-cd24731033e9",
         "x": 80.0,
         "y": 199.2,
         "width": 1729.0,
@@ -711,7 +711,7 @@
         "cell-background-container": [
          {
           "cell-background": {
-           "id": "1b6c6748-9142-48f2-b270-71b1561c80f2",
+           "id": "3ff8fad4-81d2-464a-a155-26a0cccab2dd",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 0,
@@ -720,7 +720,7 @@
          },
          {
           "cell-background": {
-           "id": "8737539c-3d03-49a1-b045-d69839411ad0",
+           "id": "4ba1c529-4807-4fcc-af81-480d3d4452cb",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 0,
@@ -729,7 +729,7 @@
          },
          {
           "cell-background": {
-           "id": "bcf99694-466e-4944-b818-42ed613de598",
+           "id": "881bcc13-9241-4046-b0a5-5bdf10cce546",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 0,
@@ -738,7 +738,7 @@
          },
          {
           "cell-background": {
-           "id": "f54b11fd-62dc-42c3-8d41-78035a2c6d7f",
+           "id": "f256dc95-b86e-4773-b730-6141dc783dd4",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 0,
@@ -747,7 +747,7 @@
          },
          {
           "cell-background": {
-           "id": "c2a71e88-4f2c-4e68-a24d-6a1a7ec5d0dc",
+           "id": "c7c0b880-5f60-4ee2-9965-8298e1e024d7",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 0,
@@ -756,7 +756,7 @@
          },
          {
           "cell-background": {
-           "id": "ca7b8e2b-8dae-4b51-b4ca-5a7c0db9ef98",
+           "id": "24f9a069-6952-40f1-94f8-69ef215913be",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 1,
@@ -765,7 +765,7 @@
          },
          {
           "cell-background": {
-           "id": "e1fe8bef-0c1c-4213-aed3-cbc7544ecfa5",
+           "id": "61011972-c218-400d-8063-67a5bc304f1e",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 1,
@@ -774,7 +774,7 @@
          },
          {
           "cell-background": {
-           "id": "23a837cc-0329-46df-82c0-2eb2f26db835",
+           "id": "946b2eef-7887-44b9-9dc1-8579b9bd5eb3",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 1,
@@ -783,7 +783,7 @@
          },
          {
           "cell-background": {
-           "id": "6a623b7c-eff9-444a-b97e-f10ed85c5ed7",
+           "id": "12c333af-06c5-403e-b792-3d7a2d12b708",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 1,
@@ -792,7 +792,7 @@
          },
          {
           "cell-background": {
-           "id": "e8849025-99b2-4433-bc7a-a8f627b3a441",
+           "id": "abbdad7a-20c6-48c5-bd84-79b1ade1a250",
            "background": "#FFFFFF",
            "background-opacity": 0.2,
            "cell-column": 1,
@@ -804,82 +804,82 @@
         "cell-content-container": [
          {
           "cell-content": {
-           "id": "72643dec-b069-4adf-9f22-c00e32c9b6ab",
+           "id": "9a37d5c9-b78b-48d0-8e43-c19418fb3a08",
            "cell-row": 0,
            "cell-column": 0,
-           "ref": "b4278bf8-225b-49b5-a8d7-02b28e6e1f5b"
+           "ref": "d55ece1a-f28b-4f6a-9965-b9c8736434eb"
           }
          },
          {
           "cell-content": {
-           "id": "3a234367-54c3-48d2-b1da-c21839cb53e3",
+           "id": "b7904acc-b729-46b4-b562-f7c2005d9b3f",
            "cell-row": 0,
            "cell-column": 2,
-           "ref": "e62edf13-00ac-4e80-b97c-99656859c0d2"
+           "ref": "25146e43-6a39-47b2-a483-5d5eb6d961ef"
           }
          },
          {
           "cell-content": {
-           "id": "df771bd9-f2ab-4493-9e77-33a1685678fc",
+           "id": "a3c30aa7-93e1-4e53-bc61-c0d7672df7e0",
            "cell-row": 2,
            "cell-column": 0,
-           "ref": "b7a24222-4450-4c1b-86c8-33467fc2e09f"
+           "ref": "770c9f73-94b4-4a92-bffb-de1a45dbeb1d"
           }
          },
          {
           "cell-content": {
-           "id": "20d5bcdd-61b5-4002-a8c5-51ce17350a14",
+           "id": "d05e917d-30e2-440f-87f2-4e8dea884703",
            "cell-row": 2,
            "cell-column": 2,
-           "ref": "391c45d7-afb5-4241-bfbf-c64caccde7b5"
+           "ref": "54bd26f6-21b2-4e33-9172-baae1c1b62b8"
           }
          },
          {
           "cell-content": {
-           "id": "ce249ee0-51f7-4c16-b00c-bb42514e4804",
+           "id": "d2f78d72-ab5b-4d30-a264-259cf197cc67",
            "cell-row": 4,
            "cell-column": 0,
-           "ref": "a1559985-7529-4b07-88c7-82e34fe2bcbd"
+           "ref": "9b55a4a0-49ab-4a0e-b661-115689c8efe9"
           }
          },
          {
           "cell-content": {
-           "id": "a1f0dc60-5173-4007-b1ba-4fc97048f7a7",
+           "id": "917ae2f9-1c4a-4192-85bc-53e39dece206",
            "cell-row": 4,
            "cell-column": 2,
-           "ref": "94f2137b-80f6-4982-be55-3f3481039f2d"
+           "ref": "71630b6e-5006-4bc3-b96a-4162253cf7fd"
           }
          },
          {
           "cell-content": {
-           "id": "fb9e80f8-32f5-4d2c-b3c9-3f5e8b3c973c",
+           "id": "02e2927f-a314-408e-9068-c3e74adc6b6a",
            "cell-row": 6,
            "cell-column": 0,
-           "ref": "43a2fdc1-346a-41c3-aaf7-df1feef4453c"
+           "ref": "684a5abc-5d86-4867-989c-bb24a9a90584"
           }
          },
          {
           "cell-content": {
-           "id": "6322b488-98b5-48c5-95d7-8386b0f01ab4",
+           "id": "76084f38-465c-4e1f-8375-29912b7f9042",
            "cell-row": 6,
            "cell-column": 2,
-           "ref": "2d803226-b68c-472d-b311-3846d1423222"
+           "ref": "191f57ef-29a8-4fa2-96f9-da13f85ab2bf"
           }
          },
          {
           "cell-content": {
-           "id": "23790a27-c75c-472d-8332-7c9ba5797b62",
+           "id": "cfd92122-e37f-428c-a963-bb1feb3696a6",
            "cell-row": 8,
            "cell-column": 0,
-           "ref": "bab9ff69-85c7-420b-8eb0-ea2a29487e1b"
+           "ref": "246d8b1a-5592-4cdf-92ee-f449bca5302d"
           }
          },
          {
           "cell-content": {
-           "id": "1eb2d93b-c005-40d8-bc05-bf0df05aacd4",
+           "id": "b8c7e552-d728-4051-bce3-4a2ecf5a6e81",
            "cell-row": 8,
            "cell-column": 2,
-           "ref": "1609b0a3-e4c4-466c-8f91-4e33edcabfbe"
+           "ref": "4841cfea-6516-4fae-b79d-93a6fcb3ff0a"
           }
          }
         ]
@@ -887,7 +887,7 @@
       },
       {
        "textarea": {
-        "id": "b4278bf8-225b-49b5-a8d7-02b28e6e1f5b",
+        "id": "d55ece1a-f28b-4f6a-9965-b9c8736434eb",
         "x": 101.0,
         "y": 220.2,
         "width": 384.0,
@@ -898,13 +898,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "8312a30f-080a-43d0-9f11-4a3cb7a00f00",
+           "id": "b4013189-2993-443a-b5c1-90ed05916f51",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "a90b85d5-5afe-43dc-aad6-ecf5d09ca3d7",
+              "id": "d2b809f7-03d6-4ec8-a725-1bdb20dda197",
               "text": "Stage",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -925,7 +925,7 @@
       },
       {
        "textarea": {
-        "id": "e62edf13-00ac-4e80-b97c-99656859c0d2",
+        "id": "25146e43-6a39-47b2-a483-5d5eb6d961ef",
         "x": 524.0,
         "y": 220.2,
         "width": 1264.0,
@@ -936,13 +936,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "a5b8af18-fa90-494d-9913-a3a17ce27786",
+           "id": "05c30d9f-346b-4f31-8e06-3e9c4e55c64c",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "b9b3186d-122b-426f-8aa7-957b1bee3e55",
+              "id": "8ff793d6-b49e-4f3b-8372-0c00fcc99a3c",
               "text": "What happens",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -963,7 +963,7 @@
       },
       {
        "textarea": {
-        "id": "b7a24222-4450-4c1b-86c8-33467fc2e09f",
+        "id": "770c9f73-94b4-4a92-bffb-de1a45dbeb1d",
         "x": 101.0,
         "y": 303.2,
         "width": 384.0,
@@ -974,13 +974,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "2f6e9a91-79c7-44a9-aaac-721aebc2bb87",
+           "id": "8aa2e401-882e-4754-8d88-141cbd13fff3",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "8937924b-88e3-468f-b43a-0d7f73a8b690",
+              "id": "60eb1249-1915-4535-800a-70aa31259432",
               "text": "Evaporation",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1001,7 +1001,7 @@
       },
       {
        "textarea": {
-        "id": "391c45d7-afb5-4241-bfbf-c64caccde7b5",
+        "id": "54bd26f6-21b2-4e33-9172-baae1c1b62b8",
         "x": 524.0,
         "y": 303.2,
         "width": 1264.0,
@@ -1012,13 +1012,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "624f9c2c-8116-4d19-823b-afa90f526ef8",
+           "id": "225390c0-b8ae-4c13-a0bc-59ac10eb0263",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "f153abbd-2478-439c-a6a7-ed4d282de21f",
+              "id": "5b4cabd1-d17f-461d-b9ad-fc9686684689",
               "text": "Sun-warmed liquid water becomes water vapor and rises.",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1039,7 +1039,7 @@
       },
       {
        "textarea": {
-        "id": "a1559985-7529-4b07-88c7-82e34fe2bcbd",
+        "id": "9b55a4a0-49ab-4a0e-b661-115689c8efe9",
         "x": 101.0,
         "y": 416.2,
         "width": 384.0,
@@ -1050,13 +1050,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "8687fd5d-406b-43ae-9f3a-ae9546ac0e3f",
+           "id": "acec4c55-04e0-427e-a6bd-49b69a84cb01",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "e56edfbd-eb22-4a78-bf6f-24d9a2c182a7",
+              "id": "22d662b7-d6d6-46a2-bfb0-f3e35a447266",
               "text": "Condensation",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1077,7 +1077,7 @@
       },
       {
        "textarea": {
-        "id": "94f2137b-80f6-4982-be55-3f3481039f2d",
+        "id": "71630b6e-5006-4bc3-b96a-4162253cf7fd",
         "x": 524.0,
         "y": 416.2,
         "width": 1264.0,
@@ -1088,13 +1088,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "95d0b6eb-dab0-463a-b39f-80715df3053b",
+           "id": "ff060a34-b1af-428a-a2ae-3d69fc49b406",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "b348e919-fabd-4f10-9ad6-302d7591c686",
+              "id": "c14c8f9d-976b-4a43-8347-42e2bac176af",
               "text": "Cooling vapor turns into droplets that form clouds.",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1115,7 +1115,7 @@
       },
       {
        "textarea": {
-        "id": "43a2fdc1-346a-41c3-aaf7-df1feef4453c",
+        "id": "684a5abc-5d86-4867-989c-bb24a9a90584",
         "x": 101.0,
         "y": 529.2,
         "width": 384.0,
@@ -1126,13 +1126,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "0a80fb97-3799-48e9-9615-a1e3a2cf62a8",
+           "id": "356b8cc4-884e-430d-971e-bc3ea37968b6",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "e00569c2-009f-4e5c-b36c-2c8f47eccdc0",
+              "id": "158ccbc7-d94e-4aff-88f3-dc5063e0a482",
               "text": "Precipitation",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1153,7 +1153,7 @@
       },
       {
        "textarea": {
-        "id": "2d803226-b68c-472d-b311-3846d1423222",
+        "id": "191f57ef-29a8-4fa2-96f9-da13f85ab2bf",
         "x": 524.0,
         "y": 529.2,
         "width": 1264.0,
@@ -1164,13 +1164,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "21a3ae3c-0f5b-432d-b925-c9d6b8d326ad",
+           "id": "30d1f112-d455-49c5-8df9-391898863703",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "abd0253f-2f10-4c20-b89e-02796bc5b246",
+              "id": "2ac107ce-5d07-4194-a23a-d1b5a8a9b159",
               "text": "Heavy droplets fall as rain, snow, sleet or hail.",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1191,7 +1191,7 @@
       },
       {
        "textarea": {
-        "id": "bab9ff69-85c7-420b-8eb0-ea2a29487e1b",
+        "id": "246d8b1a-5592-4cdf-92ee-f449bca5302d",
         "x": 101.0,
         "y": 642.2,
         "width": 384.0,
@@ -1202,13 +1202,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "ae7740f5-8972-4961-87b0-cea3c20e9486",
+           "id": "f8a11342-4470-453a-a547-925c75bf2805",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "a201cff1-3218-4f3f-b667-7642e322c646",
+              "id": "d60dc792-54bd-48f2-b4ac-302dac93a101",
               "text": "Collection",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1229,7 +1229,7 @@
       },
       {
        "textarea": {
-        "id": "1609b0a3-e4c4-466c-8f91-4e33edcabfbe",
+        "id": "4841cfea-6516-4fae-b79d-93a6fcb3ff0a",
         "x": 524.0,
         "y": 642.2,
         "width": 1264.0,
@@ -1240,13 +1240,13 @@
         "text-blocks-container": [
          {
           "paragraph": {
-           "id": "f16c0272-3100-4496-84af-ff167a04c488",
+           "id": "bea1ec35-a82b-4a5c-8697-fd0b3f8ffb5e",
            "font-size": 32.0,
            "text-align": "left",
            "text-list-container": [
             {
              "text": {
-              "id": "e828afb9-6a9e-4ef7-8981-b27b964f2f02",
+              "id": "e8b297ab-6d16-4952-a50c-7cf7358911a5",
               "text": "Water gathers in oceans, lakes, rivers and groundwater.",
               "font-family": "Segoe UI",
               "font-size": 32.0,
@@ -1269,7 +1269,7 @@
      "backgrounds": [
       {
        "background": {
-        "id": "decd16ea-0d1e-442f-8001-c83345e3bb93",
+        "id": "8ca12ec4-09fb-4637-9308-ebe6add0c829",
         "type": "color",
         "fill": "#FFFFFF",
         "opacity": 1.0
@@ -1282,15 +1282,15 @@
   "additional": [
    {
     "element": {
-     "id": "9e60be00-74a2-4861-8e92-fe9918f3b7a3",
-     "ref": "da8fd9df-ce45-4d79-9920-3d6df9a4f0eb",
+     "id": "10a05b47-b5f0-460b-bcaa-05cc2c35a772",
+     "ref": "aa4e2bce-f1b6-4848-a02f-84149db2380b",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false,
      "animation-container": [
       {
        "animation": {
-        "id": "1a08ce53-b6fe-42f2-ac9f-97fc17917ffa",
+        "id": "22ec3c7b-696b-4705-affc-79b9c8a25aec",
         "type": "fade-in",
         "duration": "2"
        }
@@ -1300,15 +1300,15 @@
    },
    {
     "element": {
-     "id": "0395377b-8ea8-4308-8ee0-760e0af0b121",
-     "ref": "7240f0e5-5a2c-4c2e-b77d-8d68634b7688",
+     "id": "1c50ed3a-da32-4341-aa9e-bb1264344265",
+     "ref": "2ef01ed7-ff70-4e16-8904-c5bbb89c0a22",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false,
      "animation-container": [
       {
        "animation": {
-        "id": "0fba44ff-5880-44e9-8752-e42f90aa3548",
+        "id": "58e3a425-dfb4-4747-9332-045c0d527591",
         "type": "fade-in",
         "duration": "2"
        }
@@ -1318,15 +1318,15 @@
    },
    {
     "element": {
-     "id": "f324f1da-e68e-484a-8715-44196a3cba00",
-     "ref": "4ad58f21-5314-4754-934f-dc9491d33a8c",
+     "id": "6b5441a5-f198-4fcc-992b-97cd7f268228",
+     "ref": "721112a4-c8ef-4c2b-82a3-401ec7e0d9e1",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false,
      "animation-container": [
       {
        "animation": {
-        "id": "cc01ea05-0b3b-462b-bfc9-856e9550d645",
+        "id": "d77f45e4-f887-46e8-819d-6df4317a2938",
         "type": "fade-in",
         "duration": "2"
        }
@@ -1336,15 +1336,15 @@
    },
    {
     "element": {
-     "id": "8707139f-ef49-4e58-a99d-2f84381585ba",
-     "ref": "50f44888-7e91-4cb6-95d5-0868e9ed9407",
+     "id": "b1785ded-d21d-409f-889b-08ed70d6a7d2",
+     "ref": "2eee2f5a-151f-4bae-bb4c-0e669e874360",
      "is-locked": false,
      "is-moveable-locked": false,
      "is-replicate": false,
      "animation-container": [
       {
        "animation": {
-        "id": "eb03476a-098f-43f2-a6d7-54f53baa4fb2",
+        "id": "3803d6e2-df2e-42a5-b492-f1a0019347df",
         "type": "fade-in",
         "duration": "2"
        }
@@ -1354,8 +1354,8 @@
    },
    {
     "element": {
-     "id": "b77caf15-b8c0-4a49-9b13-9a461bdfabd6",
-     "ref": "37fbe5f1-5de3-413f-a640-e85d658077ab",
+     "id": "d3b59cb2-2b70-4645-a193-5f85d89e984e",
+     "ref": "09c08e54-6086-499c-93ea-29bff834d10c",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1364,8 +1364,8 @@
    },
    {
     "element": {
-     "id": "d23aa2df-e740-47a2-b2f1-6b641b51e93d",
-     "ref": "3c955791-05a8-435f-be5a-9307dd2fb9ae",
+     "id": "b4656e01-27c9-46fc-b957-1b7f50de457b",
+     "ref": "cad41e03-0151-49d6-ae14-a8eb782b0b1b",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1374,8 +1374,8 @@
    },
    {
     "element": {
-     "id": "36a6565e-2e68-47e6-8c29-7188ff1d61e6",
-     "ref": "1d8ae365-7103-430a-aa6b-c0d954d0a71b",
+     "id": "d5d1b57a-bbc2-408c-9533-4b368750735c",
+     "ref": "f703ada2-eb9c-4332-87f0-de481de2b739",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1384,8 +1384,8 @@
    },
    {
     "element": {
-     "id": "0e09c1c2-a175-4e24-9d49-7fe3119f155c",
-     "ref": "63882037-208c-4e7b-98ae-1c1424990f74",
+     "id": "0fc9d714-de25-401b-897e-60c2f97c6176",
+     "ref": "ed0d5400-52e0-4bfe-988b-134b3381fc7a",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1394,8 +1394,8 @@
    },
    {
     "element": {
-     "id": "5e88ed5a-8429-497b-a997-04dfda6005b5",
-     "ref": "d3af94ad-1d56-4f6b-b46a-dc960dccfc37",
+     "id": "597f632a-35d1-429b-9b97-d1bad914555b",
+     "ref": "76b732c8-f9a9-440e-84ee-e33d1d7dc3dc",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1404,8 +1404,8 @@
    },
    {
     "element": {
-     "id": "3798538e-41da-4d9c-92bf-e4c1c798c138",
-     "ref": "19a925c9-581e-4755-bfcb-6913d4781ce9",
+     "id": "d7ebc4cd-0a61-43b0-93a6-e6864ca33afc",
+     "ref": "69cbe3d0-3e0b-4ecc-a327-74e887a4deae",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1414,8 +1414,8 @@
    },
    {
     "element": {
-     "id": "23854ce2-9605-4b30-a232-4cab053e4abf",
-     "ref": "98c03bba-cc22-40e8-94eb-206ef145f4c6",
+     "id": "117d3f61-6034-408d-9571-8ee95f63032c",
+     "ref": "0ecfc3e2-9daf-447e-92da-bbfa9c5993ac",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1424,8 +1424,8 @@
    },
    {
     "element": {
-     "id": "d0b16b61-5cdb-4954-9304-3b0d4c34dae5",
-     "ref": "fe4094be-a17b-4a2b-bb54-c4be14ed757c",
+     "id": "609c6935-71a8-4d53-b65d-971f6cf41e05",
+     "ref": "322e4bc8-df5d-4d6d-a104-18ef2b70f913",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1434,8 +1434,8 @@
    },
    {
     "element": {
-     "id": "6e62af57-8338-42b3-9d3b-b47082d12bc3",
-     "ref": "5912e9fe-7cbb-4627-b26a-774c3f7b8474",
+     "id": "6ad08bf7-5dbe-43c0-8c71-8b8270561062",
+     "ref": "592316df-ec8f-4100-aee3-cd24731033e9",
      "flip": "none",
      "is-locked": false,
      "is-moveable-locked": false,
@@ -1446,8 +1446,8 @@
   "links": [
    {
     "link": {
-     "id": "c0f17a3d-e0ec-4927-8038-b29230ef50b4",
-     "ref": "7edb02d4-5789-494a-8651-a82d4f0ded8c",
+     "id": "def5819f-6723-4196-a116-90d3b72245c1",
+     "ref": "6d5d3528-0db5-47e2-80dc-da8e129df94f",
      "link-type": "page",
      "page-id": "2"
     }
