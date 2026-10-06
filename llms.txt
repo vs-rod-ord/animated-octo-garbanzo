@@ -31,7 +31,8 @@ for few-shot grounding.
   Paste-ready stdlib-only Python helpers + a validator you run before delivering:
   [starter/olf_starter.py](starter/olf_starter.py) (always),
   [starter/olf_starter_extras.py](starter/olf_starter_extras.py) (tables, images,
-  animation, links), [starter/olf_validate.py](starter/olf_validate.py) (always,
+  animation, links), [starter/olf_starter_svg.py](starter/olf_starter_svg.py)
+  (only for SVG icons/shapes/images), [starter/olf_validate.py](starter/olf_validate.py) (always,
   fix until PASS). Fetch them as raw text and paste verbatim into your sandbox.
 - [examples/water-cycle-full.md](examples/water-cycle-full.md) — complete 3-page
   worked example: [starter/example_build.py](starter/example_build.py) →
@@ -47,6 +48,10 @@ for few-shot grounding.
 - [elements/table.md](elements/table.md) — `table:`, merges, the three index spaces
 - [elements/animate-and-link.md](elements/animate-and-link.md) — `animate:` and
   `link:` attributes (attach to any element above except `bullets`)
+- [elements/ai-pen.md](elements/ai-pen.md) — `AI-pen`: true-vector SVG icons,
+  custom shapes, rounded-rect cards (starter helper: `starter/olf_starter_svg.py`)
+- [elements/svg-image.md](elements/svg-image.md) — SVG as an `image` element:
+  what renders, what fails (`<text>`, `<pattern>`, `<use>`, animation), the 8x rule
 - [elements/raw-passthrough.md](elements/raw-passthrough.md) — `raw:`, the Layer-3
   escape hatch, and its mechanical safety checks
 
@@ -64,6 +69,9 @@ for few-shot grounding.
   a `curve` with no explicit `stroke-opacity` renders invisible
 - [constraints/raw-element-mechanical-checks.md](constraints/raw-element-mechanical-checks.md)
 - [constraints/android-vs-windows-divergence.md](constraints/android-vs-windows-divergence.md)
+- [constraints/ai-pen-path-rules.md](constraints/ai-pen-path-rules.md) —
+  **read before using any SVG path in AI-pen**: allowed commands, non-negative
+  coords, the donut-hole trap, how to vet a stock icon
 - [constraints/ai-pen-color-format.md](constraints/ai-pen-color-format.md)
 - [constraints/font-portability.md](constraints/font-portability.md)
 - [constraints/deferred-features-not-in-dsl.md](constraints/deferred-features-not-in-dsl.md) —
