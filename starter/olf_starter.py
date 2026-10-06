@@ -29,6 +29,9 @@ from datetime import datetime
 W, H = 1920, 1080
 MATRIX = "1,0,0,0,1,0,0,0,1"
 MARGIN, GUTTER = 80, 40
+# myViewBoard's bottom toolbars cover roughly the lowest ~190 canvas units of a normal
+# window. Keep anything the user must READ or TAP above this line (decor may go below).
+SAFE_BOTTOM = 880
 _MSEP = "\u300e\u300e\u300e"          # THREE U+300E chars. Never change.
 
 
