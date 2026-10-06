@@ -49,7 +49,13 @@ Layer 1 templates: `title_slide`, `bullet_list`, `two_column`, `section_marker`,
 `blank`. Layer 3 `raw:` is a literal `content.json` element passthrough, usable
 for anything not in Layer 2.
 
-**Not yet supported by the DSL** — `flashcard`, `poll`, AI-pen/SVG icon import,
+**SVG** (vector icons/shapes via `AI-pen`, and SVG `image` elements) is covered
+outside the DSL: read [`elements/ai-pen.md`](elements/ai-pen.md),
+[`elements/svg-image.md`](elements/svg-image.md) and
+[`constraints/ai-pen-path-rules.md`](constraints/ai-pen-path-rules.md), and build with
+`starter/olf_starter_svg.py`.
+
+**Not yet supported by the DSL** — `flashcard`, `poll`,
 `group`, per-element rotation, and `page.tools` (Calculator etc.) are deferred to
 a future version. See
 [`constraints/deferred-features-not-in-dsl.md`](constraints/deferred-features-not-in-dsl.md)
@@ -142,7 +148,8 @@ every time.
 Every `elements/*.md` file now includes a "Worked `content.json`" section with
 a literal, engine-sourced example — `text`, `bullets`, every `shape` kind
 (`polygon`/`ellipse`/`quadrant`/`pseudo3Dshape`/`rounded-rect`), `line`,
-`curve`, `image`, `table` (including merges), and `animate:`/`link:`. Prefer
+`curve`, `image`, `table` (including merges), `animate:`/`link:`, and `AI-pen`
+(icons, rounded rectangles) plus SVG `image` elements. Prefer
 copying the field structure from these examples over reconstructing it from
 the DSL's semantic description alone — they're taken directly from the
 reference engine's own construction code, not reverse-engineered from
@@ -151,8 +158,7 @@ behavior.
 **Still gap-level, lower confidence:** `flashcard` and `poll` have literal JSON
 too (see
 [`constraints/deferred-features-not-in-dsl.md`](constraints/deferred-features-not-in-dsl.md)),
-but AI-pen/SVG icon import (beyond the `rounded-rect` case in
-`elements/shape.md`), `group`, per-element rotation, and `page.tools` have no
+but `group`, per-element rotation, and `page.tools` have no
 worked example anywhere in this repo. For those, say so explicitly rather than
 inventing a plausible-looking JSON shape from general knowledge — several real
 bugs in this project's history came from exactly that kind of guess.
