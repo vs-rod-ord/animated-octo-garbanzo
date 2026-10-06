@@ -10,11 +10,21 @@ metadata:
 
 # OLF DSL Specification (v1)
 
+> **How to use this file in a chat sandbox (the default path).** This describes the
+> reference engine's YAML language. You almost certainly **cannot run that engine**
+> (no network, no packages). Treat this file as the **vocabulary and semantics** —
+> what a `bullets` list, a `shape`, a role preset, a template *means* and what
+> defaults it implies — and build the real file with the paste-in helpers in
+> [`spec/starter-helpers.md`](starter-helpers.md), which implement the same rules.
+> Where the text below says "call the engine", read it as "use the starter helpers
+> and run the validator".
+
 A compact YAML language for generating myViewBoard `.olf` files. Write a small
 declarative spec; a deterministic engine expands it into a full, validated
 `content.json` and zips it. All layout math — font metrics, RTF, element IDs,
 boundary fields, color-format conversion — lives in the engine, never in the
-spec. Do not attempt to compute these values yourself; call the engine.
+spec. If you *do* have the engine (an MCP tool or a local checkout), call it
+rather than computing these values yourself.
 
 ## Design principles
 
