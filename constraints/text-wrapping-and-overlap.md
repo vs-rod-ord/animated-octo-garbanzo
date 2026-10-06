@@ -53,12 +53,17 @@ def estimate_textarea_height(text, font_size_pt, box_width_px):
 ```
 
 - `0.55` for average character width and `1.8×pt` for line pitch are both
-  **deliberately on the generous side**. The one real measured data point this
-  corpus has is Segoe UI's confirmed line pitch: `78.0px = 1.7727 × font-size
-  in points` at `fs=44pt` — `1.8×pt` is close to that and rounds up slightly
-  rather than down, on purpose. Different fonts and bold weights will vary
-  somewhat; err toward reserving more vertical space, not less, since a small
+  **deliberately on the generous side**. `1.8×pt` is Segoe UI's measured pitch
+  (`1.7727`) rounded up. **Other fonts differ — Open Sans is `1.818`, so `1.8` would
+  slightly under-reserve it**; the starter helpers use a per-font table
+  (`pitch_ratio(font)`, in
+  [`width-factor-and-line-pitch.md`](width-factor-and-line-pitch.md)) and
+  `1.85` for unknown fonts. **Bold does not change the pitch**; it only widens glyphs,
+  so for bold text use `0.60` instead of `0.55` in the width estimate (the starter's
+  `bold=True`). Err toward reserving more vertical space, not less, since a small
   gap is harmless but an overlap is a visible bug.
+- Prefer the starter's `estimate_height(text, pt, width, bold=…, font=…)` over this
+  snippet; the snippet above is the Segoe-UI-regular special case.
 - `textwrap.wrap(..., break_long_words=True)` handles the case of a single
   very long word or URL that doesn't naturally break — without
   `break_long_words=True`, a long unbroken token can make the estimate wrong
