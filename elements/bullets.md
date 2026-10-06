@@ -5,7 +5,7 @@ metadata:
   type: element
   status: proven
   dsl_support: full
-  related: [spec/dsl-spec, elements/text, elements/shape]
+  related: [spec/dsl-spec, elements/text, elements/shape, constraints/text-wrapping-and-overlap]
 ---
 
 # `bullets`
@@ -25,6 +25,12 @@ Expands to one textarea per item plus one shape per item — this is a compound
 element, not a single JSON element. Row pitch is computed from real font
 metrics; items may wrap to multiple lines, and pitch adapts per item rather than
 using a fixed value. `number` bullets are label textareas, not shape+number.
+**Bullet items are narrow (often ~1200 canvas units or less) and wrap
+readily** — when generating `content.json` directly, estimate each item's
+wrapped height per
+[`constraints/text-wrapping-and-overlap.md`](../constraints/text-wrapping-and-overlap.md)
+before placing the next item's bullet + textarea pair, or consecutive items
+will overlap as soon as any item's text wraps to two lines.
 
 ## Rules
 
