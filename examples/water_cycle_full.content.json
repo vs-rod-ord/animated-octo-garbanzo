@@ -1,0 +1,1458 @@
+{
+ "olf": {
+  "width": 1920.0,
+  "height": 1080.0,
+  "viewbox": "0 0 1920 1080",
+  "meta": {
+   "id": "c716cbf6-8f99-47b7-8201-b492d64a31fc",
+   "create-platform": "myViewBoard for Windows",
+   "create-by-library": "Viewsonic Open Learning Format library",
+   "create-time": "10/6/2026 04:24:11 PM",
+   "modify-time": "10/6/2026 04:24:11 PM",
+   "create-library-version": "0.0.1.50",
+   "create-version": "3.4.9.603 [64 bits]",
+   "modify-version": "3.4.9.603 [64 bits]",
+   "modify-platform": "myViewBoard for Windows",
+   "description": "The Water Cycle"
+  },
+  "pageset": [
+   {
+    "page": {
+     "id": "a4ba09ad-1b30-4731-b6e1-df5681138c79",
+     "matrix": "1,0,0,0,1,0,0,0,1",
+     "viewbox": "0,0,1920,1080",
+     "is-hidden": false,
+     "elements": [
+      {
+       "textarea": {
+        "id": "7edb02d4-5789-494a-8651-a82d4f0ded8c",
+        "x": 80.0,
+        "y": 80.0,
+        "width": 1760.0,
+        "height": 97.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs108 The Water Cycle\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "716e067a-7e06-44ae-86fa-7a575f377a9f",
+           "font-size": 72.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "59771145-ee55-4402-8899-3153c557fb43",
+              "text": "The Water Cycle",
+              "font-family": "Segoe UI",
+              "font-size": 72.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "19911211-0831-441f-9cd7-4775611d12d1",
+        "x": 80.0,
+        "y": 217.2,
+        "width": 1760.0,
+        "height": 54.0,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red71\\green85\\blue105;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs60 Water moves continuously between the oceans, the air and the land.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "43da7130-b0ac-4db7-aab6-d05989bd5db0",
+           "font-size": 40.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "a876c85a-eef9-48f0-8763-21c084237f56",
+              "text": "Water moves continuously between the oceans, the air and the land.",
+              "font-family": "Segoe UI",
+              "font-size": 40.0,
+              "fill": "#FF475569",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "da8fd9df-ce45-4d79-9920-3d6df9a4f0eb",
+        "x": 80.0,
+        "y": 311.2,
+        "width": 1760.0,
+        "height": 100.8,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs56 1.  Evaporation: heat from the sun warms oceans, lakes, and rivers, turning liquid water into invisible water vapor that rises into the air.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "c5c46b96-4048-40fb-b447-94f5f744caf0",
+           "font-size": 37.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "1a25fa61-b8b7-41fa-826e-f58d9cd47ab4",
+              "text": "1.  Evaporation: heat from the sun warms oceans, lakes, and rivers, turning liquid water into invisible water vapor that rises into the air.",
+              "font-family": "Segoe UI",
+              "font-size": 37.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "7240f0e5-5a2c-4c2e-b77d-8d68634b7688",
+        "x": 80.0,
+        "y": 436.0,
+        "width": 1760.0,
+        "height": 100.8,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs56 2.  Condensation: as vapor rises it cools and condenses into tiny droplets that gather to form clouds.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "b6c1b434-e6b5-42f4-9acf-cd3b97b4a556",
+           "font-size": 37.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "841be19f-2852-4b3a-933d-b5c47a5578b7",
+              "text": "2.  Condensation: as vapor rises it cools and condenses into tiny droplets that gather to form clouds.",
+              "font-family": "Segoe UI",
+              "font-size": 37.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "4ad58f21-5314-4754-934f-dc9491d33a8c",
+        "x": 80.0,
+        "y": 560.8,
+        "width": 1760.0,
+        "height": 50.4,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs56 3.  Precipitation: when droplets grow heavy they fall as rain, snow, sleet or hail.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "00aca1bd-e552-4d45-a152-0f478f9ae823",
+           "font-size": 37.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "997d57a1-6b92-4b40-bca8-396887609015",
+              "text": "3.  Precipitation: when droplets grow heavy they fall as rain, snow, sleet or hail.",
+              "font-family": "Segoe UI",
+              "font-size": 37.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "50f44888-7e91-4cb6-95d5-0868e9ed9407",
+        "x": 80.0,
+        "y": 635.1999999999999,
+        "width": 1760.0,
+        "height": 100.8,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs56 4.  Collection: water runs off or soaks into the ground and collects in oceans, lakes and rivers.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "bc30fdff-03c3-4f8e-a919-f2f7b2db6d92",
+           "font-size": 37.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "5adbf18e-1365-44da-903e-d164cac0d4aa",
+              "text": "4.  Collection: water runs off or soaks into the ground and collects in oceans, lakes and rivers.",
+              "font-family": "Segoe UI",
+              "font-size": 37.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      }
+     ],
+     "backgrounds": [
+      {
+       "background": {
+        "id": "e6725755-e02a-43b7-8c4c-aebc502a6d6f",
+        "type": "color",
+        "fill": "#FFFFFF",
+        "opacity": 1.0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "page": {
+     "id": "e8b5e127-9252-4ee9-bd7d-e7b1d85b3cb7",
+     "matrix": "1,0,0,0,1,0,0,0,1",
+     "viewbox": "0,0,1920,1080",
+     "is-hidden": false,
+     "elements": [
+      {
+       "textarea": {
+        "id": "746cc83c-59c3-43ec-96a4-5e5cd36399da",
+        "x": 80.0,
+        "y": 80.0,
+        "width": 1760.0,
+        "height": 79.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs88 How the cycle flows\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "c87054a8-f110-4a77-97bd-ee0bc29ecc8c",
+           "font-size": 59.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "b7493c82-cac7-4ad1-a173-45a0614e0466",
+              "text": "How the cycle flows",
+              "font-family": "Segoe UI",
+              "font-size": 59.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "ellipse": {
+        "id": "37fbe5f1-5de3-413f-a640-e85d658077ab",
+        "is-pie": false,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 383.0,
+        "height": 163.0,
+        "rx": 190.0,
+        "ry": 80.0,
+        "cx": 190.0,
+        "cy": 80.0,
+        "angle-start": 0.0,
+        "angle-end": 359.9,
+        "fill": "#FDE68A",
+        "stroke": "#334155",
+        "stroke-width": 3.0,
+        "fill-opacity": 1.0,
+        "stroke-opacity": 1.0,
+        "show-length-measurement": "false『『『true,False,『『『true,False,",
+        "show-angle-measurement": "",
+        "matrix": "1,0,210,0,1,620,0,0,1",
+        "boundary": "208.5 618.5 591.5 781.5"
+       }
+      },
+      {
+       "textarea": {
+        "id": "70e29e7b-ea42-4d82-9511-51f412c73a10",
+        "x": 230.0,
+        "y": 676.6,
+        "width": 340.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Evaporation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "1c8ce660-c695-46ae-8140-bd8165371c7b",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "f1fe3507-07f0-4fd3-89a8-4cd77ff2ac64",
+              "text": "Evaporation",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF0F172A",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "ellipse": {
+        "id": "3c955791-05a8-435f-be5a-9307dd2fb9ae",
+        "is-pie": false,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 383.0,
+        "height": 163.0,
+        "rx": 190.0,
+        "ry": 80.0,
+        "cx": 190.0,
+        "cy": 80.0,
+        "angle-start": 0.0,
+        "angle-end": 359.9,
+        "fill": "#E2E8F0",
+        "stroke": "#334155",
+        "stroke-width": 3.0,
+        "fill-opacity": 1.0,
+        "stroke-opacity": 1.0,
+        "show-length-measurement": "false『『『true,False,『『『true,False,",
+        "show-angle-measurement": "",
+        "matrix": "1,0,770,0,1,300,0,0,1",
+        "boundary": "768.5 298.5 1151.5 461.5"
+       }
+      },
+      {
+       "textarea": {
+        "id": "83f4f5e3-b59a-4f73-9a18-77483d7734fb",
+        "x": 790.0,
+        "y": 356.6,
+        "width": 340.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Condensation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "32ca9cde-8637-473b-b86c-98ae4d2cd4bd",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "4fe96df1-df8d-4884-bc0f-969ea1905e18",
+              "text": "Condensation",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF0F172A",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "ellipse": {
+        "id": "1d8ae365-7103-430a-aa6b-c0d954d0a71b",
+        "is-pie": false,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 383.0,
+        "height": 163.0,
+        "rx": 190.0,
+        "ry": 80.0,
+        "cx": 190.0,
+        "cy": 80.0,
+        "angle-start": 0.0,
+        "angle-end": 359.9,
+        "fill": "#BAE6FD",
+        "stroke": "#334155",
+        "stroke-width": 3.0,
+        "fill-opacity": 1.0,
+        "stroke-opacity": 1.0,
+        "show-length-measurement": "false『『『true,False,『『『true,False,",
+        "show-angle-measurement": "",
+        "matrix": "1,0,1330,0,1,620,0,0,1",
+        "boundary": "1328.5 618.5 1711.5 781.5"
+       }
+      },
+      {
+       "textarea": {
+        "id": "7030368e-3822-4af1-bf4a-ee611d671214",
+        "x": 1350.0,
+        "y": 676.6,
+        "width": 340.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Precipitation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "d80f4db2-a92c-49ab-a45f-0f2b3f2b85e2",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "ec87ee4c-3fca-4d1a-a9e3-c2405c406fdb",
+              "text": "Precipitation",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF0F172A",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "ellipse": {
+        "id": "63882037-208c-4e7b-98ae-1c1424990f74",
+        "is-pie": false,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 383.0,
+        "height": 163.0,
+        "rx": 190.0,
+        "ry": 80.0,
+        "cx": 190.0,
+        "cy": 80.0,
+        "angle-start": 0.0,
+        "angle-end": 359.9,
+        "fill": "#BBF7D0",
+        "stroke": "#334155",
+        "stroke-width": 3.0,
+        "fill-opacity": 1.0,
+        "stroke-opacity": 1.0,
+        "show-length-measurement": "false『『『true,False,『『『true,False,",
+        "show-angle-measurement": "",
+        "matrix": "1,0,770,0,1,820,0,0,1",
+        "boundary": "768.5 818.5 1151.5 981.5"
+       }
+      },
+      {
+       "textarea": {
+        "id": "4c7738bc-0c0e-4f14-9b40-74ba10eed952",
+        "x": 790.0,
+        "y": 876.6,
+        "width": 340.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red15\\green23\\blue42;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Collection\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "ae8a349b-f925-4ea2-b807-77538cd980ec",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "d2b03a8d-e64b-472e-be49-53e2ecf937cb",
+              "text": "Collection",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF0F172A",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "curve": {
+        "id": "d3af94ad-1d56-4f6b-b46a-dc960dccfc37",
+        "x": 297.0,
+        "y": 397.0,
+        "width": 506.0,
+        "height": 231.0,
+        "stroke-width": 6.0,
+        "stroke-opacity": 1.0,
+        "stroke-linecap-start": "round",
+        "stroke-linecap-end": "arrow",
+        "start-point": "3.0,228.0",
+        "second-point": "223.0,83.0",
+        "end-point": "503.0,3.0",
+        "stroke": "#0369A1",
+        "matrix": "1,0,0,0,1,0,0,0,1"
+       }
+      },
+      {
+       "curve": {
+        "id": "19a925c9-581e-4755-bfcb-6913d4781ce9",
+        "x": 1117.0,
+        "y": 397.0,
+        "width": 446.0,
+        "height": 226.0,
+        "stroke-width": 6.0,
+        "stroke-opacity": 1.0,
+        "stroke-linecap-start": "round",
+        "stroke-linecap-end": "arrow",
+        "start-point": "3.0,3.0",
+        "second-point": "283.0,83.0",
+        "end-point": "443.0,223.0",
+        "stroke": "#0369A1",
+        "matrix": "1,0,0,0,1,0,0,0,1"
+       }
+      },
+      {
+       "curve": {
+        "id": "98c03bba-cc22-40e8-94eb-206ef145f4c6",
+        "x": 1147.0,
+        "y": 767.0,
+        "width": 296.0,
+        "height": 136.0,
+        "stroke-width": 6.0,
+        "stroke-opacity": 1.0,
+        "stroke-linecap-start": "round",
+        "stroke-linecap-end": "arrow",
+        "start-point": "293.0,3.0",
+        "second-point": "153.0,113.0",
+        "end-point": "3.0,133.0",
+        "stroke": "#0369A1",
+        "matrix": "1,0,0,0,1,0,0,0,1"
+       }
+      },
+      {
+       "curve": {
+        "id": "fe4094be-a17b-4a2b-bb54-c4be14ed757c",
+        "x": 377.0,
+        "y": 782.0,
+        "width": 396.0,
+        "height": 121.0,
+        "stroke-width": 6.0,
+        "stroke-opacity": 1.0,
+        "stroke-linecap-start": "round",
+        "stroke-linecap-end": "arrow",
+        "start-point": "393.0,118.0",
+        "second-point": "143.0,98.0",
+        "end-point": "3.0,3.0",
+        "stroke": "#0369A1",
+        "matrix": "1,0,0,0,1,0,0,0,1"
+       }
+      }
+     ],
+     "backgrounds": [
+      {
+       "background": {
+        "id": "7d97fd94-09fb-4748-a27d-68b3cbd6427b",
+        "type": "color",
+        "fill": "#F0F9FF",
+        "opacity": 1.0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "page": {
+     "id": "f63c7328-6cd6-4253-a21c-c456bb06b0a3",
+     "matrix": "1,0,0,0,1,0,0,0,1",
+     "viewbox": "0,0,1920,1080",
+     "is-hidden": false,
+     "elements": [
+      {
+       "textarea": {
+        "id": "7e07be21-0724-4000-adcc-3f85d27113b9",
+        "x": 80.0,
+        "y": 80.0,
+        "width": 1760.0,
+        "height": 79.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs88 Summary\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "1798fe37-ef24-4a13-8050-67c2fa57d4c0",
+           "font-size": 59.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "2d8abdb4-f9f6-421f-9f57-b68319ad3e98",
+              "text": "Summary",
+              "font-family": "Segoe UI",
+              "font-size": 59.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "table": {
+        "id": "5912e9fe-7cbb-4627-b26a-774c3f7b8474",
+        "x": 80.0,
+        "y": 199.2,
+        "width": 1729.0,
+        "height": 538.0,
+        "rows": 5,
+        "columns": 2,
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "stroke": "#000000",
+        "stroke-width": 3.0,
+        "stroke-opacity": 1.0,
+        "column-lengths-array": "420 1300",
+        "row-lengths-array": "80 110 110 110 110",
+        "column-min-lengths-array": "1 1",
+        "row-min-lengths-array": "1 1 1 1 1",
+        "cell-background-container": [
+         {
+          "cell-background": {
+           "id": "1b6c6748-9142-48f2-b270-71b1561c80f2",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 0,
+           "cell-row": 0
+          }
+         },
+         {
+          "cell-background": {
+           "id": "8737539c-3d03-49a1-b045-d69839411ad0",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 0,
+           "cell-row": 1
+          }
+         },
+         {
+          "cell-background": {
+           "id": "bcf99694-466e-4944-b818-42ed613de598",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 0,
+           "cell-row": 2
+          }
+         },
+         {
+          "cell-background": {
+           "id": "f54b11fd-62dc-42c3-8d41-78035a2c6d7f",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 0,
+           "cell-row": 3
+          }
+         },
+         {
+          "cell-background": {
+           "id": "c2a71e88-4f2c-4e68-a24d-6a1a7ec5d0dc",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 0,
+           "cell-row": 4
+          }
+         },
+         {
+          "cell-background": {
+           "id": "ca7b8e2b-8dae-4b51-b4ca-5a7c0db9ef98",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 1,
+           "cell-row": 0
+          }
+         },
+         {
+          "cell-background": {
+           "id": "e1fe8bef-0c1c-4213-aed3-cbc7544ecfa5",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 1,
+           "cell-row": 1
+          }
+         },
+         {
+          "cell-background": {
+           "id": "23a837cc-0329-46df-82c0-2eb2f26db835",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 1,
+           "cell-row": 2
+          }
+         },
+         {
+          "cell-background": {
+           "id": "6a623b7c-eff9-444a-b97e-f10ed85c5ed7",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 1,
+           "cell-row": 3
+          }
+         },
+         {
+          "cell-background": {
+           "id": "e8849025-99b2-4433-bc7a-a8f627b3a441",
+           "background": "#FFFFFF",
+           "background-opacity": 0.2,
+           "cell-column": 1,
+           "cell-row": 4
+          }
+         }
+        ],
+        "merge-cell-container": [],
+        "cell-content-container": [
+         {
+          "cell-content": {
+           "id": "72643dec-b069-4adf-9f22-c00e32c9b6ab",
+           "cell-row": 0,
+           "cell-column": 0,
+           "ref": "b4278bf8-225b-49b5-a8d7-02b28e6e1f5b"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "3a234367-54c3-48d2-b1da-c21839cb53e3",
+           "cell-row": 0,
+           "cell-column": 2,
+           "ref": "e62edf13-00ac-4e80-b97c-99656859c0d2"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "df771bd9-f2ab-4493-9e77-33a1685678fc",
+           "cell-row": 2,
+           "cell-column": 0,
+           "ref": "b7a24222-4450-4c1b-86c8-33467fc2e09f"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "20d5bcdd-61b5-4002-a8c5-51ce17350a14",
+           "cell-row": 2,
+           "cell-column": 2,
+           "ref": "391c45d7-afb5-4241-bfbf-c64caccde7b5"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "ce249ee0-51f7-4c16-b00c-bb42514e4804",
+           "cell-row": 4,
+           "cell-column": 0,
+           "ref": "a1559985-7529-4b07-88c7-82e34fe2bcbd"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "a1f0dc60-5173-4007-b1ba-4fc97048f7a7",
+           "cell-row": 4,
+           "cell-column": 2,
+           "ref": "94f2137b-80f6-4982-be55-3f3481039f2d"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "fb9e80f8-32f5-4d2c-b3c9-3f5e8b3c973c",
+           "cell-row": 6,
+           "cell-column": 0,
+           "ref": "43a2fdc1-346a-41c3-aaf7-df1feef4453c"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "6322b488-98b5-48c5-95d7-8386b0f01ab4",
+           "cell-row": 6,
+           "cell-column": 2,
+           "ref": "2d803226-b68c-472d-b311-3846d1423222"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "23790a27-c75c-472d-8332-7c9ba5797b62",
+           "cell-row": 8,
+           "cell-column": 0,
+           "ref": "bab9ff69-85c7-420b-8eb0-ea2a29487e1b"
+          }
+         },
+         {
+          "cell-content": {
+           "id": "1eb2d93b-c005-40d8-bc05-bf0df05aacd4",
+           "cell-row": 8,
+           "cell-column": 2,
+           "ref": "1609b0a3-e4c4-466c-8f91-4e33edcabfbe"
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "b4278bf8-225b-49b5-a8d7-02b28e6e1f5b",
+        "x": 101.0,
+        "y": 220.2,
+        "width": 384.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs48 Stage\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "8312a30f-080a-43d0-9f11-4a3cb7a00f00",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "a90b85d5-5afe-43dc-aad6-ecf5d09ca3d7",
+              "text": "Stage",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "e62edf13-00ac-4e80-b97c-99656859c0d2",
+        "x": 524.0,
+        "y": 220.2,
+        "width": 1264.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs48 What happens\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "a5b8af18-fa90-494d-9913-a3a17ce27786",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "b9b3186d-122b-426f-8aa7-957b1bee3e55",
+              "text": "What happens",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "b7a24222-4450-4c1b-86c8-33467fc2e09f",
+        "x": 101.0,
+        "y": 303.2,
+        "width": 384.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Evaporation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "2f6e9a91-79c7-44a9-aaac-721aebc2bb87",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "8937924b-88e3-468f-b43a-0d7f73a8b690",
+              "text": "Evaporation",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "391c45d7-afb5-4241-bfbf-c64caccde7b5",
+        "x": 524.0,
+        "y": 303.2,
+        "width": 1264.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Sun-warmed liquid water becomes water vapor and rises.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "624f9c2c-8116-4d19-823b-afa90f526ef8",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "f153abbd-2478-439c-a6a7-ed4d282de21f",
+              "text": "Sun-warmed liquid water becomes water vapor and rises.",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "a1559985-7529-4b07-88c7-82e34fe2bcbd",
+        "x": 101.0,
+        "y": 416.2,
+        "width": 384.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Condensation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "8687fd5d-406b-43ae-9f3a-ae9546ac0e3f",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "e56edfbd-eb22-4a78-bf6f-24d9a2c182a7",
+              "text": "Condensation",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "94f2137b-80f6-4982-be55-3f3481039f2d",
+        "x": 524.0,
+        "y": 416.2,
+        "width": 1264.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Cooling vapor turns into droplets that form clouds.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "95d0b6eb-dab0-463a-b39f-80715df3053b",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "b348e919-fabd-4f10-9ad6-302d7591c686",
+              "text": "Cooling vapor turns into droplets that form clouds.",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "43a2fdc1-346a-41c3-aaf7-df1feef4453c",
+        "x": 101.0,
+        "y": 529.2,
+        "width": 384.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Precipitation\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "0a80fb97-3799-48e9-9615-a1e3a2cf62a8",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "e00569c2-009f-4e5c-b36c-2c8f47eccdc0",
+              "text": "Precipitation",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "2d803226-b68c-472d-b311-3846d1423222",
+        "x": 524.0,
+        "y": 529.2,
+        "width": 1264.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Heavy droplets fall as rain, snow, sleet or hail.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "21a3ae3c-0f5b-432d-b925-c9d6b8d326ad",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "abd0253f-2f10-4c20-b89e-02796bc5b246",
+              "text": "Heavy droplets fall as rain, snow, sleet or hail.",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "bab9ff69-85c7-420b-8eb0-ea2a29487e1b",
+        "x": 101.0,
+        "y": 642.2,
+        "width": 384.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Collection\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "ae7740f5-8972-4961-87b0-cea3c20e9486",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "a201cff1-3218-4f3f-b667-7642e322c646",
+              "text": "Collection",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "1609b0a3-e4c4-466c-8f91-4e33edcabfbe",
+        "x": 524.0,
+        "y": 642.2,
+        "width": 1264.0,
+        "height": 43.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs48 Water gathers in oceans, lakes, rivers and groundwater.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "f16c0272-3100-4496-84af-ff167a04c488",
+           "font-size": 32.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "e828afb9-6a9e-4ef7-8981-b27b964f2f02",
+              "text": "Water gathers in oceans, lakes, rivers and groundwater.",
+              "font-family": "Segoe UI",
+              "font-size": 32.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      }
+     ],
+     "backgrounds": [
+      {
+       "background": {
+        "id": "decd16ea-0d1e-442f-8001-c83345e3bb93",
+        "type": "color",
+        "fill": "#FFFFFF",
+        "opacity": 1.0
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "additional": [
+   {
+    "element": {
+     "id": "9e60be00-74a2-4861-8e92-fe9918f3b7a3",
+     "ref": "da8fd9df-ce45-4d79-9920-3d6df9a4f0eb",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false,
+     "animation-container": [
+      {
+       "animation": {
+        "id": "1a08ce53-b6fe-42f2-ac9f-97fc17917ffa",
+        "type": "fade-in",
+        "duration": "2"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "element": {
+     "id": "0395377b-8ea8-4308-8ee0-760e0af0b121",
+     "ref": "7240f0e5-5a2c-4c2e-b77d-8d68634b7688",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false,
+     "animation-container": [
+      {
+       "animation": {
+        "id": "0fba44ff-5880-44e9-8752-e42f90aa3548",
+        "type": "fade-in",
+        "duration": "2"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "element": {
+     "id": "f324f1da-e68e-484a-8715-44196a3cba00",
+     "ref": "4ad58f21-5314-4754-934f-dc9491d33a8c",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false,
+     "animation-container": [
+      {
+       "animation": {
+        "id": "cc01ea05-0b3b-462b-bfc9-856e9550d645",
+        "type": "fade-in",
+        "duration": "2"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "element": {
+     "id": "8707139f-ef49-4e58-a99d-2f84381585ba",
+     "ref": "50f44888-7e91-4cb6-95d5-0868e9ed9407",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false,
+     "animation-container": [
+      {
+       "animation": {
+        "id": "eb03476a-098f-43f2-a6d7-54f53baa4fb2",
+        "type": "fade-in",
+        "duration": "2"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "element": {
+     "id": "b77caf15-b8c0-4a49-9b13-9a461bdfabd6",
+     "ref": "37fbe5f1-5de3-413f-a640-e85d658077ab",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "d23aa2df-e740-47a2-b2f1-6b641b51e93d",
+     "ref": "3c955791-05a8-435f-be5a-9307dd2fb9ae",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "36a6565e-2e68-47e6-8c29-7188ff1d61e6",
+     "ref": "1d8ae365-7103-430a-aa6b-c0d954d0a71b",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "0e09c1c2-a175-4e24-9d49-7fe3119f155c",
+     "ref": "63882037-208c-4e7b-98ae-1c1424990f74",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "5e88ed5a-8429-497b-a997-04dfda6005b5",
+     "ref": "d3af94ad-1d56-4f6b-b46a-dc960dccfc37",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "3798538e-41da-4d9c-92bf-e4c1c798c138",
+     "ref": "19a925c9-581e-4755-bfcb-6913d4781ce9",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "23854ce2-9605-4b30-a232-4cab053e4abf",
+     "ref": "98c03bba-cc22-40e8-94eb-206ef145f4c6",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "d0b16b61-5cdb-4954-9304-3b0d4c34dae5",
+     "ref": "fe4094be-a17b-4a2b-bb54-c4be14ed757c",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "6e62af57-8338-42b3-9d3b-b47082d12bc3",
+     "ref": "5912e9fe-7cbb-4627-b26a-774c3f7b8474",
+     "flip": "none",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   }
+  ],
+  "links": [
+   {
+    "link": {
+     "id": "c0f17a3d-e0ec-4927-8038-b29230ef50b4",
+     "ref": "7edb02d4-5789-494a-8651-a82d4f0ded8c",
+     "link-type": "page",
+     "page-id": "2"
+    }
+   }
+  ],
+  "groups": []
+ }
+}
