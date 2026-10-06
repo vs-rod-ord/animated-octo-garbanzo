@@ -15,7 +15,7 @@ def mc_page(doc, question, options, accent, bg, graphic, answer_key=None):
     p = doc.page(bg=bg)
     p.add(textarea(80, 40, 1400, TITLE_H, "Multiple Choice", 64, bold=True, color=accent))
     p.add(rect(80, DIV_Y, 1760, 4, fill=accent))                    # horizontal divider
-    p.add(rect(968, 220, 4, 820, fill=accent))                      # vertical divider
+    p.add(rect(968, 220, 4, 640, fill=accent))                      # vertical divider (ends above y=880)
     p.y = 220
     p.text(question, size=36, x=LEFT_X, width=LEFT_W, bold=True, color="#1E293B", gap=36)
     for i, opt in enumerate(options):
@@ -28,19 +28,19 @@ def mc_page(doc, question, options, accent, bg, graphic, answer_key=None):
 
 
 def nested_ellipses(p, accent):             # "nucleus"-style diagram
-    p.ellipse(1450, 620, 330, 300, fill="#E0E7FF", stroke=accent, stroke_width=6)
-    p.ellipse(1450, 620, 140, 130, fill="#A5B4FC", stroke=accent, stroke_width=6)
+    p.ellipse(1450, 540, 330, 300, fill="#E0E7FF", stroke=accent, stroke_width=6)
+    p.ellipse(1450, 540, 140, 130, fill="#A5B4FC", stroke=accent, stroke_width=6)
 
 
 def triangle_stack(p, accent):              # "mountain/volcano"-style diagram
-    p.add(polygon([(1100, 960), (1450, 360), (1800, 960)], fill="#FDBA74",
+    p.add(polygon([(1100, 840), (1450, 260), (1800, 840)], fill="#FDBA74",
                   stroke=accent, stroke_width=6))
-    p.add(polygon([(1330, 560), (1450, 360), (1570, 560)], fill="#FCA5A5",
+    p.add(polygon([(1330, 450), (1450, 260), (1570, 450)], fill="#FCA5A5",
                   stroke=accent, stroke_width=6))
 
 
 def ring(p, accent):                        # "membrane"-style diagram (hollow ring)
-    p.ellipse(1450, 620, 300, 300, fill="#DCFCE7", stroke=accent, stroke_width=24)
+    p.ellipse(1450, 540, 300, 300, fill="#DCFCE7", stroke=accent, stroke_width=24)
 
 
 doc = Doc("Multiple choice demo")
