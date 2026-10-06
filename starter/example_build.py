@@ -28,17 +28,17 @@ for sid in step_ids:                           # tap-to-reveal each step
 p2 = doc.page(bg="#F0F9FF")
 p2.title("How the cycle flows", size=44)
 RX, RY = 190, 80
-nodes = [("Evaporation", 400, 700, "#FDE68A"), ("Condensation", 960, 380, "#E2E8F0"),
-         ("Precipitation", 1520, 700, "#BAE6FD"), ("Collection", 960, 900, "#BBF7D0")]
+nodes = [("Evaporation", 400, 580, "#FDE68A"), ("Condensation", 960, 260, "#E2E8F0"),
+         ("Precipitation", 1520, 580, "#BAE6FD"), ("Collection", 960, 780, "#BBF7D0")]   # all above y=880
 for label, cx, cy, fill in nodes:
     p2.ellipse(cx, cy, RX, RY, fill=fill, stroke="#334155", stroke_width=3.0)
     lh = estimate_height(label, 26, 2 * RX - 40, bold=True)
     p2.add(textarea(cx - RX + 20, badge_y(cy - RY, 2 * RY, 26), 2 * RX - 40, lh, label, 26,
                     bold=True, color="#0F172A", align="center"))
-arrows = [((300, 625), (520, 480), (800, 400)),      # Evaporation -> Condensation
-          ((1120, 400), (1400, 480), (1560, 620)),   # Condensation -> Precipitation
-          ((1440, 770), (1300, 880), (1150, 900)),   # Precipitation -> Collection
-          ((770, 900), (520, 880), (380, 785))]      # Collection -> Evaporation
+arrows = [((300, 505), (520, 360), (800, 280)),      # Evaporation -> Condensation
+          ((1120, 280), (1400, 360), (1560, 500)),   # Condensation -> Precipitation
+          ((1440, 650), (1300, 760), (1150, 780)),   # Precipitation -> Collection
+          ((770, 780), (520, 760), (380, 665))]      # Collection -> Evaporation
 for a, via, b in arrows:
     p2.curve(a, via, b, color="#0369A1", width=6.0, arrow_end=True)
 
