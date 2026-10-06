@@ -66,7 +66,22 @@ def json_font_size(pt):
 
 
 def _rtf_escape(v):
-    return v.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
+    """Escape for the RTF stream. Backslash and braces; non-ASCII as signed-16-bit
+    \\uN? (what myViewBoard itself writes); and the literal word 'Arial', which
+    myViewBoard silently rewrites to 'Calibri' in the decoded text, is broken with an
+    invisible word-joiner (U+2060) so it displays correctly."""
+    out = []
+    for ch in v.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}"):
+        o = ord(ch)
+        if o < 128:
+            out.append(ch)
+        elif o <= 0xFFFF:
+            out.append("\\u%d?" % (o - 0x10000 if o > 0x7FFF else o))
+        else:                                   # astral: UTF-16 surrogate pair
+            o -= 0x10000
+            for s in (0xD800 + (o >> 10), 0xDC00 + (o & 0x3FF)):
+                out.append("\\u%d?" % (s - 0x10000))
+    return "".join(out).replace("Arial", "Ari\\u8288?al")
 
 
 def make_rtf(value, pt, font="Segoe UI", align="left", bold=False, color="#000000"):
@@ -83,18 +98,42 @@ def make_rtf(value, pt, font="Segoe UI", align="left", bold=False, color="#00000
 
 
 # ---- text height estimate (no font metrics available -> be conservative) ----
-def estimate_lines(text, pt, width_px):
+# Wrapped-line pitch = (pitch ratio) x font size in POINTS. Measured on real renders at
+# fs=44: Segoe UI 1.773, Calibri 1.614, Georgia 1.523, Open Sans 1.818, Times New
+# Roman 1.477 (derived 1.533). The values below are those rounded UP. Bold is NOT
+# different (same pitch as regular); only its glyphs are wider, handled in the line count.
+PITCH = {"Segoe UI": 1.80, "Calibri": 1.65, "Georgia": 1.55, "Open Sans": 1.85,
+         "Times New Roman": 1.55}
+PITCH_DEFAULT = 1.85            # unknown / other families: generous
+
+
+def pitch_ratio(font="Segoe UI"):
+    return PITCH.get(font, PITCH_DEFAULT)
+
+
+def estimate_lines(text, pt, width_px, bold=False):
     json_px = round(pt * 4 / 3)
-    per_line = max(1, int(width_px / (json_px * 0.55)))
+    avg = json_px * (0.60 if bold else 0.55)    # deliberately generous; bold is wider
+    per_line = max(1, int(width_px / avg))
     total = 0
     for para in str(text).split("\n"):
         total += max(1, len(textwrap.wrap(para, width=per_line, break_long_words=True)))
     return total
 
 
-def estimate_height(text, pt, width_px):
+def estimate_height(text, pt, width_px, bold=False, font="Segoe UI"):
     """lines * pitch. NEVER use the pitch alone as a height."""
-    return estimate_lines(text, pt, width_px) * pt * 1.8
+    return estimate_lines(text, pt, width_px, bold) * pt * pitch_ratio(font)
+
+
+def badge_y(y_shape, shape_h, pt):
+    """Textarea y that makes a SINGLE line of text look vertically centred inside a
+    shape (calibrated against real renders). The textarea box is not the visual text
+    box, so y = shape_centre - h/2 sits visibly too low/high; use this instead.
+    Give the textarea the shape's full width and align='center'."""
+    fs_c = max(20, min(64, pt))
+    c = 0.40 + (fs_c - 20) / 44.0 * 0.16
+    return y_shape + round(shape_h / 2 - c * pt)
 
 
 # ---- elements ---------------------------------------------------------------
@@ -212,11 +251,11 @@ class Page:
 
     # flowing text: height = lines * pitch; next y = y + height + GUTTER
     def text(self, text, size=28, x=MARGIN, width=W - 2 * MARGIN, bold=False,
-             color="#1A1A2E", align="left", y=None, gap=GUTTER):
+             color="#1A1A2E", align="left", y=None, gap=GUTTER, font="Segoe UI"):
         top = self.y if y is None else y
-        h = estimate_height(text, size, width)
-        tid = self.add(textarea(x, top, width, h, text, size, bold=bold, color=color,
-                                align=align))
+        h = estimate_height(text, size, width, bold=bold, font=font)
+        tid = self.add(textarea(x, top, width, h, text, size, font=font, bold=bold,
+                                color=color, align=align))
         if y is None:
             self.y = top + h + gap
         return tid
