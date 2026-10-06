@@ -1,6 +1,6 @@
 ---
 name: deferred-features-not-in-dsl
-description: Flashcard, poll, AI-pen/SVG icons, groups, rotation, and page.tools are documented but not yet buildable through the DSL. Read this before claiming the DSL can generate one of these.
+description: Flashcard, poll, groups, rotation, and page.tools are documented but not yet buildable through the DSL (AI-pen/SVG now has its own element docs and helper). Read this before claiming the DSL can generate one of these.
 metadata:
   type: constraint
   status: documented-only
@@ -70,7 +70,16 @@ seconds as a number. `content.json` itself doesn't contain the poll logic —
 only `content-polls.json` does; anything in `content.json` referencing a poll is
 just a visual/layout cue, not the poll definition itself.
 
-## AI-pen / SVG icon import, groups, per-element rotation, page.tools
+## AI-pen / SVG icon import — NOW COVERED (outside the DSL)
+
+SVG icons and shapes via `AI-pen`, and SVG `image` elements, are documented in
+[`elements/ai-pen.md`](../elements/ai-pen.md),
+[`elements/svg-image.md`](../elements/svg-image.md) and
+[`constraints/ai-pen-path-rules.md`](ai-pen-path-rules.md), with a tested helper
+(`starter/olf_starter_svg.py`). The DSL itself still has no `svg:`/`icon:`
+element; the helpers build the JSON directly.
+
+## groups, per-element rotation, page.tools
 
 Not detailed here — these exist in myViewBoard and are reachable via `raw:`,
 but this corpus doesn't yet carry engine-validated reference material for them
