@@ -1,0 +1,308 @@
+"""olf_validate.py -- run this on your .olf BEFORE delivering it. Standard library only.
+
+    report = validate_olf("out.olf")        # path to .olf, or a content dict
+    print_report(report)                    # prints ERRORS / WARNINGS / summary
+
+Rule: fix every ERROR, re-run until `errors == []`, and show the user the final
+report. WARNINGS are judgement calls; fix them unless you have a reason.
+
+Every check here exists because of a real failure (see constraints/*.md).
+"""
+import json
+import re
+import textwrap
+import zipfile
+
+SEP = "\u300e\u300e\u300e"
+META_KEYS = ["id", "create-platform", "create-by-library", "create-time", "modify-time",
+             "create-library-version", "create-version", "modify-version", "modify-platform"]
+SHAPE_KINDS = {"polygon", "ellipse", "polyline", "curve", "quadrant", "pseudo3Dshape"}
+FLIP_KINDS = SHAPE_KINDS
+HEX6, HEX8 = re.compile(r"^#[0-9A-Fa-f]{6}$"), re.compile(r"^#[0-9A-Fa-f]{8}$")
+MATRIX9 = re.compile(r"^(-?[\d.eE+-]+,){8}-?[\d.eE+-]+$")
+
+
+def _est_lines(text, pt, width):
+    px = round(pt * 4 / 3)
+    per = max(1, int(width / (px * 0.55)))
+    return sum(max(1, len(textwrap.wrap(p, per, break_long_words=True)))
+               for p in str(text).split("\n"))
+
+
+def validate_olf(src):
+    errs, warns = [], []
+    E, Wn = errs.append, warns.append
+
+    # ---- load -------------------------------------------------------------
+    if isinstance(src, dict):
+        data = src
+    else:
+        try:
+            with zipfile.ZipFile(src) as zf:
+                names = zf.namelist()
+                if "content.json" not in names:
+                    E("ZIP has no content.json at the archive ROOT (found: %s)" % names[:5])
+                    return {"errors": errs, "warnings": warns, "stats": {}}
+                data = json.loads(zf.read("content.json").decode("utf-8"))
+        except zipfile.BadZipFile:
+            E("not a valid ZIP file")
+            return {"errors": errs, "warnings": warns, "stats": {}}
+
+    # ---- envelope ---------------------------------------------------------
+    if not isinstance(data, dict) or list(data.keys()) != ["olf"]:
+        E("root must be an object with exactly one key 'olf' (got %s)"
+          % (list(data.keys()) if isinstance(data, dict) else type(data).__name__))
+        return {"errors": errs, "warnings": warns, "stats": {}}
+    olf = data["olf"]
+    for k in ("width", "height", "viewbox", "meta", "pageset", "additional", "links", "groups"):
+        if k not in olf:
+            E("olf missing key '%s'" % k)
+    if " " not in str(olf.get("viewbox", "")) or "," in str(olf.get("viewbox", "")):
+        E("olf.viewbox must be SPACE-separated, e.g. '0 0 1920 1080' (got %r)" % olf.get("viewbox"))
+    for k in META_KEYS:
+        if k not in olf.get("meta", {}):
+            E("meta missing '%s' (all 9 fields required)" % k)
+    if not isinstance(olf.get("additional"), list):
+        E("'additional' must be ONE array on the root olf object")
+
+    ids, elems = {}, {}              # id -> where ; element id -> (kind, dict, page_no)
+    def reg(i, where):
+        if not i:
+            E("%s has no id" % where)
+        elif i in ids:
+            E("duplicate id %s (%s and %s)" % (i, ids[i], where))
+        else:
+            ids[i] = where
+
+    reg(olf.get("meta", {}).get("id"), "meta")
+    pages = olf.get("pageset", [])
+    if not pages:
+        E("pageset is empty")
+    for pn, wrap in enumerate(pages, 1):
+        if not isinstance(wrap, dict) or list(wrap.keys()) != ["page"]:
+            E("pageset[%d] must be {\"page\": {...}}" % (pn - 1))
+            continue
+        pg = wrap["page"]
+        reg(pg.get("id"), "page %d" % pn)
+        if "," not in str(pg.get("viewbox", "")) or " " in str(pg.get("viewbox", "")):
+            E("page %d viewbox must be COMMA-separated '0,0,1920,1080' (got %r)"
+              % (pn, pg.get("viewbox")))
+        if "matrix" not in pg:
+            E("page %d missing 'matrix'" % pn)
+        if "is-hidden" not in pg:
+            E("page %d missing 'is-hidden'" % pn)
+        bgs = pg.get("backgrounds")
+        if not isinstance(bgs, list) or not bgs or "background" not in bgs[0]:
+            E("page %d 'backgrounds' must be an array of {\"background\": {id,type,fill,opacity}}" % pn)
+        else:
+            reg(bgs[0]["background"].get("id"), "page %d background" % pn)
+        if "additional" in pg:
+            E("page %d has its own 'additional' -- it belongs ONCE on the root olf object" % pn)
+        for el in pg.get("elements", []):
+            if not isinstance(el, dict) or len(el) != 1:
+                E("page %d has a malformed element wrapper" % pn)
+                continue
+            kind, body = next(iter(el.items()))
+            where = "page %d %s" % (pn, kind)
+            reg(body.get("id"), where)
+            elems[body.get("id")] = (kind, body, pn)
+            _check_element(kind, body, where, E, Wn, reg)
+
+    # ---- additional <-> elements -----------------------------------------
+    refd = set()
+    for i, a in enumerate(olf.get("additional", [])):
+        e = a.get("element") if isinstance(a, dict) else None
+        if not e:
+            E("additional[%d] must be {\"element\": {...}}" % i)
+            continue
+        reg(e.get("id"), "additional[%d]" % i)
+        ref = e.get("ref")
+        if ref not in elems:
+            E("additional[%d] ref %s matches no element" % (i, ref))
+            continue
+        if ref in refd:
+            E("two additional entries for element %s" % ref)
+        refd.add(ref)
+        kind = elems[ref][0]
+        if kind == "AI-pen" and "flip" in e:
+            E("additional entry for AI-pen must NOT have 'flip'")
+        if kind in FLIP_KINDS and e.get("flip") != "none":
+            E("additional entry for %s needs \"flip\": \"none\"" % kind)
+        for an in e.get("animation-container", []):
+            d = an.get("animation", {})
+            reg(d.get("id"), "animation")
+            if not isinstance(d.get("duration"), str) or d.get("duration") not in "0123" or not d.get("duration"):
+                E("animation duration must be the STRING '0'..'3' (got %r)" % d.get("duration"))
+            if d.get("type") not in ("fade-in", "fade-out"):
+                E("animation type must be fade-in|fade-out (got %r)" % d.get("type"))
+    for rid, (kind, body, pn) in elems.items():
+        if kind in SHAPE_KINDS and rid not in refd:
+            E("page %d %s %s has no entry in root 'additional'" % (pn, kind, rid))
+
+    # ---- links ------------------------------------------------------------
+    n_pages = len(pages)
+    for i, lk in enumerate(olf.get("links", [])):
+        d = lk.get("link", {}) if isinstance(lk, dict) else {}
+        reg(d.get("id"), "link %d" % i)
+        if d.get("ref") not in elems:
+            E("link %d ref matches no element" % i)
+        lt = d.get("link-type")
+        if lt == "page":
+            pid = d.get("page-id")
+            if not (isinstance(pid, str) and pid.isdigit() and 1 <= int(pid) <= n_pages):
+                E("link %d page-id must be a 1-based ORDINAL STRING within 1..%d (got %r)"
+                  % (i, n_pages, pid))
+        elif lt == "web" and not d.get("url"):
+            E("link %d web link needs 'url'" % i)
+        elif lt not in ("page", "web", "text", "tool", "file", "audio"):
+            E("link %d unknown link-type %r" % (i, lt))
+
+    # ---- text: tables, overlap, height -----------------------------------
+    cell_text = set()
+    for rid, (kind, b, pn) in elems.items():
+        if kind == "table":
+            _check_table(b, pn, elems, cell_text, E, Wn)
+    boxes = []
+    for rid, (kind, b, pn) in elems.items():
+        if kind != "textarea":
+            continue
+        txt, pt = _text_of(b)
+        if pt:
+            need = sum(_est_lines(p.get("text", ""), pt, b["width"]) for p in [{"text": txt}]) * pt * 1.8
+            if b["height"] < need * 0.95:
+                E("page %d textarea %r: height %.1f < estimated wrapped height %.1f "
+                  "(lines*pitch). Do NOT use pitch alone as height." % (pn, txt[:40], b["height"], need))
+            _check_rtf(b, txt, pt, pn, E, Wn)
+        if rid not in cell_text:
+            boxes.append((pn, rid, b["x"], b["y"], b["x"] + b["width"], b["y"] + b["height"], txt))
+    for i in range(len(boxes)):
+        for j in range(i + 1, len(boxes)):
+            a, c = boxes[i], boxes[j]
+            if a[0] != c[0]:
+                continue
+            ox = min(a[4], c[4]) - max(a[2], c[2])
+            oy = min(a[5], c[5]) - max(a[3], c[3])
+            if ox > 1 and oy > 1:           # true 2-D overlap (x AND y)
+                E("page %d text overlap: %r and %r overlap by %.0fx%.0f"
+                  % (a[0], a[6][:30], c[6][:30], ox, oy))
+    # off-canvas
+    for rid, (kind, b, pn) in elems.items():
+        if kind in ("textarea", "image", "table") and \
+                (b.get("x", 0) < -1 or b.get("y", 0) < -1 or
+                 b.get("x", 0) + b.get("width", 0) > 1921 or b.get("y", 0) + b.get("height", 0) > 1081):
+            Wn("page %d %s extends beyond the 1920x1080 canvas" % (pn, kind))
+
+    stats = {"pages": n_pages, "elements": len(elems), "additional": len(olf.get("additional", [])),
+             "links": len(olf.get("links", []))}
+    return {"errors": errs, "warnings": warns, "stats": stats}
+
+
+def _text_of(b):
+    runs, pt = [], None
+    for p in b.get("text-blocks-container", []):
+        for t in p.get("paragraph", {}).get("text-list-container", []):
+            r = t.get("text", {})
+            runs.append(r.get("text", ""))
+            if pt is None and r.get("font-size"):
+                pt = r["font-size"] * 3 / 4          # px -> pt
+    return "".join(runs), pt
+
+
+def _check_rtf(b, txt, pt, pn, E, Wn):
+    rtf = b.get("custom-data", "")
+    if not rtf:
+        Wn("page %d textarea %r has empty custom-data (RTF); Windows renders from RTF" % (pn, txt[:30]))
+        return
+    m = re.search(r"\\fs(\d+)", rtf)
+    if m and abs(int(m.group(1)) - pt * 2) > 2:
+        E("page %d textarea %r: RTF \\fs%s disagrees with JSON font-size (%.0f px => \\fs%.0f). "
+          "JSON is px = pt*4/3; RTF is pt*2." % (pn, txt[:30], m.group(1), pt * 4 / 3, pt * 2))
+    cm = re.search(r"\\red(\d+)\\green(\d+)\\blue(\d+)", rtf)
+    for p in b.get("text-blocks-container", []):
+        for t in p.get("paragraph", {}).get("text-list-container", []):
+            f = t.get("text", {}).get("fill", "")
+            if not HEX8.match(f):
+                E("page %d textarea %r: text fill %r must be 8-digit #AARRGGBB" % (pn, txt[:30], f))
+            elif cm:
+                want = "#%02X%02X%02X" % tuple(int(v) for v in cm.groups())
+                if f[3:].upper() != want[1:]:
+                    E("page %d textarea %r: JSON fill %s != RTF colortbl %s" % (pn, txt[:30], f, want))
+
+
+def _check_element(kind, b, where, E, Wn, reg):
+    if "matrix" in b and not MATRIX9.match(str(b["matrix"])):
+        E("%s matrix must be 9 comma-separated numbers (got %r)" % (where, b["matrix"]))
+    if kind in ("polygon", "ellipse", "polyline", "curve", "quadrant", "pseudo3Dshape"):
+        for key in ("fill", "stroke"):
+            if key in b and not HEX6.match(str(b[key])):
+                E("%s %s %r must be 6-digit #RRGGBB (8-digit is for TEXT fill only)" % (where, key, b[key]))
+        if kind in ("curve", "polyline", "polygon", "ellipse") and "stroke-opacity" not in b:
+            E("%s needs explicit stroke-opacity (a curve without it is INVISIBLE)" % where)
+        if kind == "curve" and b.get("stroke-opacity", 1) == 0:
+            E("%s stroke-opacity is 0 -- invisible arrow" % where)
+        for key in ("show-length-measurement", "show-angle-measurement"):
+            v = b.get(key)
+            if v and ("\u300e" in v) and ("\u300e" * 3 not in v or "\u300e" * 4 in v):
+                E("%s %s must use the TRIPLE separator (3 x U+300E), never 2 or 4" % (where, key))
+            if v and "\u300e" not in v and "true" in v and v.count("true") > 1:
+                E("%s %s has several entries but no U+300E separator" % (where, key))
+    if kind == "textarea":
+        for k in ("custom-data-tag", "text-blocks-container"):
+            if k not in b:
+                E("%s missing %s" % (where, k))
+        if b.get("custom-data-tag") and b["custom-data-tag"] != "RTFxamlStr_UWP":
+            Wn("%s custom-data-tag is %r (expected RTFxamlStr_UWP)" % (where, b["custom-data-tag"]))
+        for p in b.get("text-blocks-container", []):
+            pp = p.get("paragraph", {})
+            reg(pp.get("id"), where + " paragraph")
+            for t in pp.get("text-list-container", []):
+                r = t.get("text", {})
+                reg(r.get("id"), where + " run")
+                fs = r.get("font-size")
+                if fs is not None and fs > 130 * 4 / 3 + 1:
+                    E("%s font-size %s px exceeds the 130pt cap" % (where, fs))
+                if fs is not None and fs != int(fs):
+                    Wn("%s font-size %s is not a whole pixel number" % (where, fs))
+    if kind == "image" and not b.get("source"):
+        E("%s image missing 'source'" % where)
+
+
+def _check_table(b, pn, elems, cell_text, E, Wn):
+    rows, cols = b.get("rows", 0), b.get("columns", 0)
+    nb = len(b.get("cell-background-container", []))
+    if nb != rows * cols:
+        E("page %d table: cell-background-container has %d entries, expected rows*cols=%d" % (pn, nb, rows * cols))
+    mc = b.get("merge-cell-container", [])
+    if mc and len(mc) != rows * cols:
+        E("page %d table: merge-cell-container must have one entry per cell (%d), has %d" % (pn, rows * cols, len(mc)))
+    for c in b.get("cell-content-container", []):
+        d = c.get("cell-content", {})
+        r, k = d.get("cell-row"), d.get("cell-column")
+        if r is None or k is None or r % 2 or k % 2 or r > 2 * (rows - 1) or k > 2 * (cols - 1):
+            E("page %d table cell-content (%s,%s) must use EVEN indices 2r,2c within the table" % (pn, r, k))
+        if d.get("ref") not in elems:
+            E("page %d table cell-content ref matches no element" % pn)
+        else:
+            cell_text.add(d["ref"])
+    for lst in ("column-lengths-array", "row-lengths-array"):
+        n = len(str(b.get(lst, "")).split())
+        if n != (cols if lst.startswith("column") else rows):
+            E("page %d table %s has %d values, expected %d" % (pn, lst, n, cols if lst.startswith("column") else rows))
+
+
+def print_report(rep):
+    print("STATS:", rep["stats"])
+    for e in rep["errors"]:
+        print("ERROR  :", e)
+    for w in rep["warnings"]:
+        print("WARNING:", w)
+    print("RESULT : %s (%d errors, %d warnings)" % (
+        "PASS" if not rep["errors"] else "FAIL", len(rep["errors"]), len(rep["warnings"])))
+    return not rep["errors"]
+
+
+if __name__ == "__main__":
+    import sys
+    # Only acts when run as a CLI with a path; harmless when pasted into a sandbox.
+    if len(sys.argv) > 1 and sys.argv[1].lower().endswith(".olf"):
+        sys.exit(0 if print_report(validate_olf(sys.argv[1])) else 1)
