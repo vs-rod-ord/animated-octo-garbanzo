@@ -22,7 +22,7 @@ for i, (d, col, label) in enumerate([(HOME, "#1565C0", "Home"), (STAR, "#F59E0B"
                                      (ARROW, "#16A34A", "Arrow")]):
     cx = 360 + i * 600
     p1.add(ai_pen_icon([d], x=cx - 100, y=y0, size=200, vb=24, fill=col))
-    h = estimate_height(label, 26, 300)
+    h = estimate_height(label, 26, 300, bold=True)
     p1.add(textarea(cx - 150, y0 + 215, 300, h, label, 26, bold=True, align="center"))
 p1.y = y0 + 380
 p1.text("Icons are real vector paths: drag a corner in myViewBoard and they stay sharp.",
