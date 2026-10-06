@@ -18,8 +18,9 @@ there. See "The generation-path rule" below before writing anything.
 ## Reading order
 
 1. This file.
-2. [`spec/dsl-spec.md`](spec/dsl-spec.md) — the DSL's document structure, layers,
-   and how positioning/defaults work. Read this fully; it's short.
+2. [`spec/dsl-spec.md`](spec/dsl-spec.md) — the reference engine's vocabulary: what
+   templates, roles and defaults mean. Skim it; you build with the helpers (step 6),
+   not by running that engine.
 3. **[`spec/content-json-envelope.md`](spec/content-json-envelope.md) — read this
    in full, every time, before writing any JSON.** It is not optional and not
    skippable even for a one-element file. This is the root `olf` → `pageset` →
@@ -39,6 +40,13 @@ there. See "The generation-path rule" below before writing anything.
    run the validator before delivering.
 7. [`examples/water-cycle-full.md`](examples/water-cycle-full.md) — a complete
    multi-page worked example (script + resulting `content.json`) for few-shot grounding.
+8. If the request matches one, the whole-page recipe under [`patterns/`](patterns/):
+   [`multiple-choice`](patterns/multiple-choice.md) (question pages) or
+   [`page-link-menu`](patterns/page-link-menu.md) (clickable menu/contents pages).
+   For any text, also read
+   [`constraints/rtf-text-structure.md`](constraints/rtf-text-structure.md) if you
+   hand-write RTF, and [`constraints/android-vs-windows-divergence.md`](constraints/android-vs-windows-divergence.md)
+   if the file must open on Android.
 
 ## What this DSL can build today (v1 scope)
 
@@ -99,7 +107,12 @@ claim to have generated a working `.olf` file. Tell the person exactly what to
 do with it (save it as `content.json`, zip it at the root of the archive, rename
 the `.zip` to `.olf`).
 
-**Use the starter helpers and the validator — don't hand-write everything.**
+**Use the starter helpers and the validator — don't hand-write everything.** If your
+sandbox cannot download them (usual on ChatGPT/Gemini), **ask the user to attach
+`starter/olf_kit.py`** (or the repo ZIP) rather than falling back silently to
+hand-written JSON — see "Getting the helpers INTO your sandbox" in
+[`spec/starter-helpers.md`](spec/starter-helpers.md). Never claim the validator passed
+unless you actually ran it.
 [`spec/starter-helpers.md`](spec/starter-helpers.md) points to three raw Python
 files (`starter/olf_starter.py`, `starter/olf_starter_extras.py`,
 `starter/olf_validate.py`). Fetch them, paste them into your sandbox verbatim,
