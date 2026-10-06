@@ -127,7 +127,8 @@ background container, plain-hex colours, absolute path commands, non-negative
 coordinates, no `flip`); **image** sources exist in the ZIP and SVG sources are
 linted (`<text>`, `<pattern>`, `<use>`, animation, too-small intrinsic size); **textarea height ≥ the
 wrapped-height estimate**; **true 2-D overlap** between text boxes (x *and* y, so
-side-by-side text is not flagged); content beyond the canvas (warning).
+side-by-side text is not flagged); content beyond the canvas (warning); **bottom safe area** — a text box, table or image
+ending below y=880 will sit under myViewBoard's toolbar (warning, `SAFE_BOTTOM`).
 
 It cannot see the real rendered font, so it errs on the safe side. It does not
 replace opening the file in myViewBoard — it removes the mistakes that were
