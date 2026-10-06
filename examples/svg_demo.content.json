@@ -1,0 +1,541 @@
+{
+ "olf": {
+  "width": 1920.0,
+  "height": 1080.0,
+  "viewbox": "0 0 1920 1080",
+  "meta": {
+   "id": "42aca8da-eb11-46cc-85f7-cac90abe6d22",
+   "create-platform": "myViewBoard for Windows",
+   "create-by-library": "Viewsonic Open Learning Format library",
+   "create-time": "10/6/2026 04:40:12 PM",
+   "modify-time": "10/6/2026 04:40:12 PM",
+   "create-library-version": "0.0.1.50",
+   "create-version": "3.4.9.603 [64 bits]",
+   "modify-version": "3.4.9.603 [64 bits]",
+   "modify-platform": "myViewBoard for Windows",
+   "description": "SVG demo"
+  },
+  "pageset": [
+   {
+    "page": {
+     "id": "a3831506-2636-4adb-bab5-cfbd6ab24745",
+     "matrix": "1,0,0,0,1,0,0,0,1",
+     "viewbox": "0,0,1920,1080",
+     "is-hidden": false,
+     "elements": [
+      {
+       "textarea": {
+        "id": "6afe79dc-f757-4c5f-8a58-97aff202e305",
+        "x": 80.0,
+        "y": 80.0,
+        "width": 1760.0,
+        "height": 79.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs88 Vector icons (AI-pen)\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "1be7b540-8e5d-4b15-b19d-befa35dc3ac4",
+           "font-size": 59.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "827a09bb-61ac-4eb8-9947-c64a1f0552e6",
+              "text": "Vector icons (AI-pen)",
+              "font-family": "Segoe UI",
+              "font-size": 59.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "AI-pen": {
+        "id": "abe2ecd7-14ab-4abe-b7ef-d3059fdb7ce7",
+        "matrix": "1,0,80,0,1,220,0,0,1",
+        "foreground-objects-container": [
+         {
+          "path": {
+           "id": "0a70aecf-b7b6-440e-a5e4-9dfbe831bce4",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 1760.0,
+           "height": 360.0,
+           "fill-opacity": 1.0,
+           "fill": "#E0F2FE",
+           "stroke-width": 0.0,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#E0F2FE",
+           "data": "M40.0,0.0 L1720.0,0.0 A40.0,40.0 0 0 1 1760.0,40.0 L1760.0,320.0 A40.0,40.0 0 0 1 1720.0,360.0 L40.0,360.0 A40.0,40.0 0 0 1 0.0,320.0 L0.0,40.0 A40.0,40.0 0 0 1 40.0,0.0 Z",
+           "matrix": "1,0,80,0,1,220,0,0,1"
+          }
+         }
+        ],
+        "background-objects-container": [
+         {
+          "path": {
+           "id": "86dbb3c4-1372-4d7d-b894-2ede7470e505",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 1760.0,
+           "height": 360.0,
+           "fill-opacity": 0.3,
+           "fill": "#E0F2FE",
+           "stroke-width": 0.5,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#E0F2FE",
+           "data": "M40.0,0.0 L1720.0,0.0 A40.0,40.0 0 0 1 1760.0,40.0 L1760.0,320.0 A40.0,40.0 0 0 1 1720.0,360.0 L40.0,360.0 A40.0,40.0 0 0 1 0.0,320.0 L0.0,40.0 A40.0,40.0 0 0 1 40.0,0.0 Z",
+           "matrix": "1,0,80,0,1,220,0,0,1"
+          }
+         }
+        ]
+       }
+      },
+      {
+       "AI-pen": {
+        "id": "03252f17-3f28-4c7f-a3d9-4f0ac704f295",
+        "matrix": "8.3333,0,260,0,8.3333,260,0,0,1",
+        "foreground-objects-container": [
+         {
+          "path": {
+           "id": "473bc95a-3768-44fe-aa84-1b1875bc0e1c",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 1.0,
+           "fill": "#1565C0",
+           "stroke-width": 0.0,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#1565C0",
+           "data": "M10 20L10 14L14 14L14 20L19 20L19 12L22 12L12 3L2 12L5 12L5 20Z",
+           "matrix": "8.3333,0,260,0,8.3333,260,0,0,1"
+          }
+         }
+        ],
+        "background-objects-container": [
+         {
+          "path": {
+           "id": "2c19c2fa-4a91-4f25-89c7-e1b21c8b50bc",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 0.3,
+           "fill": "#1565C0",
+           "stroke-width": 0.5,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#1565C0",
+           "data": "M10 20L10 14L14 14L14 20L19 20L19 12L22 12L12 3L2 12L5 12L5 20Z",
+           "matrix": "8.3333,0,260,0,8.3333,260,0,0,1"
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "2421035f-856f-47e4-b245-7b78a23dfe5e",
+        "x": 210.0,
+        "y": 475.0,
+        "width": 300.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Home\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "d7457e7d-7ef2-412f-93b4-60ea8a83a3d2",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "b14bf4ba-7ba0-4f4d-a09f-719f91ffa663",
+              "text": "Home",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "AI-pen": {
+        "id": "2791b599-4177-4246-a2d7-93c7ad6ef771",
+        "matrix": "8.3333,0,860,0,8.3333,260,0,0,1",
+        "foreground-objects-container": [
+         {
+          "path": {
+           "id": "fb23f2f4-33dc-44c5-80bb-1117e8e1214b",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 1.0,
+           "fill": "#F59E0B",
+           "stroke-width": 0.0,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#F59E0B",
+           "data": "M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21Z",
+           "matrix": "8.3333,0,860,0,8.3333,260,0,0,1"
+          }
+         }
+        ],
+        "background-objects-container": [
+         {
+          "path": {
+           "id": "029f2314-dcf7-4ee8-a684-17f141837940",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 0.3,
+           "fill": "#F59E0B",
+           "stroke-width": 0.5,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#F59E0B",
+           "data": "M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21Z",
+           "matrix": "8.3333,0,860,0,8.3333,260,0,0,1"
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "2acdf1ff-a5de-4fa7-927a-8e5e4452b428",
+        "x": 810.0,
+        "y": 475.0,
+        "width": 300.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Star\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "da811398-e657-42b6-89d2-f62b104a0c42",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "4f1a66c7-7c73-4854-96f8-1b12c2df1ad6",
+              "text": "Star",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "AI-pen": {
+        "id": "8658d5b1-1b48-4950-bf39-09a969a2eeb6",
+        "matrix": "8.3333,0,1460,0,8.3333,260,0,0,1",
+        "foreground-objects-container": [
+         {
+          "path": {
+           "id": "213a852e-5c78-4301-807f-d1703a77480c",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 1.0,
+           "fill": "#16A34A",
+           "stroke-width": 0.0,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#16A34A",
+           "data": "M4 11L4 13L16 13L10.5 18.5L11.92 19.92L19.84 12L11.92 4.08L10.5 5.5L16 11Z",
+           "matrix": "8.3333,0,1460,0,8.3333,260,0,0,1"
+          }
+         }
+        ],
+        "background-objects-container": [
+         {
+          "path": {
+           "id": "127e58fe-6a92-4bc0-95ac-a9f22ff0a01f",
+           "x": 0.0,
+           "y": 0.0,
+           "width": 24.0,
+           "height": 24.0,
+           "fill-opacity": 0.3,
+           "fill": "#16A34A",
+           "stroke-width": 0.5,
+           "stroke-opacity": 0.0,
+           "stroke-miter-limit": 10.0,
+           "lineshape-start": "round",
+           "lineshape-end": "round",
+           "lineshape-join": "round",
+           "stroke": "#16A34A",
+           "data": "M4 11L4 13L16 13L10.5 18.5L11.92 19.92L19.84 12L11.92 4.08L10.5 5.5L16 11Z",
+           "matrix": "8.3333,0,1460,0,8.3333,260,0,0,1"
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "40ec9460-e29e-4844-a5bd-342e2211493e",
+        "x": 1410.0,
+        "y": 475.0,
+        "width": 300.0,
+        "height": 46.800000000000004,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\qc\\tx720\\cf1\\b\\f0\\fs52 Arrow\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "0299d9a0-342f-4b14-b9a8-3bbe3186da19",
+           "font-size": 35.0,
+           "text-align": "center",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "44a6431b-2092-4228-9bab-22fabfdeeb8d",
+              "text": "Arrow",
+              "font-family": "Segoe UI",
+              "font-size": 35.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "textarea": {
+        "id": "28099f85-ed77-46b6-9238-3c45c166f212",
+        "x": 80.0,
+        "y": 640.0,
+        "width": 1760.0,
+        "height": 50.4,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red71\\green85\\blue105;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\f0\\fs56 Icons are real vector paths: drag a corner in myViewBoard and they stay sharp.\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "4e9ea5bc-1c32-46b0-80a2-4c3cc3db6062",
+           "font-size": 37.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "0aed54c4-17ed-4939-8b5e-f99eb4e3aa3e",
+              "text": "Icons are real vector paths: drag a corner in myViewBoard and they stay sharp.",
+              "font-family": "Segoe UI",
+              "font-size": 37.0,
+              "fill": "#FF475569",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "normal",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      }
+     ],
+     "backgrounds": [
+      {
+       "background": {
+        "id": "81a49f52-727d-43a2-9504-ee18f8863e8e",
+        "type": "color",
+        "fill": "#FFFFFF",
+        "opacity": 1.0
+       }
+      }
+     ]
+    }
+   },
+   {
+    "page": {
+     "id": "e7c7b14c-255f-4883-a8fb-e0565f70224b",
+     "matrix": "1,0,0,0,1,0,0,0,1",
+     "viewbox": "0,0,1920,1080",
+     "is-hidden": false,
+     "elements": [
+      {
+       "textarea": {
+        "id": "7aea939d-3661-4593-b4c1-a3299899425c",
+        "x": 80.0,
+        "y": 80.0,
+        "width": 1760.0,
+        "height": 79.2,
+        "custom-data": "{\\rtf1\\fbidis\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Segoe UI;}}\r\n{\\colortbl ;\\red26\\green26\\blue46;}\r\n{\\*\\generator Riched20 10.0.26100}\\viewkind4\\uc1 \r\n\\pard\\ql\\tx720\\cf1\\b\\f0\\fs88 SVG image element\\par\r\n}\r\n",
+        "custom-data-tag": "RTFxamlStr_UWP",
+        "matrix": "1,0,0,0,1,0,0,0,1",
+        "text-blocks-container": [
+         {
+          "paragraph": {
+           "id": "ed7aa1b8-f3f0-43df-a837-352aee7d2a24",
+           "font-size": 59.0,
+           "text-align": "left",
+           "text-list-container": [
+            {
+             "text": {
+              "id": "2750533c-4964-4024-a0ca-e62d82533c9e",
+              "text": "SVG image element",
+              "font-family": "Segoe UI",
+              "font-size": 59.0,
+              "fill": "#FF1A1A2E",
+              "font-style": "normal",
+              "font-stretch": "normal",
+              "font-weight": "bold",
+              "text-decoration": "normal",
+              "baseline-align": "baseline",
+              "fill-opacity": 1.0
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      {
+       "image": {
+        "id": "860f1fb1-dc71-4b85-882c-9f68f26c98e5",
+        "x": 560.0,
+        "y": 260.0,
+        "width": 800.0,
+        "height": 520.0,
+        "mime-type": "image/svg+xml",
+        "source": "images/badge.svg",
+        "matrix": "1,0,0,0,1,0,0,0,1"
+       }
+      }
+     ],
+     "backgrounds": [
+      {
+       "background": {
+        "id": "cbe202fe-cf2c-4a4c-a171-1f54a2e374d3",
+        "type": "color",
+        "fill": "#FFFFFF",
+        "opacity": 1.0
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "additional": [
+   {
+    "element": {
+     "id": "5aee8cb9-bf60-4645-81e0-7f210e084105",
+     "ref": "abe2ecd7-14ab-4abe-b7ef-d3059fdb7ce7",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "5320fd50-a2ba-4d30-b6a8-3194facdde39",
+     "ref": "03252f17-3f28-4c7f-a3d9-4f0ac704f295",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "b72b462f-f041-4671-aad8-9c066af6cd92",
+     "ref": "2791b599-4177-4246-a2d7-93c7ad6ef771",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   },
+   {
+    "element": {
+     "id": "ce58871b-9852-4eec-919f-fc252de6e397",
+     "ref": "8658d5b1-1b48-4950-bf39-09a969a2eeb6",
+     "is-locked": false,
+     "is-moveable-locked": false,
+     "is-replicate": false
+    }
+   }
+  ],
+  "links": [],
+  "groups": []
+ }
+}
