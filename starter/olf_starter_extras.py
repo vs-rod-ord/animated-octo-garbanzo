@@ -83,8 +83,8 @@ def add_table(page, x, y, col_lengths, row_lengths, cells, size=22, header=True,
             ix = x + sw + sum(v + sw for v in col_lengths[:c]) + TABLE_PAD
             iy = y + sw + sum(v + sw for v in row_lengths[:r]) + TABLE_PAD
             w = col_lengths[c] - 2 * TABLE_PAD
-            h = estimate_height(txt, size, w)
             bold = header and r == 0
+            h = estimate_height(txt, size, w, bold=bold)
             ta = textarea(ix, iy, w, h, txt, size, bold=bold)
             page.elements.append(ta)
             rr, cc = swallowed.get((r, c), (r, c))
